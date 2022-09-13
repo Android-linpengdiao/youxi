@@ -1,0 +1,190 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="cpv_progressNormalColor" format="color"/>
+        <attr name="cpv_progressReachColor" format="color"/>
+        <attr name="cpv_progressTextColor" format="color"/>
+        <attr name="cpv_progressTextSize" format="dimension"/>
+        <attr name="cpv_progressTextOffset" format="dimension"/>
+        <attr name="cpv_progressNormalSize" format="dimension"/>
+        <attr name="cpv_progressReachSize" format="dimension"/>
+        <attr name="cpv_radius" format="dimension"/>
+        <attr name="cpv_progressTextVisible" format="boolean"/>
+        <attr name="cpv_progressStartArc" format="integer"/>
+        <attr name="cpv_progressTextSkewX" format="dimension"/>
+        <attr name="cpv_progressTextPrefix" format="string"/>
+        <attr name="cpv_progressTextSuffix" format="string"/>
+        <attr name="cpv_innerBackgroundColor" format="color"/>
+        <attr name="cpv_progressStyle" format="enum">
+            <enum name="Normal" value="0"/>
+            <enum name="FillInner" value="1"/>
+            <enum name="FillInnerArc" value="2"/>
+        </attr>
+        <attr name="cpv_innerProgressColor" format="color"/>
+        <attr name="cpv_innerPadding" format="dimension"/>
+        <attr name="cpv_outerColor" format="color"/>
+        <attr name="cpv_outerSize" format="dimension"/>
+        <attr name="cpv_reachCapRound" format="boolean"/>
+    </declare-styleable>
+
+    <style name="WindowDialog" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <!--是否去除标题 -->
+        <item name="windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 背景透明 -->
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 没有windowActionBar-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item> -->
+
+        <!-- <item name="android:backgroundDimEnabled">false</item> -->
+    </style>
+
+    <style name="searchStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textColorHint">#999999</item>
+    </style>
+
+    <style name="PlayerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <!--实现BottomSheetDialog圆角效果-->
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <declare-styleable name="TitleView">
+        <attr name="title_text" format="string" />
+        <attr name="title_size" format="reference" />
+        <attr name="title_color" format="color" />
+        <attr name="title_bold" format="boolean" />
+        <attr name="content_text" format="string" />
+        <attr name="content_size" format="reference" />
+        <attr name="content_color" format="color" />
+        <attr name="icon_left" format="reference" />
+        <attr name="icon_left_width" format="integer" />
+        <attr name="icon_left_visible" format="boolean" />
+        <attr name="icon_right" format="reference" />
+        <attr name="icon_right_visible" format="boolean" />
+        <attr name="icon_switch" format="reference" />
+        <attr name="switch_visible" format="boolean" />
+        <attr name="arrow_visible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewItemLayout">
+        <attr name="item_title" format="string" />
+        <attr name="item_title_size" format="dimension" />
+        <attr name="item_title_color" format="color" />
+        <attr name="item_title_bold" format="boolean" />
+        <attr name="item_content" format="string" />
+        <attr name="item_content_size" format="dimension" />
+        <attr name="item_content_color" format="color" />
+        <attr name="item_icon_left" format="reference" />
+        <attr name="item_icon_left_width" format="integer" />
+        <attr name="item_icon_left_visible" format="boolean" />
+        <attr name="item_icon_right" format="reference" />
+        <attr name="item_icon_right_visible" format="boolean" />
+        <attr name="item_switch" format="reference" />
+        <attr name="item_switch_visible" format="boolean" />
+        <attr name="item_arrow_visible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AirRatingBar">
+        <!--未选中-->
+        <attr name="ratingDefault" format="reference" />
+        <!--选中半个-->
+        <attr name="ratingHalf" format="reference" />
+        <!--选中-->
+        <attr name="ratingSelect" format="reference" />
+        <!--总数-->
+        <attr name="ratingTotalNum" format="integer" />
+        <!--默认选中的数量 -->
+        <attr name="ratingDefaultSelectNum" format="float" />
+        <!--间距-->
+        <attr name="ratingDistance" format="dimension" />
+        <!--宽度-->
+        <attr name="ratingWidth" format="dimension" />
+        <!--高度-->
+        <attr name="ratingHeight" format="dimension" />
+        <!--整个 or 半个-->
+        <attr name="ratingIsFull" format="boolean" />
+        <!--是否可选中-->
+        <attr name="ratingSelectable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TopTabLayout">
+        <attr name="yj_tabIndicatorColor" format="color" />
+        <attr name="yj_tabIndicatorHeight" format="dimension" />
+        <attr name="yj_tabContentStart" format="dimension" />
+        <attr name="yj_tabBackground" format="reference" />
+        <attr name="yj_tabIndicatorDrawable" format="reference" />
+        <attr name="yj_tabIndicatorDrawableHeight" format="dimension" />
+        <attr name="yj_tabIndicatorPaddingBottom" format="dimension" />
+        <attr name="yj_tabIndicatorPaddingTop" format="dimension" />
+        <attr name="yj_tabIndicatorPaddingLeft" format="dimension" />
+        <attr name="yj_tabIndicatorPaddingRight" format="dimension" />
+
+        <attr name="yj_tabMode">
+            <enum name="scrollable" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <attr name="yj_tabGravity">
+            <enum name="fill" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+        <attr name="yj_tabMinWidth" format="dimension" />
+        <attr name="yj_tabMaxWidth" format="dimension" />
+        <attr name="yj_tabTextAppearance" format="reference" />
+        <attr name="yj_tabTextColor" format="color" />
+        <attr name="yj_tabSelectedTextColor" format="color" />
+        <attr name="yj_tabPaddingStart" format="dimension" />
+        <attr name="yj_tabPaddingTop" format="dimension" />
+        <attr name="yj_tabPaddingEnd" format="dimension" />
+        <attr name="yj_tabPaddingBottom" format="dimension" />
+        <attr name="yj_tabPadding" format="dimension" />
+        <attr name="yj_tabTextSize" format="dimension" />
+        <attr name="yj_tabSelectTextSize" format="dimension" />
+    </declare-styleable>
+
+    <style name="YJTabLayoutStyle" parent="android:Widget">
+        <item name="yj_tabMaxWidth" tools:ignore="PrivateResource">@dimen/design_tab_max_width
+        </item>
+        <item name="yj_tabIndicatorColor">?attr/colorAccent</item>
+        <item name="yj_tabIndicatorHeight">2dp</item>
+        <item name="yj_tabPaddingStart">12dp</item>
+        <item name="yj_tabPaddingEnd">12dp</item>
+        <item name="yj_tabBackground">?attr/selectableItemBackground</item>
+        <item name="yj_tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="yj_tabSelectedTextColor">?android:textColorPrimary</item>
+        <item name="yj_tabGravity">center</item>
+        <item name="yj_tabMode">scrollable</item>
+    </style>
+
+    <style name="YueTabLayoutTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#999999</item>
+    </style>
+
+</resources>

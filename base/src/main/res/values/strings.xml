@@ -1,0 +1,487 @@
+<resources>
+
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="The_day_before_yesterday">前天</string>
+    <string name="Days_ago">天前</string>
+    <string name="long_long_ago">很久以前</string>
+    <string name="An_hour_ago">小时前</string>
+    <string name="minutes_ago">分钟前</string>
+    <string name="just">刚刚</string>
+    <string name="day">日</string>
+    <string name="month">月</string>
+
+
+    <string name="app_name">中国视听</string>
+    <string name="picture">相册</string>
+    <string name="camera">拍摄</string>
+    <string name="videoCall">视频通话</string>
+    <string name="voiceCall">语音通话</string>
+    <string name="Chat">聊天</string>
+
+    <string name="ChatVoice">语音</string>
+    <string name="ChatPicture">图片</string>
+    <string name="ChatVideo">视频</string>
+
+    <string name="Rat">鼠</string>
+    <string name="OX">牛</string>
+    <string name="Tiger">虎</string>
+    <string name="Rabbit">兔</string>
+    <string name="Dragon">龙</string>
+    <string name="Snake">蛇</string>
+    <string name="Horse">马</string>
+    <string name="Sheep">羊</string>
+    <string name="Monkey">猴</string>
+    <string name="Rooster">鸡</string>
+    <string name="Dog">狗</string>
+    <string name="Pig">猪</string>
+
+    <string name="Capricorn">魔羯座</string>
+    <string name="Aquarius">水瓶座</string>
+    <string name="Pisces">双鱼座</string>
+    <string name="Aries">白羊座</string>
+    <string name="Taurus">金牛座</string>
+    <string name="Gemini">双子座</string>
+    <string name="Cancer">巨蟹座</string>
+    <string name="Leo">狮子座</string>
+    <string name="Virgo">处女座</string>
+    <string name="Libra">天秤座</string>
+    <string name="Scorpio">天蝎座</string>
+    <string name="Sagittarius">射手座</string>
+
+
+    <string name="Messages">消息</string>
+    <string name="Contacts">好友</string>
+    <string name="Discover">发现</string>
+    <string name="Me">我的</string>
+
+    <!--登录页-->
+    <string name="Login">登录</string>
+    <string name="LoginRegister">登录/注册</string>
+    <string name="EnterPhoneNumber">输入手机号</string>
+    <string name="ForgotPassword">忘记密码</string>
+    <string name="Account">账号登录</string>
+    <string name="LoginSuccessful">登录成功</string>
+
+
+    <!--选择国家和地区页-->
+    <string name="CurrentLocation">选择国家和地区</string>
+    <string name="SearchRegions">搜索国家</string>
+
+    <!--注册 */-->
+    <string name="Register">注册</string>
+    <string name="TwoMoreSteps">只剩两步</string>
+    <string name="WhatIsYourGender">您是男生还是女生</string>
+    <string name="registrationCompleted">注册完成后性别将不可修改：</string>
+    <string name="Man">男生</string>
+    <string name="Woman">女生</string>
+    <string name="DayOfBirth">选择你的破壳日（>18岁）</string>
+    <string name="yearsOld">岁</string>
+    <string name="LastStep">只剩一步</string>
+
+
+    <!--完善资料-->
+    <string name="CompleteInfo">完善资料</string>
+    <string name="AddProfilePhoto">点击添加头像</string>
+    <string name="UploadPicture">上传清晰的五官头像，让更多用户发现你</string>
+    <string name="LikesJiu">99+喜欢</string>
+    <string name="LikesYi">1人喜欢</string>
+    <string name="LikesLing">0人喜欢</string>
+    <string name="NickName">设置昵称</string>
+    <string name="PasswordSetting">设置密码（6位以上）</string>
+    <string name="Done">完成注册</string>
+
+    <!--消息模块-->
+    <string name="Search">搜索</string>
+    <string name="AddFriend">添加好友</string>
+    <string name="Forward">转发</string>
+    <string name="Withdrawal">撤回</string>
+    <string name="SureToDelete">确定删除吗?</string>
+    <string name="SaveTimeLine">检测到您有编辑的信息，是否保存为草稿？</string>
+
+    <!--会话列表页-->
+    <string name="Keywords">关键字</string>
+    <string name="NewGroupChat">发起群聊</string>
+    <string name="AddContacts">添加好友</string>
+    <string name="Scan">扫一扫</string>
+
+    <string name="MoreGroupChat">更多群聊</string>
+    <string name="MoreChatHistories">更多聊天记录</string>
+
+    <!--选择好友页-->
+    <string name="SelectFriends">选择好友</string>
+    <string name="SelectGroup">选择一个群</string>
+    <string name="SelectChat">选择一个聊天</string>
+
+    <!--创建成功页-->
+    <string name="Successfully">创建成功</string>
+    <string name="GroupNumber">群号码：</string>
+    <string name="CopyGroupNumber">复制群号码</string>
+
+    <!--选择一个群页-->
+    <string name="JoinGroupChat">加入</string>
+
+    <!--添加好友页-->
+    <string name="MyID">我的ID号：</string>
+    <string name="ScanQR">扫一扫上面的二维码，加我好友</string>
+    <string name="UserNotFound">该用户不存在</string>
+
+    <!--好友主页-->
+    <string name="DescribeMind">请输入个性签名</string>
+    <string name="Bio">个性签名</string>
+    <string name="BioV">个性签名：</string>
+    <string name="Alias">设置备注</string>
+    <string name="Profile">主页</string>
+    <string name="MessageSend">发消息</string>
+    <string name="TagsV">个性标签：</string>
+    <string name="Movies">电影：</string>
+    <string name="Music">音乐：</string>
+    <string name="Comic">动漫：</string>
+    <string name="Foodie">美食：</string>
+    <string name="Sports">运动：</string>
+
+    <!--好友主页-->
+    <string name="SendFriendRequest">你需要发送验证申请，等待对方通过</string>
+    <string name="EditContact">为朋友设置备注</string>
+    <string name="UserRemark">请输入好友备注名称</string>
+    <string name="Send">发送</string>
+
+
+    <!--消息列表页-->
+    <string name="HoldToTalk">按住说话</string>
+    <string name="ReleaseToSend">松开手指，结束并发送</string>
+    <string name="ReleaseToCancel">松开手指，取消发送</string>
+
+    <!--群设置-->
+    <string name="GroupSettings">群设置</string>
+    <string name="GroupName">群聊名称</string>
+    <string name="MyAliasInGroup">我在本群昵称</string>
+    <string name="GroupQRCode">群二维码</string>
+    <string name="GroupNotice">群公告</string>
+    <string name="GroupChatType">群聊类型</string>
+    <string name="GroupChatTypePrivate">私有</string>
+    <string name="GroupChatTypePublic">公开</string>
+    <string name="StickyOnTop">聊天置顶</string>
+    <string name="MuteNotifications">消息免打扰</string>
+    <string name="ClearChatHistory">清空聊天记录</string>
+    <string name="AllMembersMute">全员禁言</string>
+    <string name="AllMembersUnmute">全员解禁</string>
+    <string name="RestrictMember">指定成员禁言</string>
+    <string name="GroupAdmin">设置管理员</string>
+    <string name="DeleteAndLeave">删除并退出群聊</string>
+    <string name="DeleteGroup">解散群聊</string>
+    <string name="GroupAdminMembers">群管理员</string>
+    <string name="GroupAdminPermissions">群管理员可以拥有以下能力：\n1. 可以修改群名称\n2. 发表群公告\n3. 移除群成员</string>
+    <string name="ChatSetting">聊天设置</string>
+    <string name="GroupMembers">聊天成员</string>
+    <string name="RemoveMembers">删除</string>
+    <string name="Edit">编辑</string>
+    <string name="EditTheGroupNotice">请编辑群公告</string>
+
+
+    <!--好友页-->
+    <string name="NewContacts">新的朋友</string>
+    <string name="BlockList">黑名单</string>
+    <string name="Remark">备注</string>
+    <string name="Delete">删除</string>
+
+    <!--新的朋友页-->
+    <string name="MobileID">手机号/ID</string>
+    <string name="GoConfirm">接受</string>
+    <string name="ConfirmFriendRequest">已添加</string>
+    <string name="Message">他的留言</string>
+    <string name="AddToContacts">添加为好友</string>
+    <string name="Remove">移除</string>
+
+    <!--搜索页-->
+    <string name="GroupChat">群聊</string>
+    <string name="myGroupChat">我的群组</string>
+    <string name="Group">群组</string>
+    <string name="CreateGroupChat">创建群聊</string>
+    <string name="RecommendedGroup">为你推荐</string>
+    <string name="ChatHistory">聊天记录</string>
+    <string name="More">更多</string>
+    <string name="AllGood">都行</string>
+    <string name="contactPerson">联系人</string>
+
+    <!--匹配页-->
+    <string name="Match">匹配</string>
+    <string name="SuperLike">超喜欢我：</string>
+    <string name="LikesLeft">剩余%s次喜欢</string>
+    <string name="wantToLocation">请输入您想找的地址</string>
+
+    <!--查找页-->
+    <string name="ChaZhao">查找</string>
+    <string name="SearchRange">查找范围(公里)</string>
+    <string name="Range">公里</string>
+    <string name="Unlimited">不限</string>
+    <string name="Gender">性别</string>
+    <string name="ExclusiveForVIP">VIP会员专属</string>
+    <string name="Age">年龄</string>
+    <string name="GenderAge">性别/年龄</string>
+    <string name="Alternative">另类</string>
+    <string name="SuperLikesyou">超级喜欢你</string>
+    <string name="PeopleNearby">正在查找附近的人</string>
+    <string name="LikesSent">你的喜欢已经发送给TA了</string>
+    <string name="reply">耐心等待TA的回复吧</string>
+    <string name="NoMoreReminders">不再提醒</string>
+    <string name="gotIt">知道了</string>
+    <string name="SuperLikes">超级喜欢</string>
+    <string name="OnlyLeftLikes">还剩%s次</string>
+    <string name="SeeHowToDeal">查看规则</string>
+    <string name="SendPrivateMessage">您可对TA发出专属私信哦！</string>
+    <string name="Greetings">打招呼</string>
+    <string name="ItMATCH">相互喜欢了对方</string>
+    <string name="ChatNow">立刻去聊</string>
+    <string name="Back">返回</string>
+
+    <!--发现页-->
+    <string name="Comment">发表你的看法...</string>
+    <string name="NoPostsYet">你的好友暂未发布任何动态</string>
+    <string name="Posts">动态</string>
+    <string name="CreatePost">发布动态</string>
+    <string name="Subject">输入标题</string>
+    <string name="WhatsOnYourMind">说你所想...</string>
+    <string name="WhoCanSeeYourPost">发布范围</string>
+    <string name="FindPlacesNearYou">所在位置</string>
+    <string name="Tags">关联标签</string>
+    <string name="Post">发布</string>
+    <string name="Public">公开</string>
+    <string name="Private">仅自己可见</string>
+    <string name="SaySomething">说点什么...</string>
+    <string name="writeBack">回复</string>
+    <string name="AllWriteBack">全部回复</string>
+    <string name="writeBackHint">回复一下</string>
+
+    <!--我的页-->
+    <string name="PhotosOfYou">真实头像</string>
+    <string name="Likes">喜欢</string>
+    <string name="GetMembershipPlan">开通特权</string>
+    <string name="Contents">内容</string>
+    <string name="Favorites">收藏</string>
+    <string name="praise">赞过</string>
+    <string name="MyPosts">我发布的</string>
+    <string name="Drafts">本地草稿</string>
+    <string name="SetBackground">设置背景图</string>
+    <string name="BecomeAMember">成为会员</string>
+    <string name="BasicInformation">基础信息</string>
+
+    <!--我的会员页-->
+    <string name="MembershipPlan">我的会员</string>
+    <string name="MembershipExpired">到期</string>
+    <string name="MakePayment">立即续费</string>
+    <string name="PaymentHistory">购买记录</string>
+    <string name="MonthlyPlan">购买年限</string>
+    <string name="Monthly">月</string>
+    <string name="MonthlyPlanOne">1个月</string>
+    <string name="MonthlyPlanSix">6个月</string>
+    <string name="MonthlyPlanTwelve">12个月</string>
+    <string name="AgreeVIPService">点击购买即表示您同意</string>
+    <string name="VIPService">《会员服务协议》</string>
+
+    <!--系统消息页-->
+    <string name="Commented">评论</string>
+    <string name="CommentedHint">发个评论吧～</string>
+    <string name="LikeYourPosts">获赞</string>
+    <string name="MatchNotification">匹配消息</string>
+    <string name="SystemNotification">系统消息</string>
+    <string name="Information">消息详情</string>
+    <string name="Comments">评论我的</string>
+    <string name="MySent">我发出的</string>
+    <string name="MyReceived">我收到的</string>
+    <string name="PraiseOfHarvest">收获的赞</string>
+
+    <!--编辑资料页-->
+    <string name="EditProfile">编辑资料</string>
+    <string name="ConstellationZodiac">星座/属相</string>
+    <string name="UserNickName">昵称</string>
+    <string name="Birth">出生日期</string>
+    <string name="Region">国家地区</string>
+    <string name="Setting">请设置</string>
+    <string name="Set">已设置</string>
+    <string name="SexualOrientation">社交属性</string>
+    <string name="Passions">兴趣爱好</string>
+    <string name="Relationship">情感信息</string>
+    <string name="Education">学校</string>
+    <string name="WorkPosition">行业/职位</string>
+    <string name="Select">请选择</string>
+
+    <!--输入城市名称页-->
+    <string name="CityName">输入城市名称</string>
+    <string name="PopularRegions">热门</string>
+    <string name="China">国内</string>
+    <string name="International">国际</string>
+
+    <!--编辑资料页-->
+    <string name="EditInfo">编辑资料</string>
+    <string name="PassionsSports">喜欢的运动</string>
+    <string name="PassionsMusic">喜欢的音乐</string>
+    <string name="PassionsFoodie">喜欢的食物</string>
+    <string name="PassionsMovies">喜欢的电影</string>
+    <string name="PassionsReading">喜欢的书和动漫</string>
+
+    <!--设置-->
+    <string name="EmotionalState">情感状态</string>
+    <string name="socialConcat">社交偏好</string>
+    <string name="Purposes">交友目的</string>
+
+    <!--谁喜欢我页-->
+    <string name="WhoLikesMe">谁喜欢我</string>
+    <string name="Today">今天</string>
+    <string name="Yesterday">昨天</string>
+    <string name="Follower">粉丝</string>
+
+
+    <!--设置-->
+    <string name="Settings">基础设置</string>
+    <string name="ClearCache">清除缓存</string>
+    <string name="PushNotifications">消息推送</string>
+    <string name="Privacy">隐私设置</string>
+    <string name="Language">语言切换</string>
+    <string name="AboutUs">关于我们</string>
+    <string name="ShareApp">分享APP</string>
+    <string name="HelpSupport">帮助与客服</string>
+    <string name="DeleteAccount">账号注销</string>
+    <string name="Logout">退出登录</string>
+    <string name="BusinessCard">我的名片</string>
+    <string name="ChangePhoneNumber">更换手机号</string>
+
+    <string name="English">英语</string>
+    <string name="Chinese">汉语</string>
+
+    <string name="active">活跃</string>
+    <string name="PrivacySettings">隐私设置</string>
+    <string name="TurnOffActiveStatusForAllContacts">隐藏活跃时间</string>
+    <string name="LastSeenOnline">别人可以看到你最近的登录时间</string>
+    <string name="HideMyLocation">隐藏位置</string>
+    <string name="ShowMyDistance">别人可以看到你们之间的距离</string>
+    <string name="TurnOffActiveStatusForOnlySomeContacts">对指定的人隐身</string>
+
+    <!--关于我们页-->
+    <string name="TermsPolicies">用户服务协议</string>
+    <string name="PrivacyPolicy">用户隐私协议</string>
+    <string name="About">平台说明</string>
+    <string name="GiveFeedback">意见反馈</string>
+    <string name="MyQRCode">我的二维码</string>
+
+    <!--意见反馈页-->
+    <string name="Description">请描述您的建议</string>
+    <string name="EmailAddressPhoneNumber">请填写您的联系方式，便于我们联系您(非必填)</string>
+
+    <!--帮助与客服页-->
+    <string name="CustomerService">客服电话：</string>
+    <string name="FQ">常见问题</string>
+    <string name="Businesshours">营业时间</string>
+
+    <!--注销申请页-->
+    <string name="conditionsHint">注销账号前请您确认是否满足以下注销条件</string>
+    <string name="conditionsText">1. 账号当前为有效状态\n2. 账号会员已到期\n3. 账号无任何纠纷，包括投诉、举报或被投诉、被举报</string>
+    <string name="Continue">确认注销</string>
+    <string name="VerificationCenter">验证中心</string>
+    <string name="Verification">验证</string>
+    <string name="EnterSMSCodeVerification">输入获取的验证码，有效期5分钟</string>
+    <string name="AgreeDeletionPolicy">我已阅读并知晓了</string>
+    <string name="DeletionPolicy">注销须知</string>
+    <string name="DeletionPolicyV">《注销须知》</string>
+
+    <string name="Password">请输入密码</string>
+    <string name="sentSMSCode">验证码已通过短信发送至：</string>
+    <string name="YourAccount">您的账号：</string>
+    <string name="Resend">再次发送</string>
+    <string name="EnterPhoneNumberCreateAccount">输入未注册的手机号，将自动进入注册页面</string>
+    <string name="AccountDeletion">您的账号注销完成</string>
+    <string name="accountCannotDeleted">抱歉，由于以下原因，账号无法注销</string>
+    <string name="DeleteAccountV">注销申请</string>
+    <string name="seeing">感谢您的支持，期待不久之后可以与\n您再次相遇</string>
+    <string name="ForgotYourPassword">如果您忘记了密码，可点击下方“忘记密码”找回</string>
+
+
+
+    <!--分享相关-->
+    <string name="WeChat">微信</string>
+    <string name="Facebook">脸书</string>
+    <string name="Twitter">推特</string>
+
+    <!--分享相关-->
+    <string name="Report">举报</string>
+    <string name="ReportWithAnonymously">匿名举报</string>
+    <string name="Blocking">拉黑</string>
+
+    <!--提示相关-->
+    <string name="NoFriend">暂无好友</string>
+    <string name="NoContent">暂无内容</string>
+    <string name="Reminder">温馨提示</string>
+    <string name="abnormal">您的账号登录异常，请重新登录！</string>
+    <string name="authorization">您的定位未授权,请点击确定前往设置授权</string>
+    <string name="SelectDate">选择年月日</string>
+
+
+    <!--按钮-->
+    <string name="Submit">提交</string>
+    <string name="GetVerificationCode">获取验证码</string>
+    <string name="SendCode">验证码已发送</string>
+    <string name="CONTINUE">继续</string>
+    <string name="Cancel">取消</string>
+    <string name="OK">确定</string>
+    <string name="Save">保存</string>
+    <string name="Share">分享</string>
+    <string name="confirm">完成</string>
+    <string name="reset">重置</string>
+    <string name="ViewAll">全部</string>
+    <string name="Copy">复制</string>
+    <string name="Add">添加</string>
+    <string name="Hint">提示</string>
+    <string name="Loading">请稍等</string>
+    <string name="Uploading">上传中...</string>
+    <string name="MoreComments">更多评论</string>
+    <string name="SentSuccessfully">发送成功</string>
+    <string name="DynamicContent">请输入动态内容</string>
+    <string name="ReleaseSuccess">发布成功</string>
+    <string name="PleaseEnterContent">请输入内容</string>
+    <string name="NoMore">没有更多了</string>
+    <string name="PleaseSelectMembers">请选择成员</string>
+    <string name="PleaseEnterNickname">请输入昵称</string>
+    <string name="Nickname">昵称</string>
+
+    <string name="ServiceOrPrivacy">我已理解并同意《用户协议》和《隐私政策》中的条款</string>
+
+    <string name="ServiceOrPrivacyAgree">我已理解并同意</string>
+    <string name="and">和</string>
+
+    <string name="TermsOfService">用户协议</string>
+    <string name="TermsOfServiceV">《用户协议》</string>
+    <string name="Privacy_Policy">隐私政策</string>
+    <string name="Privacy_PolicyV">《隐私政策》</string>
+
+    <string name="ChatAgreeFriends">同意添加好友</string>
+    <string name="ChatJoinScanning">通过扫一扫加入了群聊</string>
+    <string name="ChatJoinSearch">通过搜索加入了群聊</string>
+    <string name="ChangedGroupChatName">修改了群聊名称</string>
+    <string name="ChatMessageWithdrawn">撤回了一条消息</string>
+    <string name="ChatJoinGroup">加入了群聊</string>
+    <string name="Invited">邀请</string>
+    <string name="OutGroupChat">移出了群聊</string>
+    <string name="Takes">将</string>
+    <string name="Mute">禁言</string>
+    <string name="UnMute">解除禁言</string>
+    <string name="Restrict">指定了</string>
+    <string name="all">所有人</string>
+    <string name="DownloadPictures">下载图片</string>
+    <string name="IdentifyQRCode">识别二维码</string>
+    <string name="DownloadSuccess">已下载至相册</string>
+    <string name="DownloadFailed">下载失败</string>
+    <string name="YourFavoriteTimesHaveRunOut">您的喜欢次数已用完！</string>
+    <string name="firstOne">已是第一个</string>
+    <string name="Added">Added successfully</string>
+    <string name="Removed">移除成功</string>
+    <string name="You">你</string>
+
+    <string name="ChatAllMembersMute">设置了全员禁言</string>
+    <string name="ChatAllMembersUnmute">设置了全员解除禁言</string>
+    <string name="InitiateVoiceCall">发起语音通话</string>
+    <string name="EndVoiceCall">语音通话结束</string>
+    <string name="InitiateVideoCall">发起视频通话</string>
+    <string name="EndVideoCall">语音视频结束</string>
+
+
+</resources>

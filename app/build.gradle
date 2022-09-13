@@ -1,0 +1,111 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.yuoxi.android.app"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+        //lombok
+        javaCompileOptions {
+            annotationProcessorOptions
+                    {
+                        includeCompileClasspath = true
+                    }
+        }
+    }
+
+    signingConfigs {
+        signConfig {
+            storeFile file('../wangeben.jks')
+            storePassword 'wangeben'
+            keyAlias 'wangeben'
+            keyPassword 'wangeben'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig // 配置release包的签名
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = getProductName() + "-${releaseTime()}-v${defaultConfig.versionName}" + ".apk"
+                        outputFileName = fileName
+                    }
+                }
+            }
+
+        }
+        debug {
+            signingConfig signingConfigs.signConfig // 配置debug包的签名
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    android {
+        dataBinding {
+            enabled = true
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+    implementation project(':base')
+    //轮播图
+    implementation project(':banner')
+    //网络请求
+    implementation project(':okhttp')
+
+    //下来刷新
+    implementation smartrefresh
+    implementation smartrefreshHeaderClassics
+    implementation smartrefreshFooterClassics
+    //主页底部导航栏
+    implementation easyNavigation
+    //城市选择器
+    implementation pickerView
+
+    implementation lombok
+    implementation annotation
+
+}
+
+def getProductName() {//获取产品的名字
+    return "爱游"
+}
+
+def releaseTime() {//获取当前系统的时间
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}

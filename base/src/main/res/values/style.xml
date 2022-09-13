@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextSizeView">
+        <attr name="text" format="string" />
+        <attr name="text_size" format="dimension|reference" />
+        <attr name="text_color" format="color|reference" />
+        <attr name="text_bold" format="boolean" />
+    </declare-styleable>
+
+    <style name="LoadingDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="ProgressDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="PopupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
+    </style>
+
+<!--    <declare-styleable name="DoubleHeadedDragonBar">-->
+<!--        &lt;!&ndash;进度条按钮宽高&ndash;&gt;-->
+<!--        <attr name="button_width" format="dimension" />-->
+<!--        <attr name="button_height" format="dimension" />-->
+<!--        &lt;!&ndash;进图条按钮图片&ndash;&gt;-->
+<!--        <attr name="button_img" format="reference" />-->
+<!--        &lt;!&ndash;单位字体颜色&ndash;&gt;-->
+<!--        <attr name="text_color" format="color" />-->
+<!--        &lt;!&ndash;进图条背景颜色&ndash;&gt;-->
+<!--        <attr name="bg_color" format="color" />-->
+<!--        &lt;!&ndash;进度条颜色&ndash;&gt;-->
+<!--        <attr name="value_color" format="color" />-->
+<!--        &lt;!&ndash;进度条宽&ndash;&gt;-->
+<!--        <attr name="seek_height" format="dimension" />-->
+<!--    </declare-styleable>-->
+
+    <!--实现BottomSheetDialog圆角效果-->
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>
