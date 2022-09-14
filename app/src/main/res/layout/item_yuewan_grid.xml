@@ -19,13 +19,13 @@
             android:id="@+id/coverView"
             android:layout_width="@dimen/dp_46"
             android:layout_height="@dimen/dp_46"
-            android:background="@drawable/image" />
+            android:src="@drawable/image" />
 
         <TextView
             android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_6"
             android:ellipsize="end"
             android:gravity="center"
             android:maxLines="1"

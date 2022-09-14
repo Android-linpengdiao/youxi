@@ -20,6 +20,7 @@ public class MainMessageFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_message, container, false);
+        setStatusBarHeight(binding.getRoot());
 
         return binding.getRoot();
     }

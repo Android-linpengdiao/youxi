@@ -18,6 +18,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <include layout="@layout/status_bar" />
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +72,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/gridRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <ImageView

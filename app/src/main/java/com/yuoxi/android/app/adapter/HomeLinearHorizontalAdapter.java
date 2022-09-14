@@ -2,6 +2,7 @@ package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
 
+import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemHomeLinearHorizontalBinding;
@@ -30,7 +31,7 @@ public class HomeLinearHorizontalAdapter extends BaseRecyclerAdapter<String, Ite
     protected void onBindItem(ItemHomeLinearHorizontalBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-//        GlideLoader.LoaderRadioCover(mContext, null, binding.coverView, 10);
+        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
 
 
     }

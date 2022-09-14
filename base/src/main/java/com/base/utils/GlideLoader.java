@@ -276,7 +276,7 @@ public class GlideLoader {
         try {
             Glide.with(context)
                     .load(drawable)
-                    .fitCenter()
+                    .centerCrop()
                     .into(view);
         } catch (Exception e) {
             e.getMessage();
@@ -287,7 +287,7 @@ public class GlideLoader {
         try {
             Glide.with(context)
                     .load(drawable)
-                    .fitCenter()
+                    .centerCrop()
                     .transform(new GlideRoundTransform(context, round))
                     .into(view);
         } catch (Exception e) {

@@ -63,7 +63,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp_14"
                         android:layout_height="@dimen/dp_14"
-                        android:background="@drawable/circle_gray" />
+                        android:src="@mipmap/ic_mine_nv" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,7 +78,7 @@
                         android:layout_width="@dimen/dp_20"
                         android:layout_height="@dimen/dp_20"
                         android:layout_marginRight="@dimen/dp_3"
-                        android:background="@drawable/circle_gray" />
+                        android:background="@drawable/ic_test_yingxiong" />
 
                     <TextView
                         android:layout_width="wrap_content"

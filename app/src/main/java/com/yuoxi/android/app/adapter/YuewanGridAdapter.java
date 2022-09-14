@@ -2,9 +2,9 @@ package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
 
+import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
-import com.yuoxi.android.app.databinding.ItemHomeLinearHorizontalBinding;
 import com.yuoxi.android.app.databinding.ItemYuewanGridBinding;
 
 /**
@@ -31,7 +31,7 @@ public class YuewanGridAdapter extends BaseRecyclerAdapter<String, ItemYuewanGri
     protected void onBindItem(ItemYuewanGridBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-//        GlideLoader.LoaderRadioCover(mContext, null, binding.coverView, 10);
+        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_yingxiong, binding.coverView);
 
 
     }

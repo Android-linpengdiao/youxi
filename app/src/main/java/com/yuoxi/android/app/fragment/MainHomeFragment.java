@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
+import com.base.utils.GlideLoader;
 import com.base.view.RecycleViewDivider;
 import com.okhttp.ResultClient;
 import com.okhttp.SendRequest;
@@ -39,7 +40,9 @@ public class MainHomeFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_home, container, false);
+        setStatusBarHeight(binding.getRoot());
 
+        GlideLoader.LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
         initBanner();
 
         RecycleViewDivider horizontalDivider = new RecycleViewDivider(getActivity(),

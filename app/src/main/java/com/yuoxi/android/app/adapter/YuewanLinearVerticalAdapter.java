@@ -6,6 +6,7 @@ import android.graphics.Color;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
+import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
 import com.base.view.RecycleViewDivider;
 import com.yuoxi.android.app.R;
@@ -36,7 +37,7 @@ public class YuewanLinearVerticalAdapter extends BaseRecyclerAdapter<String, Ite
     protected void onBindItem(ItemYuewanLinearVerticalBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-//        GlideLoader.LoaderRadioCover(mContext, null, binding.coverView, 10);
+        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
 
 
     }
