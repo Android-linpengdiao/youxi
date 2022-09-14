@@ -2,15 +2,14 @@ package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
 
-import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
-import com.yuoxi.android.app.databinding.ItemHomeLinearBinding;
+import com.yuoxi.android.app.databinding.ItemHomeLinearHorizontalBinding;
 
 /**
- * 发现 - 关注栏目
+ * 发现 - 横布局
  */
-public class HomeLinearAdapter extends BaseRecyclerAdapter<String, ItemHomeLinearBinding> {
+public class HomeLinearHorizontalAdapter extends BaseRecyclerAdapter<String, ItemHomeLinearHorizontalBinding> {
 
     private OnClickListener onClickListener;
 
@@ -18,17 +17,17 @@ public class HomeLinearAdapter extends BaseRecyclerAdapter<String, ItemHomeLinea
         this.onClickListener = onClickListener;
     }
 
-    public HomeLinearAdapter(Context context) {
+    public HomeLinearHorizontalAdapter(Context context) {
         super(context);
     }
 
     @Override
     protected int getLayoutResId(int viewType) {
-        return R.layout.item_home_linear;
+        return R.layout.item_home_linear_horizontal;
     }
 
     @Override
-    protected void onBindItem(ItemHomeLinearBinding binding, String dataBean, int position) {
+    protected void onBindItem(ItemHomeLinearHorizontalBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
 //        GlideLoader.LoaderRadioCover(mContext, null, binding.coverView, 10);

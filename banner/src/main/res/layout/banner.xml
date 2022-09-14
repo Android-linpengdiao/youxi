@@ -27,7 +27,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bannerViewPager">
+        android:layout_below="@+id/bannerViewPager"
+        android:visibility="gone">
 
         <TextView
             android:id="@id/numIndicator"
@@ -49,7 +50,7 @@
             android:visibility="gone"
             tools:visibility="visible">
 
-            <com.base.view.TextSizeView
+            <TextView
                 android:id="@id/bannerTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,8 +69,7 @@
                 android:visibility="gone"
                 android:text=""
                 tools:visibility="visible"
-                app:text_size="@dimen/sp_16"
-                tools:textSize="@dimen/sp_16" />
+                android:textSize="@dimen/sp_16" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
