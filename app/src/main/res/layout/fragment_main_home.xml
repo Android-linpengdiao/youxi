@@ -70,7 +70,7 @@
                                 android:layout_width="@dimen/dp_18"
                                 android:layout_height="@dimen/dp_18"
                                 android:layout_marginRight="@dimen/dp_4"
-                                android:background="@drawable/circle_gray" />
+                                android:background="@mipmap/ic_home_jinbi_t" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                                 android:layout_width="@dimen/dp_18"
                                 android:layout_height="@dimen/dp_18"
                                 android:layout_marginRight="@dimen/dp_4"
-                                android:background="@drawable/circle_gray" />
+                                android:background="@mipmap/ic_home_zuanshi_t" />
 
                             <TextView
                                 android:layout_width="wrap_content"

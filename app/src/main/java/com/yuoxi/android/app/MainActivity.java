@@ -19,6 +19,7 @@ import com.yuoxi.android.app.databinding.ActivityMainBinding;
 import com.yuoxi.android.app.fragment.MainHomeFragment;
 import com.yuoxi.android.app.fragment.MainMessageFragment;
 import com.yuoxi.android.app.fragment.MainMineFragment;
+import com.yuoxi.android.app.fragment.MainYuewanFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity {
         addActivity(this);
 
         fragmentList.add(new MainHomeFragment());
-        fragmentList.add(new MainHomeFragment());
+        fragmentList.add(new MainYuewanFragment());
         fragmentList.add(new MainMessageFragment());
         fragmentList.add(new MainMineFragment());
 
