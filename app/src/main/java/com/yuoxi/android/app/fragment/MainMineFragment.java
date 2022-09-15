@@ -9,7 +9,9 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
 import com.base.utils.GlideLoader;
+import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.UserInfoActivity;
 import com.yuoxi.android.app.databinding.FragmentMainHomeBinding;
 import com.yuoxi.android.app.databinding.FragmentMainMineBinding;
 
@@ -24,6 +26,13 @@ public class MainMineFragment extends BaseFragment {
         setStatusBarHeight(binding.getRoot());
 
         GlideLoader.LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
+
+        binding.userInfoView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                openActivity(UserInfoActivity.class);
+            }
+        });
 
         return binding.getRoot();
     }

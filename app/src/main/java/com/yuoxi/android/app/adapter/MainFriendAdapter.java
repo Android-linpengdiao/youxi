@@ -32,7 +32,7 @@ public class MainFriendAdapter extends BaseRecyclerAdapter<UserInfo, ItemMainFri
 
     @Override
     protected void onBindItem(ItemMainFriendBinding binding, UserInfo dataBean, int position) {
-        binding.nameTextView.setText(dataBean.getName());
+        binding.userNameView.setText(dataBean.getName());
 
         if (position != 0) {
             if (!dataBean.getPinyin().substring(0, 1).equals(mList.get(position - 1).getPinyin().substring(0, 1))) {
@@ -42,7 +42,7 @@ public class MainFriendAdapter extends BaseRecyclerAdapter<UserInfo, ItemMainFri
                 binding.pinyinTextView.setVisibility(View.GONE);
             }
         } else {
-            binding.pinyinTextView.setText(dataBean.getPinyin().toUpperCase());
+            binding.pinyinTextView.setText(dataBean.getPinyin().toUpperCase().substring(0, 1));
             binding.pinyinTextView.setVisibility(View.VISIBLE);
         }
 

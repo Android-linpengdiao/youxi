@@ -32,7 +32,7 @@ public class MainMessageAdapter extends BaseRecyclerAdapter<String, ItemMainMess
     protected void onBindItem(ItemMainMessageBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_yingxiong, binding.userIconView);
+//        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_yingxiong, binding.userIconView);
 
 
     }

@@ -47,10 +47,11 @@ public class MainMessageFriendFragment extends BaseFragment {
 
         List<UserInfo> userInfoList = new ArrayList<>();
 
-        userInfoList.add(new UserInfo("北京"));
-        userInfoList.add(new UserInfo("上海"));
-        userInfoList.add(new UserInfo("天津"));
-        userInfoList.add(new UserInfo("重庆"));
+        userInfoList.add(new UserInfo("玛卡巴卡"));
+        userInfoList.add(new UserInfo("桐桐"));
+        userInfoList.add(new UserInfo("明明"));
+        userInfoList.add(new UserInfo("庆庆"));
+        userInfoList.add(new UserInfo("丽丽"));
         Collections.sort(userInfoList, new UserInfo());
         messageAdapter.refreshData(userInfoList);
 
