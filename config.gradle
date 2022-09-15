@@ -81,7 +81,7 @@ ext {
     DateTimePickerLibrary = 'jsc.kit.datetimepicker:DateTimePickerLibrary:0.4.8'
     springview = 'com.liaoinstan.springview:library:1.2.6'
     //滑动删除
-    SwipeDelMenuLayout = 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    swipeDelMenuLayout = 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
     RangeSeekBar = 'com.github.Jay-Goo:RangeSeekBar:v1.0.0'
 
     DoubleHeadedDragonBar = 'com.github.yujinzhao123:DoubleHeadedDragonBar:1.0.4'

@@ -96,6 +96,13 @@ dependencies {
     implementation easyNavigation
     //城市选择器
     implementation pickerView
+    implementation swipeDelMenuLayout
+    //播放器
+    implementation project(':dkplayer-java')
+    implementation project(':dkplayer-ui')
+    implementation project(':dkplayer-videocache')
+    implementation project(path: ':dkplayer-players:ijk')
+    implementation project(path: ':dkplayer-players:exo')
 
     implementation lombok
     implementation annotation

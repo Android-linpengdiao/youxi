@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.mcxtzhang.swipemenulib.SwipeMenuLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:clickable="false"
+        android:paddingBottom="1dp">
+
+
+        <LinearLayout
+            android:id="@+id/viewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/userIconView"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/circle_gray" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/userNameTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLength="8"
+                        android:minHeight="24dp"
+                        android:singleLine="true"
+                        tools:text="userNameTextView"
+                        android:textColor="#393942"
+                        android:textSize="@dimen/sp_16"/>
+
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="24dp"
+                        tools:text="timeTextView"
+                        android:textColor="#ff848b99"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:minHeight="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/messageDraftView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:minHeight="24dp"
+                        android:singleLine="true"
+                        android:text="[草稿] "
+                        android:textColor="#c40404"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/chatHintView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:minHeight="24dp"
+                        android:singleLine="true"
+                        android:text="[有人@我] "
+                        android:textColor="#c40404"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/messageTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:minHeight="24dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#696972"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/notificationStatusView"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/circle_gray"
+                        android:gravity="center"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/unreadMessageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_gray"
+                        android:gravity="center"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_124"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dp_62"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="备注"
+                android:textColor="#fffeffff"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="@dimen/dp_62"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="置顶"
+                android:textColor="#fffeffff"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/deleteTextView"
+                android:layout_width="@dimen/dp_62"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="#fffeffff"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+    </com.mcxtzhang.swipemenulib.SwipeMenuLayout>
+</layout>

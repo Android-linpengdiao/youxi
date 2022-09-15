@@ -19,7 +19,7 @@
             android:background="@mipmap/ic_message_bg"
             android:orientation="vertical">
 
-            <include layout="@layout/status_bar"/>
+            <include layout="@layout/status_bar" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -37,6 +37,20 @@
                     android:background="@mipmap/ic_search_w" />
 
             </RelativeLayout>
+
+            <com.yuoxi.android.app.tab.TopTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_42"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:yj_tabBackground="@null"
+                app:yj_tabIndicatorHeight="@dimen/dp_0"
+                app:yj_tabMode="scrollable"
+                app:yj_tabSelectTextSize="@dimen/sp_18"
+                app:yj_tabSelectedTextColor="#FFFFFF"
+                app:yj_tabTextColor="#696972"
+                app:yj_tabTextSize="@dimen/sp_16" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"

@@ -1,5 +1,10 @@
+rootProject.name = "yuoxi"
 include ':banner'
 include ':okhttp'
 include ':base'
 include ':app'
-rootProject.name = "yuoxi"
+include ':dkplayer-java'
+include ':dkplayer-ui'
+include ':dkplayer-videocache'
+include ':dkplayer-players:exo'
+include ':dkplayer-players:ijk'

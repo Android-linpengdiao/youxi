@@ -1,9 +1,15 @@
 package com.base;
 
-import java.io.Serializable;
-import java.util.List;
+import android.util.Log;
 
-public class UserInfo implements Serializable {
+import com.ecity.android.tinypinyin.Pinyin;
+
+import java.io.Serializable;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Pattern;
+
+public class UserInfo implements Serializable, Comparator<UserInfo> {
 
     private Long id;
     private String name;
@@ -26,6 +32,13 @@ public class UserInfo implements Serializable {
     private Long push;
     private String token;
     private Boolean register;
+
+    public UserInfo() {
+    }
+
+    public UserInfo(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
@@ -193,5 +206,53 @@ public class UserInfo implements Serializable {
 
     public void setRegister(Boolean register) {
         this.register = register;
+    }
+
+    private String pinyin;
+
+    public void setPinyin(String pinyin) {
+        this.pinyin = pinyin;
+    }
+
+    public String getPinyin() {
+        if (pinyin != null && !pinyin.equals("")) {
+            return pinyin;
+        }
+        StringBuffer buffer = new StringBuffer();
+        for (int i = 0; i < name.length(); i++) {
+            String sortString = Pinyin.toPinyin(name.charAt(i));
+            if (sortString.substring(0, 1).toUpperCase().matches("[A-Z]")) {
+                buffer.append(sortString);
+            } else {
+                buffer.append(name.charAt(i));
+            }
+        }
+        pinyin = buffer.toString().toUpperCase();
+        if (Pattern.compile("[0-9]*").matcher(pinyin).matches() || !checkPinYin(pinyin)) {
+            pinyin = "#";
+        }
+        return pinyin;
+    }
+
+    public static boolean checkPinYin(String fstrData) {
+        char c = fstrData.charAt(0);
+        if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int compare(UserInfo o1, UserInfo o2) {
+        if (o1.getPinyin().equals("@")
+                || o2.getPinyin().equals("#")) {
+            return -1;
+        } else if (o1.getPinyin().equals("#")
+                || o2.getPinyin().equals("@")) {
+            return 1;
+        } else {
+            return o1.getPinyin().compareTo(o2.getPinyin());
+        }
     }
 }
