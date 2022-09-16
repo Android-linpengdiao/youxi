@@ -13,16 +13,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.base.BaseData;
 import com.base.Constants;
 import com.base.UserInfo;
 import com.base.utils.CommonUtil;
 import com.base.utils.MsgCache;
 import com.base.utils.PermissionUtils;
 import com.base.utils.StatusBarUtil;
+import com.base.utils.ToastUtils;
 import com.okhttp.ResultClient;
 import com.okhttp.SendRequest;
 import com.okhttp.callbacks.GenericsCallback;
 import com.okhttp.sample_okhttp.JsonGenericsSerializator;
+import com.yuoxi.android.app.Callback;
 import com.yuoxi.android.app.R;
 
 import java.util.ArrayList;
@@ -38,6 +41,36 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setStatusBarDarkTheme(false);
 
+    }
+
+    /**
+     * 关注
+     *
+     * @param type     关注类型 1用户
+     * @param typeId
+     * @param url
+     * @param callback
+     */
+    public void focusFans(int type, int typeId, String url, Callback callback) {
+        SendRequest.focusFans(getUserInfo().getToken(), type, typeId, url,
+                new GenericsCallback<BaseData>(new JsonGenericsSerializator()) {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        if (callback != null)
+                            callback.onError();
+                    }
+
+
+                    @Override
+                    public void onResponse(BaseData response, int id) {
+                        if (callback != null)
+                            callback.onResponse(response.isSuccess(), id);
+                        if (!response.isSuccess()) {
+                            ToastUtils.showShort(BaseActivity.this, response.getMsg());
+                        }
+
+                    }
+                });
     }
 
 

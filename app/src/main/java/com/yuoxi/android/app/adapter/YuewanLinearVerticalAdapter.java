@@ -37,7 +37,7 @@ public class YuewanLinearVerticalAdapter extends BaseRecyclerAdapter<String, Ite
     protected void onBindItem(ItemYuewanLinearVerticalBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
+        GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
 
 
     }

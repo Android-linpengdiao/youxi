@@ -26,6 +26,59 @@ public class SendRequest {
      * ======================================  中国视听  ================================================
      */
 
+
+    /**
+     * type  关注类型 1用户
+     * typeId 第三方ID
+     */
+    public static void focusFans(String token, int type, int typeId, String url, Callback call) {
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+        map.put("type", String.valueOf(type));
+        map.put("typeId", String.valueOf(typeId));
+        OkHttpUtils.post().params(map).url(url).build().execute(call);
+    }
+
+    /**
+     * @param token
+     * @param type
+     * @param cursor
+     * @param url
+     * @param call
+     */
+    public static void getFocusFansPager(String token, int uid, int type, String cursor, String url, Callback call) {
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+        map.put("uid", String.valueOf(uid));
+        map.put("type", String.valueOf(type));
+        map.put("cursor", cursor);
+        OkHttpUtils.post().params(map).url(url).build().execute(call);
+    }
+
+
+
+
+
+
+
+
+
+    /**
+     * ======================================  中国视听  ================================================
+     */
+
+
+
+
+
+
+
+
+
+    /**
+     * ======================================  中国视听  ================================================
+     */
+
     /**
      * ======================================  登录 - 用户信息  ================================================
      */

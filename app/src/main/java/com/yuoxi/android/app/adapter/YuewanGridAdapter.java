@@ -31,7 +31,7 @@ public class YuewanGridAdapter extends BaseRecyclerAdapter<String, ItemYuewanGri
     protected void onBindItem(ItemYuewanGridBinding binding, String dataBean, int position) {
 
 //        binding.titleView.setText(null);
-        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_yingxiong, binding.coverView);
+        GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_yingxiong, binding.coverView);
 
 
     }

@@ -40,7 +40,7 @@ public class GlideLoader {
         return mInstance;
     }
 
-    public static void LoaderUserIcon(Context context, String url, ImageView view) {
+    public void LoaderUserIcon(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -56,7 +56,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderCover(Context context, String url, ImageView view) {
+    public void LoaderCover(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -73,7 +73,7 @@ public class GlideLoader {
     }
 
 
-    public static void LoaderVideoCover(Context context, String url, ImageView view) {
+    public void LoaderVideoCover(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -89,7 +89,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderVideoCoverSmall(Context context, String url, ImageView view) {
+    public void LoaderVideoCoverSmall(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -105,7 +105,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderAudioCover(Context context, String url, ImageView view) {
+    public void LoaderAudioCover(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -121,7 +121,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderVideoCoverGrid(Context context, String url, ImageView view, int rowNum) {
+    public void LoaderVideoCoverGrid(Context context, String url, ImageView view, int rowNum) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -137,7 +137,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderDrawableVideoCover(Context context, int drawable, ImageView view) {
+    public void LoaderDrawableVideoCover(Context context, int drawable, ImageView view) {
         try {
             Glide.with(context)
                     .load(drawable)
@@ -151,7 +151,7 @@ public class GlideLoader {
     }
 
 
-    public static void LoaderRadioCover(Context context, String url, ImageView view) {
+    public void LoaderRadioCover(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -167,7 +167,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderRadioCover(Context context, String url, ImageView view, int round) {
+    public void LoaderRadioCover(Context context, String url, ImageView view, int round) {
         try {
             Glide.with(context)
                     .load(url + format(url))
@@ -184,7 +184,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderDrawableRadioCover(Context context, int drawable, ImageView view) {
+    public void LoaderDrawableRadioCover(Context context, int drawable, ImageView view) {
         try {
             Glide.with(context)
                     .load(drawable)
@@ -197,7 +197,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderDrawableRadioCover(Context context, int drawable, ImageView view, int round) {
+    public void LoaderDrawableRadioCover(Context context, int drawable, ImageView view, int round) {
         try {
             Glide.with(context)
                     .load(drawable)
@@ -211,7 +211,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderImage(Context context, String url, ImageView view) {
+    public void LoaderImage(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url)
@@ -226,7 +226,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderImage(Context context, String url, ImageView view, int round) {
+    public void LoaderImage(Context context, String url, ImageView view, int round) {
         try {
             Glide.with(context)
                     .load(url)
@@ -243,7 +243,7 @@ public class GlideLoader {
 
     }
 
-    public static void LoaderMediaImage(Context context, String url, ImageView view) {
+    public void LoaderMediaImage(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url)
@@ -256,7 +256,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderCircleImage(Context context, String url, ImageView view) {
+    public void LoaderCircleImage(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
                     .load(url)
@@ -272,7 +272,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderDrawable(Context context, int drawable, ImageView view) {
+    public void LoaderDrawable(Context context, int drawable, ImageView view) {
         try {
             Glide.with(context)
                     .load(drawable)
@@ -283,7 +283,7 @@ public class GlideLoader {
         }
     }
 
-    public static void LoaderDrawable(Context context, int drawable, ImageView view, int round) {
+    public void LoaderDrawable(Context context, int drawable, ImageView view, int round) {
         try {
             Glide.with(context)
                     .load(drawable)
@@ -296,15 +296,15 @@ public class GlideLoader {
     }
 
 
-    private static Serializable format(String url) {
+    private Serializable format(String url) {
         return "?quality=60&format=2";
     }
 
-    private static boolean skipMemoryCache() {
+    private boolean skipMemoryCache() {
         return false;
     }
 
-    private static DiskCacheStrategy getDiskCacheStrategy() {
+    private DiskCacheStrategy getDiskCacheStrategy() {
         return DiskCacheStrategy.ALL;
     }
 

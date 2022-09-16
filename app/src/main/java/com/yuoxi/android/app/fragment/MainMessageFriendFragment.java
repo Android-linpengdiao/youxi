@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.UserInfo;
 import com.base.manager.RecycleViewManager;
-import com.base.utils.CommonUtil;
+import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.BlacklistActivity;
+import com.yuoxi.android.app.activity.FocusFansActivity;
+import com.yuoxi.android.app.activity.GroupsActivity;
 import com.yuoxi.android.app.adapter.MainFriendAdapter;
-import com.yuoxi.android.app.adapter.MainMessageAdapter;
 import com.yuoxi.android.app.databinding.FragmentMainMessageFriendBinding;
 import com.yuoxi.android.app.view.SideLetterBar;
 
@@ -55,6 +57,39 @@ public class MainMessageFriendFragment extends BaseFragment {
         Collections.sort(userInfoList, new UserInfo());
         messageAdapter.refreshData(userInfoList);
 
+        binding.focusView.setOnClickListener(onMultiClickListener);
+        binding.fansView.setOnClickListener(onMultiClickListener);
+        binding.groupView.setOnClickListener(onMultiClickListener);
+        binding.blacklistView.setOnClickListener(onMultiClickListener);
+
         return binding.getRoot();
     }
+
+    private OnMultiClickListener onMultiClickListener = new OnMultiClickListener() {
+        @Override
+        public void OnMultiClick(View view) {
+            Bundle bundle = new Bundle();
+            switch (view.getId()) {
+                case R.id.focusView:
+                    bundle.putInt("type", 0);
+                    openActivity(FocusFansActivity.class, bundle);
+
+                    break;
+                case R.id.fansView:
+                    bundle.putInt("type", 1);
+                    openActivity(FocusFansActivity.class, bundle);
+
+                    break;
+                case R.id.groupView:
+                    openActivity(GroupsActivity.class);
+
+                    break;
+                case R.id.blacklistView:
+                    openActivity(BlacklistActivity.class);
+
+                    break;
+
+            }
+        }
+    };
 }

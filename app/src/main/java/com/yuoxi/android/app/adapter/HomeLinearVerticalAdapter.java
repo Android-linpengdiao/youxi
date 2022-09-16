@@ -48,7 +48,7 @@ public class HomeLinearVerticalAdapter extends BaseRecyclerAdapter<String, ItemH
         tagAdapter.refreshData(CommonUtil.getTitles());
 
 //        binding.titleView.setText(null);
-        GlideLoader.LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
+        GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
 
 
     }

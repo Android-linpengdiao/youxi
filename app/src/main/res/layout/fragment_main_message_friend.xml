@@ -104,6 +104,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/fansView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_50"
                             android:background="#2A2737"
@@ -134,6 +135,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/focusView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_50"
                             android:background="#2A2737"
@@ -164,6 +166,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/groupView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_50"
                             android:background="#2A2737"
@@ -194,6 +197,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/blacklistView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_50"
                             android:background="#2A2737"

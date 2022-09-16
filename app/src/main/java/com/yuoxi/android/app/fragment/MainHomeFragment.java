@@ -42,7 +42,7 @@ public class MainHomeFragment extends BaseFragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_home, container, false);
         setStatusBarHeight(binding.getRoot());
 
-        GlideLoader.LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
+        GlideLoader.getInstance().LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
         initBanner();
 
         RecycleViewDivider horizontalDivider = new RecycleViewDivider(getActivity(),
