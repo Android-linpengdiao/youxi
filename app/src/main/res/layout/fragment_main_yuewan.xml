@@ -93,7 +93,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/dp_16"
-                    android:paddingRight="@dimen/dp_16" />
+                    android:paddingRight="@dimen/dp_16"
+                    tools:listitem="@layout/item_yuewan_linear_vertical"/>
             </RelativeLayout>
 
         </LinearLayout>

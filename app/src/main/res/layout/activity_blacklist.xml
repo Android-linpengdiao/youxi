@@ -36,8 +36,7 @@
                 android:gravity="center"
                 android:text="黑名单"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/sp_16"
-                android:textStyle="bold" />
+                android:textSize="@dimen/sp_18"/>
 
             <TextView
                 android:id="@+id/menuTextView"
@@ -53,6 +52,56 @@
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="#1F1C2D"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_13"
+            android:paddingRight="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_11">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_8"
+                android:src="@mipmap/ic_message_laba" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="加入黑名单后您将不在接收来自黑名单用户的消息 该用户创建的房间也将不展示在剧本大厅中"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:text="我知道了"
+                    android:textColor="#ee61e6"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:src="@mipmap/ic_close"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
@@ -67,9 +116,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:overScrollMode="never"
-                    android:paddingLeft="@dimen/dp_15"
                     android:paddingTop="@dimen/dp_4"
-                    android:paddingRight="@dimen/dp_15" />
+                    tools:listitem="@layout/item_blacklist" />
 
                 <TextView
                     android:id="@+id/emptyView"

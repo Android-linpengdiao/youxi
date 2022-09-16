@@ -9,7 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:background="#181526">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -239,7 +240,8 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/item_main_friend"/>
 
                     <com.yuoxi.android.app.view.SideLetterBar
                         android:id="@+id/sidebar"

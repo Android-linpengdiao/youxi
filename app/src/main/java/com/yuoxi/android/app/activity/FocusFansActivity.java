@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.base.utils.CommonUtil;
 import com.base.view.OnClickListener;
 import com.okhttp.Pager;
 import com.okhttp.SendRequest;
@@ -38,9 +39,9 @@ public class FocusFansActivity extends BaseActivity {
         uid = getIntent().getIntExtra("uid", 0);
         type = getIntent().getIntExtra("type", 0);
         if (type == 0) {
-            binding.titleView.setText("关注");
+            binding.titleView.setText("我的关注");
         } else {
-            binding.titleView.setText("粉丝");
+            binding.titleView.setText("我的粉丝");
         }
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(FocusFansActivity.this));
@@ -48,6 +49,7 @@ public class FocusFansActivity extends BaseActivity {
         focusFansAdapter = new FocusFansAdapter(FocusFansActivity.this);
         focusFansAdapter.setType(type);
         binding.recyclerView.setAdapter(focusFansAdapter);
+        focusFansAdapter.refreshData(CommonUtil.getTitles());
         focusFansAdapter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view, Object object) {
@@ -89,7 +91,7 @@ public class FocusFansActivity extends BaseActivity {
             }
         });
 
-        setRefresh();
+//        setRefresh();
 
     }
 
@@ -139,11 +141,11 @@ public class FocusFansActivity extends BaseActivity {
                     public void onResponse(Pager<FocusFansBean> response, int id) {
                         pager = response;
                         if (response != null && response.getData() != null) {
-                            if (isRefresh) {
-                                focusFansAdapter.refreshData(response.getData());
-                            } else {
-                                focusFansAdapter.loadMoreData(response.getData());
-                            }
+//                            if (isRefresh) {
+//                                focusFansAdapter.refreshData(response.getData());
+//                            } else {
+//                                focusFansAdapter.loadMoreData(response.getData());
+//                            }
                             if (!response.isHasnext()) {
                                 binding.refreshLayout.setNoMoreData(true);
                             }

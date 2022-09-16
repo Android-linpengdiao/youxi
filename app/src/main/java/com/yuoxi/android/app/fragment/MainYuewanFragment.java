@@ -13,10 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
 import com.base.view.GridItemDecoration;
+import com.base.view.OnClickListener;
 import com.base.view.RecycleViewDivider;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.YWFilterActivity;
 import com.yuoxi.android.app.adapter.HomeLinearHorizontalAdapter;
 import com.yuoxi.android.app.adapter.HomeLinearVerticalAdapter;
 import com.yuoxi.android.app.adapter.YuewanGridAdapter;
@@ -44,10 +46,21 @@ public class MainYuewanFragment extends BaseFragment {
         builder.color(R.color.transparent);
         builder.size(CommonUtil.dip2px(getActivity(), 10));
         binding.gridRecyclerView.addItemDecoration(new GridItemDecoration(builder));
-        binding.gridRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),4));
+        binding.gridRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         YuewanGridAdapter gridAdapter = new YuewanGridAdapter(getActivity());
         binding.gridRecyclerView.setAdapter(gridAdapter);
-        gridAdapter.refreshData(CommonUtil.getTitles().subList(0,8));
+        gridAdapter.refreshData(CommonUtil.getTitles().subList(0, 8));
+        gridAdapter.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view, Object object) {
+                openActivity(YWFilterActivity.class);
+            }
+
+            @Override
+            public void onLongClick(View view, Object object) {
+
+            }
+        });
 
         RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
                 LinearLayoutManager.VERTICAL,

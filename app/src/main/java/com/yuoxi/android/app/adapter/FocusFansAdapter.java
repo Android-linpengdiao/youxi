@@ -11,7 +11,7 @@ import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemFocusFansBinding;
 import com.yuoxi.android.app.model.FocusFansBean;
 
-public class FocusFansAdapter extends BaseRecyclerAdapter<FocusFansBean, ItemFocusFansBinding> {
+public class FocusFansAdapter extends BaseRecyclerAdapter<String, ItemFocusFansBinding> {
 
 
     private OnClickListener onClickListener;
@@ -40,42 +40,42 @@ public class FocusFansAdapter extends BaseRecyclerAdapter<FocusFansBean, ItemFoc
     }
 
     @Override
-    protected void onBindItem(ItemFocusFansBinding binding, FocusFansBean dataBean, int position) {
+    protected void onBindItem(ItemFocusFansBinding binding, String dataBean, int position) {
 
-        if (type == 0) {
-            binding.titleView.setText(!CommonUtil.isBlank(dataBean.getTypeUser().getName()) ? dataBean.getTypeUser().getName() : dataBean.getTypeUser().getPhone());
-            GlideLoader.getInstance().LoaderUserIcon(mContext, dataBean.getTypeUser().getIcon(), binding.iconView);
-        } else if (type == 1) {
-            binding.titleView.setText(!CommonUtil.isBlank(dataBean.getUser().getName()) ? dataBean.getUser().getName() : dataBean.getUser().getPhone());
-            GlideLoader.getInstance().LoaderUserIcon(mContext, dataBean.getUser().getIcon(), binding.iconView);
-        }
-
-        binding.focusView.setVisibility(type == 2 ? View.GONE : View.VISIBLE);
-        if (dataBean.getFocus() == 1) {
-            binding.focusView.setText("已关注");
-            binding.focusView.setTextColor(Color.parseColor("#333333"));
-            binding.focusView.setBackgroundResource(R.drawable.button_radius_gray);
-        } else {
-            binding.focusView.setText("关注");
-            binding.focusView.setTextColor(Color.parseColor("#ffffff"));
-            binding.focusView.setBackgroundResource(R.drawable.button_yellow);
-        }
-
-        binding.focusView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (onClickListener != null) {
-                    onClickListener.onClick(view, dataBean);
-                }
-            }
-        });
-        binding.viewLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (onClickListener != null) {
-                    onClickListener.onClick(view, dataBean);
-                }
-            }
-        });
+//        if (type == 0) {
+//            binding.titleView.setText(!CommonUtil.isBlank(dataBean.getTypeUser().getName()) ? dataBean.getTypeUser().getName() : dataBean.getTypeUser().getPhone());
+//            GlideLoader.getInstance().LoaderUserIcon(mContext, dataBean.getTypeUser().getIcon(), binding.iconView);
+//        } else if (type == 1) {
+//            binding.titleView.setText(!CommonUtil.isBlank(dataBean.getUser().getName()) ? dataBean.getUser().getName() : dataBean.getUser().getPhone());
+//            GlideLoader.getInstance().LoaderUserIcon(mContext, dataBean.getUser().getIcon(), binding.iconView);
+//        }
+//
+//        binding.focusView.setVisibility(type == 2 ? View.GONE : View.VISIBLE);
+//        if (dataBean.getFocus() == 1) {
+//            binding.focusView.setText("已关注");
+//            binding.focusView.setTextColor(Color.parseColor("#333333"));
+//            binding.focusView.setBackgroundResource(R.drawable.button_radius_gray);
+//        } else {
+//            binding.focusView.setText("关注");
+//            binding.focusView.setTextColor(Color.parseColor("#ffffff"));
+//            binding.focusView.setBackgroundResource(R.drawable.button_yellow);
+//        }
+//
+//        binding.focusView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (onClickListener != null) {
+//                    onClickListener.onClick(view, dataBean);
+//                }
+//            }
+//        });
+//        binding.viewLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (onClickListener != null) {
+//                    onClickListener.onClick(view, dataBean);
+//                }
+//            }
+//        });
     }
 }
