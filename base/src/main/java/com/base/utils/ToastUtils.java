@@ -44,6 +44,27 @@ public class ToastUtils {
         });
     }
 
+    public static void showShortChatErrMsg(final Context context, final String msg) {
+        if (null == context || null == msg || msg.equals("") || msg.length() == 0) {
+            return;
+        }
+        BaseApplication.getHandler().post(new Runnable() {
+            @Override
+            public void run() {
+//                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+
+                Toast toast = new Toast(context);
+                View view = LayoutInflater.from(context).inflate(R.layout.toast_custom, null);
+                TextView content = view.findViewById(R.id.content);
+                content.setText(msg);
+                toast.setView(view);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+    }
+
     public static void showLong(Context context, int resId) {
         String msg;
         try {

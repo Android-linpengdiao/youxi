@@ -242,10 +242,10 @@ public class SendRequest {
 
     }
 
-    public static void userLoad(String token, Long id, Callback call) {
+    public static void userLoad(String token, String id, Callback call) {
         Map<String, String> map = new HashMap<>();
         map.put("token", token);
-        map.put("id", String.valueOf(id));
+        map.put("id", id);
         OkHttpUtils.post()
                 .headers(HeadersUtils.getHeaders(map, APIUrls.userLoad))
                 .params(map).url(APIUrls.userLoad).tag(APIUrls.userLoad).build().execute(call);

@@ -2,13 +2,16 @@ package com.base.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,6 +52,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.base.BaseApplication;
+import com.base.Constants;
 import com.base.MessageBus;
 import com.base.R;
 import com.base.manager.DialogManager;
@@ -77,10 +81,89 @@ import java.util.regex.PatternSyntaxException;
 public class CommonUtil {
     private static final String TAG = "CommonUtil";
 
+    public static final String Index = "MaxStreamIndex";
+    private static final String CountDown = "CountDown";
+
+    public static boolean wordIsBlank(String s) {
+        return (s == null || s.equals(""));
+    }
+
+    public static boolean isPicture(String url) {
+        return (url.startsWith("http") || url.startsWith("/storage"));
+    }
+
+    public static String getDateToString(String time) {
+        long lcc = Long.valueOf(time);
+        Date d = new Date(lcc);
+        SimpleDateFormat sdr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdr.format(d);
+    }
+
+    public static String getStringToDate(String time) {
+        String timeStamp = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d;
+        try {
+            d = sdf.parse(time);
+            long l = d.getTime();
+            timeStamp = String.valueOf(l);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return timeStamp;
+    }
+
+    //判断service是否开启
+    public static boolean isWorked(Context context, String className) {
+        if (context == null || TextUtils.isEmpty(className)) {
+            return false;
+        }
+        ActivityManager myManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        ArrayList<ActivityManager.RunningServiceInfo> runningService = (ArrayList<ActivityManager.RunningServiceInfo>) myManager
+                .getRunningServices(300);
+        for (int i = 0; i < runningService.size(); i++) {
+//            LogUtil.i(TAG, "isWorked: className " + runningService.get(i).service.getClassName().toString() + "  " + className);
+            if (runningService.get(i).service.getClassName().toString()
+                    .equals(className)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //判断某个Activity 界面是否在前台
+    public static boolean isForeground(Context context, String className) {
+        if (context == null || TextUtils.isEmpty(className)) {
+            return false;
+        }
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> list = am.getRunningTasks(300);
+        if (list != null && list.size() > 0) {
+            ComponentName cpn = list.get(0).topActivity;
+            if (className.equals(cpn.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static synchronized String chatMaxStreamIndex(Context context, String master, String type, String maxStreamIndex) {
+        if (type.equals(Constants.SET_MSG_INDEX)) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences(Index, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(master, maxStreamIndex);
+            editor.commit();
+        } else if (type.equals(Constants.GET_MSG_INDEX)) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences(Index, Context.MODE_PRIVATE);
+            return sharedPreferences.getString(master, "0");
+        }
+        return null;
+    }
+
     /**
      * @param source
      * @param n      每次分割的个数
-     * @return java.util.List<java.util.List<T>>
+     * @return java.util.List<java.util.List < T>>
      * @Title: 将list按照指定元素个数(n)分割
      * @methodName: partList
      * @Description: 如果指定元素个数(n)>list.size(),则返回list;这时候商:0；余数:list.size()

@@ -3,14 +3,11 @@ package com.okhttp.utils;
 public class APIUrls {
 
 
-    //        public final static String URL_DOMAIN = "http://192.168.0.5:10040";
-//    public final static String URL_DOMAIN = "http://39.107.247.82:10040";
-    public final static String URL_DOMAIN = "http://123.56.67.54";
+    public final static String URL_DOMAIN = "http://web.huixinbaokeji.com";
 
     /**
      * ======================================  中国视听  ================================================
      */
-
 
 
     public final static String focusfansAdd = URL_DOMAIN + "web/focusfans/add";
@@ -19,11 +16,6 @@ public class APIUrls {
     public final static String getFocusPager = URL_DOMAIN + "web/focusfans/getFocusPager";
     //获取粉丝列表
     public final static String getFansPager = URL_DOMAIN + "web/focusfans/getFansPager";
-
-
-
-
-
 
 
     /**

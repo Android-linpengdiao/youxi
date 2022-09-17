@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
+import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
 import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
@@ -25,8 +26,6 @@ public class MainMineFragment extends BaseFragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_mine, container, false);
         setStatusBarHeight(binding.getRoot());
 
-        GlideLoader.getInstance().LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
-
         binding.userInfoView.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void OnMultiClick(View view) {
@@ -35,5 +34,13 @@ public class MainMineFragment extends BaseFragment {
         });
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        binding.userNameView.setText(getUserInfo().getName());
+        binding.userIDView.setText("ID:" + getUserInfo().getId());
+        GlideLoader.getInstance().LoaderUserIcon(getActivity(), getUserInfo().getIcon(), binding.userIconView);
     }
 }

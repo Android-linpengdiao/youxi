@@ -20,10 +20,10 @@
             <option value="$PROJECT_DIR$/dkplayer-ui" />
             <option value="$PROJECT_DIR$/dkplayer-videocache" />
             <option value="$PROJECT_DIR$/okhttp" />
+            <option value="$PROJECT_DIR$/quakooim" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
     <option name="offlineMode" value="true" />

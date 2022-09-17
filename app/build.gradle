@@ -87,6 +87,8 @@ dependencies {
     implementation project(':banner')
     //网络请求
     implementation project(':okhttp')
+    //IM
+    implementation project(':quakooim')
 
     //下来刷新
     implementation smartrefresh

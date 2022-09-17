@@ -10,6 +10,8 @@ public class SharedPreferencesUtils {
 
     public static String SP_DATA = "sp_data";
     public static String updateSongTest = "updateSongTest";
+    public static final String SP_HUAWEITOKEN = "sp_huaWeiToken";
+    public static final String SP_MEIZUPUSHID = "sp_meiZuPushId";
 
     public static SharedPreferencesUtils mInstance;
     public static SharedPreferences sharedPreferences;
@@ -27,6 +29,34 @@ public class SharedPreferencesUtils {
 
     public SharedPreferencesUtils() {
         sharedPreferences = BaseApplication.getInstance().getSharedPreferences(SP_DATA, Context.MODE_PRIVATE);
+    }
+
+    public static String getMeizuPushId() {
+        SharedPreferences sharedPreferences =
+                BaseApplication.getInstance().getSharedPreferences(SP_DATA, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(SP_MEIZUPUSHID, "");
+    }
+
+    public static void setMeizuPushId(String pushId) {
+        SharedPreferences sharedPreferences =
+                BaseApplication.getInstance().getSharedPreferences(SP_DATA, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(SP_MEIZUPUSHID, pushId);
+        editor.commit();
+    }
+
+    public static String getHuaWeiToken() {
+        SharedPreferences sharedPreferences =
+                BaseApplication.getInstance().getSharedPreferences(SP_DATA, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(SP_HUAWEITOKEN, "");
+    }
+
+    public static void setHuaWeiToken(String token) {
+        SharedPreferences sharedPreferences =
+                BaseApplication.getInstance().getSharedPreferences(SP_DATA, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(SP_HUAWEITOKEN, token);
+        editor.commit();
     }
 
 

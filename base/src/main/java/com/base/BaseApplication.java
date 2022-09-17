@@ -62,8 +62,8 @@ public class BaseApplication extends Application {
         MsgCache.get(this).put(Constants.USER_INFO, userInfo);
     }
 
-    public UserInfo getUserInfo() {
-        UserInfo userinfo = (UserInfo) MsgCache.get(this).getAsObject(Constants.USER_INFO);
+    public static UserInfo getUserInfo() {
+        UserInfo userinfo = (UserInfo) MsgCache.get(getInstance()).getAsObject(Constants.USER_INFO);
         if (!CommonUtil.isBlank(userinfo)) {
             return userinfo;
         }

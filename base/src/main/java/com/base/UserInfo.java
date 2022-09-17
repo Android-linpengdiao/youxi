@@ -1,91 +1,82 @@
 package com.base;
 
-import android.util.Log;
-
 import com.ecity.android.tinypinyin.Pinyin;
+
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.Comparator;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public class UserInfo implements Serializable, Comparator<UserInfo> {
 
-    private Long id;
-    private String name;
-    private String icon;
-    private Long rand;
-    private Long userType;
-    private Long userRank;
-    private String phone;
-    private String password;
-    private List<?> rids;
-    private Long sid;
-    private Long status;
-    private Long sex;
-    private Long age;
-    private String birthdate;
-    private Long invitationUid;
-    private Long ctime;
-    private Long utime;
-    private Long check;
-    private Long push;
-    private String token;
-    private Boolean register;
+    public String id = ""; //id
+    public String phone = ""; //手机号
+    public String name = ""; //昵称
+    public String remark = ""; //备注
+    public String token = ""; //
+    public String icon = ""; //图片地址
+    public String info = ""; //签名
+    public String money = ""; //钱
+    public int diamond = 0;//
+    public int status = 0; //状态
+    public int friends = 0;//是否是好友 1
+    public int sex = 1;//性别
+    public String number = "";// 鸡毛信号
+    public String utime = "";
+    public String ctime = "";
+    public int check = 1; //0没有；1未选；2选中；3不可选
+    public int addFriendSetting = 0; //0:好友验证，1不需要验证
+    public String inviteInfo = "";
+    private int mute = 0;//0解禁，1禁言
 
-    public UserInfo() {
+
+
+    public boolean link = false;
+    public String password; //
+    public String initialLetter = "";
+    public String type = Constants.FRAGMENT_FRIEND;
+
+    public static UserInfo getVideoInstanceFromJson(JSONObject json) {
+        UserInfo userInfo = new UserInfo();
+        userInfo.id = json.optString("id");
+        userInfo.icon = json.optString("icon");
+        return userInfo;
     }
 
-    public UserInfo(String name) {
-        this.name = name;
+    public static UserInfo getInstanceFromJson(JSONObject json) {
+
+        UserInfo userInfo = new UserInfo();
+        userInfo.id = json.optString("id");
+        userInfo.token = json.optString("token");
+        userInfo.diamond = json.optInt("diamond");
+        userInfo.money = json.optString("money");
+        userInfo.status = json.optInt("status");
+        userInfo.friends = json.optInt("friends");
+        userInfo.sex = json.optInt("sex");
+        userInfo.utime = json.optString("utime");
+        userInfo.ctime = json.optString("ctime");
+
+        userInfo.addFriendSetting = json.optInt("addFriendSetting");
+        userInfo.inviteInfo = json.optString("inviteInfo");
+        userInfo.mute = json.optInt("mute");
+
+        userInfo.name = json.optString("name");
+        userInfo.remark = json.optString("remark");
+        userInfo.phone = json.optString("phone");
+        userInfo.friends = json.optInt("friends");
+        userInfo.icon = json.optString("icon");
+        userInfo.info = json.optString("info");
+        userInfo.number = json.optString("number");
+        return userInfo;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public Long getRand() {
-        return rand;
-    }
-
-    public void setRand(Long rand) {
-        this.rand = rand;
-    }
-
-    public Long getUserType() {
-        return userType;
-    }
-
-    public void setUserType(Long userType) {
-        this.userType = userType;
-    }
-
-    public Long getUserRank() {
-        return userRank;
-    }
-
-    public void setUserRank(Long userRank) {
-        this.userRank = userRank;
     }
 
     public String getPhone() {
@@ -96,100 +87,20 @@ public class UserInfo implements Serializable, Comparator<UserInfo> {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<?> getRids() {
-        return rids;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setRids(List<?> rids) {
-        this.rids = rids;
-    }
-
-    public Long getSid() {
-        return sid;
-    }
-
-    public void setSid(Long sid) {
-        this.sid = sid;
-    }
-
-    public Long getStatus() {
-        return status;
-    }
-
-    public void setStatus(Long status) {
-        this.status = status;
-    }
-
-    public Long getSex() {
-        return sex;
-    }
-
-    public void setSex(Long sex) {
-        this.sex = sex;
-    }
-
-    public String getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public Long getAge() {
-        return age;
-    }
-
-    public void setAge(Long age) {
-        this.age = age;
-    }
-
-    public Long getInvitationUid() {
-        return invitationUid;
-    }
-
-    public void setInvitationUid(Long invitationUid) {
-        this.invitationUid = invitationUid;
-    }
-
-    public Long getCtime() {
-        return ctime;
-    }
-
-    public void setCtime(Long ctime) {
-        this.ctime = ctime;
-    }
-
-    public Long getUtime() {
-        return utime;
-    }
-
-    public void setUtime(Long utime) {
-        this.utime = utime;
-    }
-
-    public Long getCheck() {
-        return check;
-    }
-
-    public void setCheck(Long check) {
-        this.check = check;
-    }
-
-    public Long getPush() {
-        return push;
-    }
-
-    public void setPush(Long push) {
-        this.push = push;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public String getToken() {
@@ -200,12 +111,148 @@ public class UserInfo implements Serializable, Comparator<UserInfo> {
         this.token = token;
     }
 
-    public Boolean getRegister() {
-        return register;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setRegister(Boolean register) {
-        this.register = register;
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
+
+    public int getDiamond() {
+        return diamond;
+    }
+
+    public void setDiamond(int diamond) {
+        this.diamond = diamond;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getFriends() {
+        return friends;
+    }
+
+    public void setFriends(int friends) {
+        this.friends = friends;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getUtime() {
+        return utime;
+    }
+
+    public void setUtime(String utime) {
+        this.utime = utime;
+    }
+
+    public String getCtime() {
+        return ctime;
+    }
+
+    public void setCtime(String ctime) {
+        this.ctime = ctime;
+    }
+
+    public int getCheck() {
+        return check;
+    }
+
+    public void setCheck(int check) {
+        this.check = check;
+    }
+
+    public int getAddFriendSetting() {
+        return addFriendSetting;
+    }
+
+    public void setAddFriendSetting(int addFriendSetting) {
+        this.addFriendSetting = addFriendSetting;
+    }
+
+    public String getInviteInfo() {
+        return inviteInfo;
+    }
+
+    public void setInviteInfo(String inviteInfo) {
+        this.inviteInfo = inviteInfo;
+    }
+
+    public int getMute() {
+        return mute;
+    }
+
+    public void setMute(int mute) {
+        this.mute = mute;
+    }
+
+    public boolean isLink() {
+        return link;
+    }
+
+    public void setLink(boolean link) {
+        this.link = link;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getInitialLetter() {
+        return initialLetter;
+    }
+
+    public void setInitialLetter(String initialLetter) {
+        this.initialLetter = initialLetter;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     private String pinyin;

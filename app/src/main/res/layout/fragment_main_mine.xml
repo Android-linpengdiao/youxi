@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -56,11 +57,11 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/titleView"
+                        android:id="@+id/userNameView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="桐公子"
+                        tools:text="桐公子"
                         android:textColor="#FFFFFF"
                         android:textSize="@dimen/sp_18" />
 
@@ -72,10 +73,11 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/userIDView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/dp_5"
-                            android:text="ID:15509782"
+                            android:text="ID:"
                             android:textColor="#C4C4C4"
                             android:textSize="@dimen/sp_14" />
 

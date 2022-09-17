@@ -10,11 +10,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
+import com.base.view.OnClickListener;
+import com.quakoo.im.IMChatActivity;
 import com.yuoxi.android.app.R;
-import com.yuoxi.android.app.adapter.HomeLinearVerticalAdapter;
 import com.yuoxi.android.app.adapter.MainMessageAdapter;
-import com.yuoxi.android.app.adapter.MainPagerAdapter;
-import com.yuoxi.android.app.databinding.FragmentMainMessageBinding;
 import com.yuoxi.android.app.databinding.FragmentMainMessageMessageBinding;
 
 public class MainMessageMessageFragment extends BaseFragment {
@@ -30,6 +29,17 @@ public class MainMessageMessageFragment extends BaseFragment {
         MainMessageAdapter messageAdapter = new MainMessageAdapter(getActivity());
         binding.recyclerView.setAdapter(messageAdapter);
         messageAdapter.refreshData(CommonUtil.getTitles());
+        messageAdapter.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view, Object object) {
+                openActivity(IMChatActivity.class);
+            }
+
+            @Override
+            public void onLongClick(View view, Object object) {
+
+            }
+        });
 
         return binding.getRoot();
     }

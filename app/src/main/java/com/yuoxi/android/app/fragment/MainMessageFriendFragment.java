@@ -49,11 +49,9 @@ public class MainMessageFriendFragment extends BaseFragment {
 
         List<UserInfo> userInfoList = new ArrayList<>();
 
-        userInfoList.add(new UserInfo("玛卡巴卡"));
-        userInfoList.add(new UserInfo("桐桐"));
-        userInfoList.add(new UserInfo("明明"));
-        userInfoList.add(new UserInfo("庆庆"));
-        userInfoList.add(new UserInfo("丽丽"));
+        UserInfo userInfo = new UserInfo();
+        userInfo.setName("玛卡巴卡");
+        userInfoList.add(userInfo);
         Collections.sort(userInfoList, new UserInfo());
         messageAdapter.refreshData(userInfoList);
 
