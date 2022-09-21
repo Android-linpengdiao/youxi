@@ -1,4 +1,4 @@
-package com.quakoo.im;
+package com.quakoo.im.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -19,6 +19,7 @@ import com.base.utils.CommonUtil;
 import com.base.utils.MsgCache;
 import com.base.utils.PermissionUtils;
 import com.base.utils.StatusBarUtil;
+import com.quakoo.im.R;
 
 import java.util.ArrayList;
 import java.util.List;

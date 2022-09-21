@@ -90,7 +90,7 @@ public class ImSocketService extends Service {
     private Boolean serviceContect = false;
 
     //主机IP地址
-    private static String HOST = "120.55.88.212";//""192.168.101.25";
+    private static String HOST = "120.55.88.212";
     ///端口号
     public static final String PORT = "11111";
 
@@ -141,11 +141,12 @@ public class ImSocketService extends Service {
             UserInfo userinfo = (UserInfo) MsgCache.get(context).getAsObject(Constants.USER_INFO);
             if (!CommonUtil.isBlank(userinfo)) {
                 Intent intent = new Intent(context, ImSocketService.class);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    context.startForegroundService(intent);
-                } else {
-                    context.startService(intent);
-                }
+                context.startService(intent);
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                    context.startForegroundService(intent);
+//                } else {
+//                    context.startService(intent);
+//                }
             }
         }
     }
@@ -174,15 +175,15 @@ public class ImSocketService extends Service {
         //    NotificationManager.IMPORTANCE_MIN: 静默;
         //    NotificationManager.IMPORTANCE_HIGH:随系统使用声音或振动
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-            NotificationChannel channel = new NotificationChannel(getPackageName() + ".service", getResources().getString(R.string.app_service),
-                    NotificationManager.IMPORTANCE_MIN);
-            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            manager.createNotificationChannel(channel);
-            Notification notification = new Notification.Builder(getApplicationContext(), getPackageName() + ".service").build();
-            startForeground(Constants.IM_SERVICE_ID, notification);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//
+//            NotificationChannel channel = new NotificationChannel(getPackageName() + ".service", getResources().getString(R.string.app_service),
+//                    NotificationManager.IMPORTANCE_MIN);
+//            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//            manager.createNotificationChannel(channel);
+//            Notification notification = new Notification.Builder(getApplicationContext(), getPackageName() + ".service").build();
+//            startForeground(Constants.IM_SERVICE_ID, notification);
+//        }
 
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
 //        sdao = new ScreenDaoImpl(this);
@@ -361,7 +362,7 @@ public class ImSocketService extends Service {
             while (true) {
 
                 // 将要接收的数据的长度
-                final int dataLen = stream.readInt();
+                int dataLen = stream.readInt();
                 LogUtil.i(TAG, "ReceiveMsg: dataLen " + dataLen);
                 if (dataLen > 5 * 1024 * 1024)
                     throw new IllegalStateException("oom");

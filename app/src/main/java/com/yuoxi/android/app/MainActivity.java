@@ -61,6 +61,7 @@ public class MainActivity extends BaseActivity {
 //                .tabTextSize(getResources().getDimensionPixelSize(R.dimen.sp_10))
                 .tabTextSize(10)
 
+                .navigationHeight(56)
                 .lineHeight(1)
                 .lineColor(getResources().getColor(R.color.colorPrimary))
 

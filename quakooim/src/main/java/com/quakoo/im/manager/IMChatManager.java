@@ -564,7 +564,7 @@ public class IMChatManager {
             Class aClass = null;
             try {
                 if (cm.getType().equals(Constants.FRAGMENT_FRIEND) || cm.getType().equals(Constants.FRAGMENT_GROUP)) {
-                    aClass = Class.forName("com.queke.im.activity.IMChatActivity");
+                    aClass = Class.forName("com.quakoo.im.activity.IMChatActivity");
                 } else if (cm.getType().equals(Constants.FRAGMENT_NOTICE)) {
                     aClass = Class.forName("com.queke.im.activity.ImNoticeActivity");
                 } else {

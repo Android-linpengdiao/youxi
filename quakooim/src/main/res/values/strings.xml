@@ -2,4 +2,6 @@
     <string name="app_name">quakooim</string>
     <string name="app_service">quakooim</string>
     <string name="app_new_msg">新消息通知</string>
+    <string name="app_name_num">quakooim号</string>
+    <string name="app_name_num_aid">quakooim小助手</string>
 </resources>
