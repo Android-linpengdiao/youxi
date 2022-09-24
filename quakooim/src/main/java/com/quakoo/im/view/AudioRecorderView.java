@@ -69,6 +69,10 @@ public class AudioRecorderView extends RelativeLayout {
         });
     }
 
+    public void setRecorderListener(AudioRecorderButton.AudioFinishRecorderListener mRecorderListener) {
+        audioRecorderButton.setAudioFinishRecorderListener(mRecorderListener);
+    }
+
     public void init() {
         recorderTimeContainer.setVisibility(INVISIBLE);
         cancelImageView.setVisibility(INVISIBLE);

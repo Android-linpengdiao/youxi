@@ -292,6 +292,7 @@ public class IMChatActivity extends BaseActivity implements CustomClickEvents, H
         mBinding.ChatEdittextView.setCustomClickEvents(this);
         mBinding.ChatEdittextView.setFocusable(true);
         mBinding.ChatEdittextView.setListView(mBinding.chatList);
+        mBinding.audioRecorderView.setRecorderListener(this);
 
 
         manager = ScreenShotListenManager.newInstance(this);
