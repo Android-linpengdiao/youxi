@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.location.LocationManager;
 import android.media.MediaMetadataRetriever;
@@ -27,6 +28,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Environment;
 import android.os.IBinder;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -41,6 +43,7 @@ import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Display;
@@ -146,6 +149,78 @@ public class CommonUtil {
         }
         return false;
     }
+
+    public static void toSetting(Context context) {
+        Intent localIntent = new Intent();
+        localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (Build.VERSION.SDK_INT >= 9) {
+            localIntent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            localIntent.setData(Uri.fromParts("package", context.getPackageName(), null));
+        } else if (Build.VERSION.SDK_INT <= 8) {
+            localIntent.setAction(Intent.ACTION_VIEW);
+            localIntent.setClassName("com.android.settings", "com.android.setting.InstalledAppDetails");
+            localIntent.putExtra("com.android.settings.ApplicationPkgName", context.getPackageName());
+        }
+        context.startActivity(localIntent);
+    }
+
+    public static boolean sdCardIsAvailable() {
+        String status = Environment.getExternalStorageState();
+        if (!status.equals(Environment.MEDIA_MOUNTED))
+            return false;
+        return true;
+    }
+
+
+    //键盘显示监听
+    public static void observeSoftKeyboard(final Activity activity, final OnSoftKeyboardChangeListener listener) {
+        final View decorView = activity.getWindow().getDecorView();
+        decorView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+            int previousKeyboardHeight = -1;
+
+            @Override
+            public void onGlobalLayout() {
+                Rect rect = new Rect();
+                decorView.getWindowVisibleDisplayFrame(rect);
+                int displayHeight = rect.bottom - rect.top;
+                int height = decorView.getHeight();
+                int keyboardHeight = height - rect.bottom;
+                if (Build.VERSION.SDK_INT >= 20) {
+                    // When SDK Level >= 20 (Android L), the softInputHeight will contain the height of softButtonsBar (if has)
+                    keyboardHeight = keyboardHeight - getSoftButtonsBarHeight(activity);
+
+                }
+                if (previousKeyboardHeight != keyboardHeight) {
+                    boolean hide = (double) displayHeight / height > 0.8;
+                    listener.onSoftKeyBoardChange(keyboardHeight, !hide, this);
+                }
+                previousKeyboardHeight = height;
+
+            }
+        });
+    }
+
+    private static int getSoftButtonsBarHeight(Activity activity) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int usableHeight = metrics.heightPixels;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            activity.getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
+        }
+        int realHeight = metrics.heightPixels;
+        if (realHeight > usableHeight) {
+            return realHeight - usableHeight;
+        } else {
+            return 0;
+        }
+    }
+
+    public interface OnSoftKeyboardChangeListener {
+        void onSoftKeyBoardChange(int softKeybardHeight, boolean visible, ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener);
+    }
+
+
 
     public static synchronized String chatMaxStreamIndex(Context context, String master, String type, String maxStreamIndex) {
         if (type.equals(Constants.SET_MSG_INDEX)) {

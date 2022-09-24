@@ -16,12 +16,20 @@ public class BaseApplication extends Application {
 
     private static BaseApplication myApplication;
     private static Handler handler;
+    public static volatile UserInfo userInfo;
+    public static volatile int keyboardheight = 0; //获取键盘的高度
 
     @Override
     public void onCreate() {
         super.onCreate();
         myApplication = this;
         handler = new Handler(Looper.getMainLooper());
+
+        userInfo = (UserInfo) MsgCache.get(getInstance()).getAsObject(Constants.USER_INFO);
+        if (CommonUtil.isBlank(userInfo)) {
+            userInfo = new UserInfo();
+        }
+
 //        initAssets();
     }
 
@@ -63,11 +71,7 @@ public class BaseApplication extends Application {
     }
 
     public static UserInfo getUserInfo() {
-        UserInfo userinfo = (UserInfo) MsgCache.get(getInstance()).getAsObject(Constants.USER_INFO);
-        if (!CommonUtil.isBlank(userinfo)) {
-            return userinfo;
-        }
-        return new UserInfo();
+        return userInfo;
     }
 
     public String getMetaData(String property) {

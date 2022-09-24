@@ -6,6 +6,15 @@ import android.graphics.BitmapFactory;
 public class BitmapUtils {
 
     private static BitmapFactory.Options options = null;
+
+    /**
+     * 通过文件路径来获取Bitmap
+     * @param pathName
+     * @return
+     */
+    public static Bitmap getBitmapFromFile(String pathName) {
+        return BitmapFactory.decodeFile(pathName);
+    }
     /**
      * 判断图片是否已经损坏
      */

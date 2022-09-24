@@ -1,4 +1,5 @@
 rootProject.name = "yuoxi"
+include ':camera'
 include ':banner'
 include ':okhttp'
 include ':base'

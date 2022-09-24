@@ -6,7 +6,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
-        <activity android:name=".activity.IMChatActivity"></activity>
+        <activity
+            android:name=".activity.IMChatActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".media.MediaSelectActivity"
+            android:screenOrientation="portrait" />
+
         <service
             android:name=".aiyou.ImSocketService"
             android:enabled="true"

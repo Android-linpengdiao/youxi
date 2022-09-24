@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--用于判断当前是否是文本输入 还是 语音输入 文本是1 语音是2-->
+        <variable
+            name="editType"
+            type="Integer"></variable>
+
+        <import type="android.view.View"></import>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/chat_input"
+            android:minHeight="@dimen/Input_box_height"
+            android:paddingLeft="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16">
+
+            <RelativeLayout
+                android:id="@+id/edit_input_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_toRightOf="@+id/edit_type_layout"
+                android:layout_weight="1"
+                android:focusable="true">
+
+                <com.quakoo.im.view.MsgEditText
+                    android:id="@+id/edit_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginBottom="@dimen/dp_12"
+                    android:background="@drawable/bg_im_chat_sound"
+                    android:gravity="center_vertical"
+                    android:hint="说点什么..."
+                    android:maxLines="3"
+                    android:minHeight="@dimen/dp_42"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#666666" />
+
+                <ImageView
+                    android:id="@+id/edit_emotion"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_im_chat_add_emotion_black"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+                <com.quakoo.im.view.AudioRecorderButton
+                    android:id="@+id/voice_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/im_chat_voice_send_button"
+                    android:checked="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:minHeight="43dp"
+                    android:stateListAnimator="@null"
+                    android:text="按住可说话"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/muteView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/im_chat_voice_send_button"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:minHeight="43dp"
+                    android:text="禁言中"
+                    android:textColor="@color/color_2E2E2E"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/emotion_message_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/edit_input_layout"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sendText"
+                    android:layout_width="@dimen/dp_56"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_text_send_green"
+                    android:gravity="center"
+                    android:text="发送"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ext_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/chat_input"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_18">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imChatExtAudioView"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_im_chat_ext_audio"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <!--切换至声音发送-->
+                <ImageView
+                    android:id="@+id/imChatExtPhotoView"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_3"
+                    android:src="@drawable/ic_im_chat_ext_photo"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <!--切换至声音发送-->
+                <ImageView
+                    android:id="@+id/imChatExtVideoView"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_im_chat_ext_video"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <!--切换至声音发送-->
+                <ImageView
+                    android:id="@+id/imChatExtCallView"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_3"
+                    android:src="@drawable/ic_im_chat_ext_call"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <!--切换至声音发送-->
+                <ImageView
+                    android:id="@+id/edit_yuyin"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_im_chat_sound_toggle_black"
+                    android:tag="打字"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/edit_jianpan2"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_im_chat_text_toggle_black"
+                    android:tint="@color/white"
+                    android:visibility="gone"
+                    tools:ignore="UseAppTint" />
+
+                <ImageView
+                    android:id="@+id/other_message"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_im_chat_add_extra_black"
+                    android:tag="默认"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pane_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/edit_layout"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/emotion_panel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/pane1"
+                    layout="@layout/sub_panel_content"></include>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/other_pane2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/pane2"
+                    layout="@layout/merge_panel_content"></include>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

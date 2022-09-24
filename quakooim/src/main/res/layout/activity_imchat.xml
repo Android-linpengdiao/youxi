@@ -7,10 +7,98 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
+        android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.IMChatActivity">
+        android:background="#181526"
+        android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:background="#181526"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/backView"
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:onClick="onClickBack"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的好友"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_18" />
+
+            <ImageView
+                android:id="@+id/menuImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:src="@drawable/ic_im_menu" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/chat_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topView"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chat_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <com.quakoo.im.view.ChatEdittextView
+                android:id="@+id/ChatEdittextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
+
+        <com.quakoo.im.view.AudioRecorderView
+            android:id="@+id/audioRecorderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/new_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topView"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_imchat_new_message"
+            android:drawableLeft="@drawable/ic_scroll_blue"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp"
+            android:text="32条新消息"
+            android:textColor="@color/main_navigation_selection_text"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 </layout>

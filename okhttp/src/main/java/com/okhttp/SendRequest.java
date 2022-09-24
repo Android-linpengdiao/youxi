@@ -8,10 +8,12 @@ import com.base.BaseApplication;
 import com.base.utils.AES256Utils;
 import com.base.utils.GsonUtils;
 import com.okhttp.callbacks.Callback;
+import com.okhttp.callbacks.StringCallback;
 import com.okhttp.utils.APIUrls;
 import com.okhttp.utils.HeadersUtils;
 import com.okhttp.utils.OkHttpUtils;
 
+import java.io.File;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +25,7 @@ public class SendRequest {
     private static String TAG = "SendRequest";
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
 
@@ -55,6 +57,16 @@ public class SendRequest {
         OkHttpUtils.post().params(map).url(url).build().execute(call);
     }
 
+    /**
+     * 用于上传图片/视频/音频
+     *
+     * @param file
+     * @param callBack
+     */
+    public static void getUpFile(File file, StringCallback callBack) {
+        OkHttpUtils.getInstance().post().addFile("file", file.getName(), file).url(APIUrls.URL_UPLOAD_FILES).build().execute(callBack);
+    }
+
 
 
 
@@ -64,7 +76,7 @@ public class SendRequest {
 
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
 
@@ -76,7 +88,7 @@ public class SendRequest {
 
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
     /**
@@ -838,7 +850,7 @@ public class SendRequest {
 
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
 }

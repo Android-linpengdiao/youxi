@@ -6,9 +6,10 @@ public class APIUrls {
     public final static String URL_DOMAIN = "http://web.huixinbaokeji.com";
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
+    public final static String URL_UPLOAD_FILES = "http://store.huixinbaokeji.com/storage/handle";
 
     public final static String focusfansAdd = URL_DOMAIN + "web/focusfans/add";
     public final static String focusfansDel = URL_DOMAIN + "web/focusfans/del";
@@ -19,7 +20,7 @@ public class APIUrls {
 
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
     /**
@@ -155,7 +156,7 @@ public class APIUrls {
 
 
     /**
-     * ======================================  中国视听  ================================================
+     * ======================================  爱游  ================================================
      */
 
 }

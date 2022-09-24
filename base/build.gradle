@@ -41,6 +41,7 @@ dependencies {
     api luban
     api rxjava
     api rxandroid
+    api andPermission
 
     api files('libs/core-3.3.0.jar')
     api files('libs/TinyPinyin.jar')

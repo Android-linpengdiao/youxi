@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!--用于显示自己发送的消息-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/send_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="2018-01-01 01:22"
+            android:textColor="#ABABAB"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/send_time"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp">
+            <!--头像-->
+            <ImageView
+                android:id="@+id/message_ic"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/circle_gray" />
+
+            <ImageView
+                android:id="@+id/send_status"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="-50dp"
+                android:layout_toLeftOf="@+id/collection_layout"
+                android:src="@drawable/ic_loading" />
+
+            <LinearLayout
+                android:id="@+id/collection_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/message_ic">
+
+                <ImageView
+                    android:id="@+id/destroy_status"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/message_content_layout"
+                    android:src="@drawable/ic_destroy"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/message_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_im_chat_owm_sound"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:text="这是发送者的名字"
+                        android:textColor="@color/chat_message_name_text_color"
+                        android:textSize="@dimen/chat_message_name_size"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

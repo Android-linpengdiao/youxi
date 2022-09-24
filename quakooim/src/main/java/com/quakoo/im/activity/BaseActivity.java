@@ -20,6 +20,7 @@ import com.base.utils.MsgCache;
 import com.base.utils.PermissionUtils;
 import com.base.utils.StatusBarUtil;
 import com.quakoo.im.R;
+import com.quakoo.im.model.EmotionEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,27 @@ public class BaseActivity extends AppCompatActivity {
             return userinfo;
         }
         return new UserInfo();
+    }
+
+    public void setEmotionList(EmotionEntity emotionList) {
+        MsgCache.get(getApplication()).put(Constants.EMOTIN_LIST + getUserInfo().getId(), emotionList);
+    }
+
+    public EmotionEntity getEmotionList() {
+        EmotionEntity emotionEntity = (EmotionEntity) MsgCache.get(getApplication()).getAsObject(Constants.EMOTIN_LIST + getUserInfo().getId());
+        if (emotionEntity != null && emotionEntity.getEmotionList() != null && emotionEntity.getEmotionList().size() > 0) {
+            return emotionEntity;
+        } else {
+            EmotionEntity emotions = new EmotionEntity();
+            List<EmotionEntity.DataBean> list = new ArrayList<>();
+            EmotionEntity.DataBean dataBean = new EmotionEntity.DataBean();
+            dataBean.setUrl("add");
+            dataBean.setStatus(false);
+            list.add(dataBean);
+            emotions.setEmotionList(list);
+            setEmotionList(emotions);
+            return emotions;
+        }
     }
 
 

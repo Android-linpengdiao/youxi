@@ -60,6 +60,7 @@ ext {
 
     lombok = 'org.projectlombok:lombok:1.16.18'
     annotation = 'org.glassfish:javax.annotation:10.0-b28'
+    andPermission = 'com.yanzhenjie:permission:2.0.3'
 
 
     glide = 'com.github.bumptech.glide:glide:4.9.0'

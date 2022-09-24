@@ -26,6 +26,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.base.R;
+import com.base.databinding.ViewAddPermissionDialogBinding;
 import com.base.databinding.ViewConfirmDialogAlertBinding;
 import com.base.databinding.ViewEditUserNameDialogBinding;
 import com.base.utils.CommonUtil;
@@ -111,6 +112,50 @@ public class DialogManager {
         ViewConfirmDialogAlertBinding binding = DataBindingUtil.bind(contentView);
 
         binding.contentView.setText(content);
+        if (!CommonUtil.isBlank(title)) {
+            binding.titleView.setText(title);
+        }
+        if (!CommonUtil.isBlank(cancelText)) {
+            binding.cancelView.setText(cancelText);
+        }
+        if (!CommonUtil.isBlank(confirmText)) {
+            binding.confirmView.setText(confirmText);
+        }
+        binding.cancelView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemLeft();
+                }
+                dialog.cancel();
+            }
+        });
+        binding.confirmView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemRight();
+                }
+                dialog.cancel();
+            }
+        });
+        return dialog;
+    }
+
+    public AlertDialog addPermissionDialog(Activity activity, String title,Listener listener) {
+        return addPermissionDialog(activity,title,null,null,listener);
+    }
+
+    public AlertDialog addPermissionDialog(Activity activity, String title, String cancelText, String confirmText, final Listener listener) {
+        final AlertDialog dialog = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_DARK).create();
+        dialog.setCancelable(true);
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.getDecorView().setBackgroundColor(activity.getResources().getColor(R.color.transparent));
+        View contentView = LayoutInflater.from(activity).inflate(R.layout.view_add_permission_dialog, null);
+        window.setContentView(contentView);
+        ViewAddPermissionDialogBinding binding = DataBindingUtil.bind(contentView);
+
         if (!CommonUtil.isBlank(title)) {
             binding.titleView.setText(title);
         }

@@ -1,7 +1,93 @@
 <resources>
-    <string name="app_name">quakooim</string>
-    <string name="app_service">quakooim</string>
+
+    <string name="app_name">惠信二手平台</string>
+    <string name="app_service">惠信二手服务</string>
     <string name="app_new_msg">新消息通知</string>
-    <string name="app_name_num">quakooim号</string>
-    <string name="app_name_num_aid">quakooim小助手</string>
+    <string name="app_name_num">惠信号</string>
+    <string name="app_name_num_aid">惠信小助手</string>
+    <string name="app_name_red">惠信红包</string>
+    <string name="app_name_hint">输入好友手机号或惠信号</string>
+    <string name="app_name_in">留在惠信二手平台</string>
+    <string name="app_name_small_routine">惠信小程序</string>
+    <string name="app_name_game">龙港麻将</string>
+    <string name="app_name_return_game">返回龙港麻将</string>
+    <string name="app_name_login">惠信二手平台登录</string>
+    <string name="app_name_qrcode">扫一扫上面的二维码图案，加我惠信</string>
+    <string name="app_name_register_protocol">《软件许可及服务协议》</string>
+    <string name="app_name_welcome">惠信二手平台 不仅仅是聊天</string>
+    <string name="app_name_search">惠信号/手机号</string>
+    <string name="app_name_id">惠信ID: </string>
+    <string name="app_name_phone">小程序商务合作：18870488796</string>
+    <string name="app_name_service">《服务协议》</string>
+    <string name="app_name_protocol">《隐私政策》</string>
+
+    <string name="navigation_title_home">二手</string>
+    <string name="navigation_title_product">商城</string>
+    <string name="navigation_title_message">消息</string>
+    <string name="navigation_title_friend">好友</string>
+    <string name="navigation_title_my">我的</string>
+
+    <string name="search">搜索</string>
+    <string name="scanning">扫一扫</string>
+    <string name="main_message">添加好友</string>
+    <string name="Initiate_group_chat">发起群聊</string>
+    <string name="title_activity_user_info">UserInfoActivity</string>
+    <string name="title_activity_my_collection_list">MyCollectionListActivity</string>
+    <string name="press_say">按住说话</string>
+    <string name="press_send">发送</string>
+    <string name="picture">相片</string>
+    <string name="site">相机</string>
+    <string name="video">视频</string>
+    <string name="location">位置</string>
+    <string name="hongbao">红包</string>
+    <string name="voicechat">语音通话</string>
+    <string name="videochat">视频通话</string>
+    <string name="usercard">个人名片</string>
+    <string name="collect">我的收藏</string>
+    <string name="product">商品</string>
+    <string name="transitional_image">the image of transition</string>
+    <string name="hongbao_moren_zhufu">恭喜发财，大吉大利</string>
+    <string name="title_activity_hong_bao_details">HongBaoDetailsActivity</string>
+    <string name="sex_nan">男</string>
+    <string name="sex_nv">女</string>
+    <string name="loading">正在加载...</string>
+    <string name="noMore">\n已加载全部内容\n</string>
+    <string name="str_request_error">请求出错</string>
+    <string name="avchat_notification">正在与%1$s通话中，点击继续</string>
+    <string name="avchat_call">网络通话</string>
+    <string name="avchat_no_pickup_call">未接听</string>
+    <string name="avchat_invalid_channel_id_finish">对方已挂断,通话结束</string>
+    <string name="avchat_audio_invitation">邀请你语音通话…</string>
+
+    <string name="str_setting_hint">开始消息推送通知 \n\n您可以到 “应用信息”>“通知管理”中开启通知。</string>
+    <string name="str_setting_hint_26">开始消息推送通知 \n\n您可以到 “应用信息”>“通知管理”>“新消息通知”中开启通知。</string>
+
+    <string name="register_success">Register push success.</string>
+    <string name="register_fail">Register push fail.</string>
+    <string name="recv_passthrough_message"> Receive a passthrough message. Content is \"%1$s\"</string>
+    <string name="click_notification_message"> Clicked a notification message. Content is \"%1$s\"</string>
+    <string name="arrive_notification_message"> Arrived a notification message. Content is \"%1$s\"</string>
+    <string name="set_alias_success"> Set alias \"%1$s\" success.</string>
+    <string name="set_alias_fail"> Set alias fail for %1$s.</string>
+    <string name="unset_alias_success"> Unset alias \"%1$s\" success.</string>
+    <string name="unset_alias_fail"> Unset alias fail for %1$s.</string>
+    <string name="set_account_success"> Set account \"%1$s\" success.</string>
+    <string name="set_account_fail"> Set account fail for %1$s.</string>
+    <string name="unset_account_success"> Unset account \"%1$s\" success.</string>
+    <string name="unset_account_fail"> Unset account fail for %1$s.</string>
+    <string name="subscribe_topic_success"> Subscribe topic \"%1$s\" success.</string>
+    <string name="subscribe_topic_fail"> Subscribe topic fail for %1$s.</string>
+    <string name="unsubscribe_topic_success"> Unsubscribe topic \"%1$s\" success.</string>
+    <string name="unsubscribe_topic_fail"> Unsubscribe topic fail for %1$s.</string>
+    <string name="set_accept_time_success"> Set accept time %1$s - %2$s success.</string>
+    <string name="set_accept_time_fail"> Set accept time fail for %1$s.</string>
+
+
+    <string name="str_phone_register">用手机注册</string>
+    <string name="str_next_step">下一步</string>
+    <string name="str_protocol_hint">轻触上面的"下一步"按钮,即表示你同意</string>
+    <string name="str_verification_code">获取验证码</string>
+    <string name="str_register">注册</string>
+
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
 </resources>

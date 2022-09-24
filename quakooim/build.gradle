@@ -21,6 +21,10 @@ android {
             enabled = true
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -37,4 +41,7 @@ dependencies {
     api okhttpInterceptor
     api gson
     api project(':base')
+    api project(':camera')
+    //网络请求
+    api project(':okhttp')
 }

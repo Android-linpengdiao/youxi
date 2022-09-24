@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/recorder_dialog_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/id_recorder_dialog_icon"
+            android:layout_width="100dp"
+            android:layout_height="83dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/record_animate" />
+
+        <TextView
+            android:id="@+id/id_recorder_dialog_label"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="手指上滑，取消发送"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edit_hint_size" />
+    </LinearLayout>
+
+</RelativeLayout>

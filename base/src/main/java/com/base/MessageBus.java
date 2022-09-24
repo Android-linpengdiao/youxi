@@ -216,5 +216,6 @@ public class MessageBus {
     public static final String msgId_download_paused = "download_paused";
     public static final String msgId_download_error = "download_error";
     public static final String msgId_download_warn = "download_warn";
+    public static final String msgId_product = "product";
 
 }

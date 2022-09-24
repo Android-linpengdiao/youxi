@@ -53,6 +53,14 @@ public class FileUtils {
         return getPath() + "media" + File.separator;
     }
 
+    public static String getMasterPath() {
+        return getPath() + "master" + File.separator;
+    }
+
+    public static String getChatPath() {
+        return getMasterPath() + "chat" + File.separator;
+    }
+
     public static String getAppPath() {
         return Environment.getExternalStorageDirectory() + File.separator +
                 BaseApplication.getInstance().getResources().getString(R.string.app_name) + File.separator;
@@ -108,6 +116,64 @@ public class FileUtils {
             }
         }
         return null;
+    }
+
+    // 创建一个附件文件
+    public static File createAttachmentFile(String master, String fileName) {
+        Context context = BaseApplication.getInstance();
+        if (!CommonUtil.sdCardIsAvailable()) {
+            ToastUtils.showShort(context,"SD卡当前不可用");
+            return new File("");
+        }
+//        if (CommonUtil.isBlank(fileName)) {
+//            fileName = "_" + System.currentTimeMillis() + "_TMP";
+//        }
+        // 例子
+        // /sdcard/msgcopy/<appName>/chat/<master>/<fileName>
+        String appName = context.getPackageName();
+        String path = getChatPath() +
+                master + File.separator +
+                fileName;
+
+        File file = new File(path);
+        file.getParentFile().mkdirs();
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            } else {
+                file.delete();
+                file.createNewFile();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new File("");
+        }
+        return file;
+    }
+
+    public static void compressBmpToFile(Bitmap bmp, File file, int option) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        int options = 100;//个人喜欢从80开始,
+        bmp.compress(Bitmap.CompressFormat.JPEG, options, baos);
+        while (baos.toByteArray().length / 1024 > option) {
+            baos.reset();
+            options -= 5;
+            if (options < 0) {
+                options = 5;
+                bmp.compress(Bitmap.CompressFormat.JPEG, options, baos);
+                break;
+            }
+            bmp.compress(Bitmap.CompressFormat.JPEG, options, baos);
+        }
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(baos.toByteArray());
+            fos.flush();
+            fos.close();
+            bmp.recycle();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static File getTempFileName(String picPath) {

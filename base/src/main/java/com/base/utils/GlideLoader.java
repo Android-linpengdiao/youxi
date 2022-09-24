@@ -10,6 +10,7 @@ import com.base.BaseApplication;
 import com.base.R;
 import com.base.manager.DialogManager;
 import com.base.view.GlideRoundTransform;
+import com.base.view.RoundedCornersTransform;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory;
@@ -40,6 +41,17 @@ public class GlideLoader {
         return mInstance;
     }
 
+    public static void LoderAvatar(Context context, String url, ImageView view, int round) {
+        RequestOptions options = new RequestOptions().transform(new GlideRoundTransform(context, round));
+        Glide.with(context)
+                .load(url)
+                .placeholder(R.drawable.ic_default_icon)
+                .error(R.drawable.ic_default_icon)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .apply(options)
+                .into(view);
+    }
+
     public void LoaderUserIcon(Context context, String url, ImageView view) {
         try {
             Glide.with(context)
@@ -53,6 +65,30 @@ public class GlideLoader {
                     .into(view);
         } catch (Exception e) {
             e.getMessage();
+        }
+    }
+
+    public static void LoderChatImage(Context context, String url, ImageView view,int round) {
+        if (!CommonUtil.isBlank(url)) {
+            RequestOptions options = new RequestOptions()
+                    .centerCrop()
+                    .transform(new GlideRoundTransform(context, round))
+                    .placeholder(R.drawable.image)
+                    .error(R.drawable.image)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL);
+            if (url.endsWith("gif")) {
+                Glide.with(context)
+                        .asGif()
+                        .load(url)
+                        .apply(options)
+                        .into(view);
+            } else {
+                Glide.with(context)
+                        .asBitmap()
+                        .load(url)
+                        .apply(options)
+                        .into(view);
+            }
         }
     }
 
@@ -294,6 +330,19 @@ public class GlideLoader {
             e.getMessage();
         }
     }
+    public static void LoderDrawable(Context context, int drawable, ImageView view) {
+        Glide.with(context)
+                .load(drawable)
+                .into(view);
+    }
+
+    public static void LoderCustomEmotionImage(Context context, String url, ImageView view) {
+        Glide.with(context)
+                .load(url)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(view);
+    }
+
 
 
     private Serializable format(String url) {

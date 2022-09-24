@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <integer name="slide_animation_duration">200</integer>
+    <dimen name="design_bottom_navigation_text_size">12sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size">12sp</dimen>
+    <dimen name="design_bottom_navigation_height">60dp</dimen>
+    <dimen name="sider_bar_textsize">14sp</dimen>
+    <dimen name="menu_main_item_icon_heigth">24dp</dimen>
+    <dimen name="title_size_16">16sp</dimen>
+    <dimen name="title_size_18">18sp</dimen>
+    <dimen name="menu_main_item_heigth">50dp</dimen>
+    <dimen name="menu_main_item_left">14dp</dimen>
+    <dimen name="chat_contact_heigth">55dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="TitleBar_height">64dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="edit_content_size">16sp</dimen>
+    <dimen name="edit_hint_size">14sp</dimen>
+    <dimen name="fixed_height_bottom_padding">2dp</dimen>
+    <dimen name="menu_item_heigth_60">60dp</dimen>
+    <dimen name="meun_title_size">15sp</dimen>
+    <dimen name="media_item_heigth">55dp</dimen>
+    <dimen name="chat_message_name_size">12sp</dimen>
+    <dimen name="keyboardHeight">280dp</dimen>
+    <dimen name="min_panel_height">220dp</dimen>
+    <dimen name="max_panel_height">380dp</dimen>
+    <dimen name="chat_media_radius">4dp</dimen>
+    <dimen name="divide_heigth">0.1dp</dimen>
+    <dimen name="media_heigth">56dp</dimen>
+    <dimen name="min_keyboard_height">80dp</dimen>
+    <dimen name="image_thumbnail_spacing">2dp</dimen>
+    <dimen name="im_topbar_height">50dp</dimen>
+    <dimen name="image_thumbnail_ImageWidth">84dp</dimen>
+    <dimen name="image_thumbnail_ImageHeight">93dp</dimen>
+    <dimen name="Input_box_height">60dp</dimen>
+    <dimen name="keyboardheigth">293dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="button_radius">5dp</dimen>
+    <dimen name="im_topbar_title_size">18sp</dimen>
+
+</resources>
