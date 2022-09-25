@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorAppTheme">#1F1C2D</color>
-    <color name="colorAppThemeDark">#2A2737</color>
+    <color name="colorAppTheme">#2A2737</color>
+    <color name="colorAppThemeDark">#1F1C2D</color>
     <color name="transparentDark">#1D000000</color>
     <color name="transparent">#00000000</color>
 
