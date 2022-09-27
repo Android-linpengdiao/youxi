@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 
@@ -57,12 +58,9 @@ public class MainActivity extends BaseActivity {
                 .normalIconItems(unSelectList)//未选中的图片
                 .selectTextColor(Color.parseColor("#8654FF"))//选中的文字颜色
                 .normalTextColor(Color.parseColor("#FFFFFF"))//未选中的文字颜色
-//                .textSizeType(EasyNavigationBar.TextSizeType.TYPE_SP)
-//                .tabTextSize(getResources().getDimensionPixelSize(R.dimen.sp_10))
-                .tabTextSize(10)
+                .textSizeType(TypedValue.COMPLEX_UNIT_PX)
+                .tabTextSize(getResources().getDimensionPixelSize(R.dimen.sp_10))
 
-                .navigationHeight(56)
-                .lineHeight(1)
                 .lineColor(getResources().getColor(R.color.colorPrimary))
 
                 .canScroll(false)//可以滑动
