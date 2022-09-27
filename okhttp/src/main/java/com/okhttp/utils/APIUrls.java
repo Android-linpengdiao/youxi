@@ -11,12 +11,13 @@ public class APIUrls {
 
     public final static String URL_UPLOAD_FILES = "http://store.huixinbaokeji.com/storage/handle";
 
-    public final static String focusfansAdd = URL_DOMAIN + "web/focusfans/add";
-    public final static String focusfansDel = URL_DOMAIN + "web/focusfans/del";
+    public final static String getFriendsList = URL_DOMAIN + "/friends/getFriendsList";
+    public final static String focusfansAdd = URL_DOMAIN + "/web/focusfans/add";
+    public final static String focusfansDel = URL_DOMAIN + "/web/focusfans/del";
     //获取我的关注列表
-    public final static String getFocusPager = URL_DOMAIN + "web/focusfans/getFocusPager";
+    public final static String getFocusPager = URL_DOMAIN + "/web/focusfans/getFocusPager";
     //获取粉丝列表
-    public final static String getFansPager = URL_DOMAIN + "web/focusfans/getFansPager";
+    public final static String getFansPager = URL_DOMAIN + "/web/focusfans/getFansPager";
 
 
     /**

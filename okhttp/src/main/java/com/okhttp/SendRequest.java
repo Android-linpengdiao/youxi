@@ -28,6 +28,18 @@ public class SendRequest {
      * ======================================  爱游  ================================================
      */
 
+    /**
+     * 好友列表
+     *
+     * @param token
+     * @param callback
+     */
+    public static void getFriendsList(String token, Callback callback) {
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+        OkHttpUtils.getInstance().post().params(map).url(APIUrls.getFriendsList).build().execute(callback);
+    }
+
 
     /**
      * type  关注类型 1用户
