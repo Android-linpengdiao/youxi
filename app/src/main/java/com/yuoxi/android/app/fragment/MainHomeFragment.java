@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
+import com.base.view.OnMultiClickListener;
 import com.base.view.RecycleViewDivider;
 import com.okhttp.ResultClient;
 import com.okhttp.SendRequest;
@@ -22,6 +23,8 @@ import com.okhttp.utils.OkHttpUtils;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.BangActivity;
+import com.yuoxi.android.app.activity.UserInfoActivity;
 import com.yuoxi.android.app.adapter.HomeLinearHorizontalAdapter;
 import com.yuoxi.android.app.adapter.HomeLinearVerticalAdapter;
 import com.yuoxi.android.app.databinding.FragmentMainHomeBinding;
@@ -45,11 +48,11 @@ public class MainHomeFragment extends BaseFragment {
         GlideLoader.getInstance().LoaderDrawable(getActivity(), R.drawable.ic_test_user_icon, binding.userIconView);
         initBanner();
 
-        RecycleViewDivider horizontalDivider = new RecycleViewDivider(getActivity(),
-                LinearLayoutManager.HORIZONTAL,
-                CommonUtil.dip2px(getActivity(), 10),
-                Color.parseColor("#181526"));
-        binding.horizontalRecyclerView.addItemDecoration(horizontalDivider);
+//        RecycleViewDivider horizontalDivider = new RecycleViewDivider(getActivity(),
+//                LinearLayoutManager.HORIZONTAL,
+//                CommonUtil.dip2px(getActivity(), 10),
+//                Color.parseColor("#181526"));
+//        binding.horizontalRecyclerView.addItemDecoration(horizontalDivider);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         binding.horizontalRecyclerView.setLayoutManager(layoutManager);
@@ -57,15 +60,22 @@ public class MainHomeFragment extends BaseFragment {
         binding.horizontalRecyclerView.setAdapter(homeLinearHorizontalAdapter);
         homeLinearHorizontalAdapter.refreshData(CommonUtil.getTitles());
 
-        RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
-                LinearLayoutManager.VERTICAL,
-                CommonUtil.dip2px(getActivity(), 10),
-                Color.parseColor("#181526"));
-        binding.verticalRecyclerView.addItemDecoration(verticalDivider);
+//        RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
+//                LinearLayoutManager.VERTICAL,
+//                CommonUtil.dip2px(getActivity(), 10),
+//                Color.parseColor("#00000000"));
+//        binding.verticalRecyclerView.addItemDecoration(verticalDivider);
         binding.verticalRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         HomeLinearVerticalAdapter homeLinearVerticalAdapter = new HomeLinearVerticalAdapter(getActivity());
         binding.verticalRecyclerView.setAdapter(homeLinearVerticalAdapter);
         homeLinearVerticalAdapter.refreshData(CommonUtil.getTitles());
+
+        binding.bangView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                openActivity(BangActivity.class);
+            }
+        });
 
         return binding.getRoot();
     }

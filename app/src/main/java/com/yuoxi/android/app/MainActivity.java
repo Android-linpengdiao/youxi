@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity {
                 .textSizeType(TypedValue.COMPLEX_UNIT_PX)
                 .tabTextSize(getResources().getDimensionPixelSize(R.dimen.sp_10))
 
-                .lineColor(getResources().getColor(R.color.colorPrimary))
+                .lineColor(getResources().getColor(R.color.dividerColor))
 
                 .canScroll(false)//可以滑动
                 .mode(EasyNavigationBar.NavigationMode.MODE_NORMAL)

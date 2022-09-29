@@ -2,6 +2,7 @@ package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -10,12 +11,13 @@ import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
 import com.base.view.RecycleViewDivider;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.databinding.ItemBangJubenBinding;
 import com.yuoxi.android.app.databinding.ItemHomeLinearVerticalBinding;
 
 /**
- * 首页 - 竖布局
+ * 榜单 - 剧本
  */
-public class HomeLinearVerticalAdapter extends BaseRecyclerAdapter<String, ItemHomeLinearVerticalBinding> {
+public class BangJuBenVerticalAdapter extends BaseRecyclerAdapter<String, ItemBangJubenBinding> {
 
     private OnClickListener onClickListener;
 
@@ -23,23 +25,18 @@ public class HomeLinearVerticalAdapter extends BaseRecyclerAdapter<String, ItemH
         this.onClickListener = onClickListener;
     }
 
-    public HomeLinearVerticalAdapter(Context context) {
+    public BangJuBenVerticalAdapter(Context context) {
         super(context);
     }
 
     @Override
     protected int getLayoutResId(int viewType) {
-        return R.layout.item_home_linear_vertical;
+        return R.layout.item_bang_juben;
     }
 
     @Override
-    protected void onBindItem(ItemHomeLinearVerticalBinding binding, String dataBean, int position) {
+    protected void onBindItem(ItemBangJubenBinding binding, String dataBean, int position) {
 
-//        RecycleViewDivider horizontalDivider = new RecycleViewDivider(mContext,
-//                LinearLayoutManager.HORIZONTAL,
-//                CommonUtil.dip2px(mContext, 6),
-//                Color.parseColor("#2A2737"));
-//        binding.tagRecyclerView.addItemDecoration(horizontalDivider);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         binding.tagRecyclerView.setLayoutManager(layoutManager);
@@ -49,6 +46,10 @@ public class HomeLinearVerticalAdapter extends BaseRecyclerAdapter<String, ItemH
 
 //        binding.titleView.setText(null);
         GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
+        binding.tagView.setVisibility(position < 3 ? View.VISIBLE : View.GONE);
+        binding.tagView.setText(String.valueOf(position + 1));
+        binding.tagView.setBackgroundResource(position == 0 ? R.mipmap.ic_bang_juben_tag_1 : position == 1 ? R.mipmap.ic_bang_juben_tag_2 : R.mipmap.ic_bang_juben_tag_3);
+        binding.getRoot().setBackgroundResource(position == 0 ? R.mipmap.ic_bang_juben_1 : position == 1 ? R.mipmap.ic_bang_juben_2 : R.mipmap.ic_bang_juben_3);
 
 
     }
