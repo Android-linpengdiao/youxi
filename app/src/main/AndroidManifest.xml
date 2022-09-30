@@ -18,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.shiwu.SWHomeActivity"></activity>
+        <activity android:name=".activity.MateActivity"></activity>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".activity.anjian.AJHomeActivity" />
+        <activity android:name=".activity.shiwu.SWHomeActivity" />
         <activity android:name=".activity.shiwu.SWGoldActivity" />
         <activity android:name=".activity.BangActivity" />
         <activity android:name=".activity.YWFilterActivity" />

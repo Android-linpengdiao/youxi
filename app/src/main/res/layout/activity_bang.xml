@@ -62,7 +62,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp_7"
-                    android:onClick="onClickBack"
+                    android:onClick="onClickRule"
                     android:padding="@dimen/dp_7"
                     android:src="@mipmap/ic_bang_guize" />
 

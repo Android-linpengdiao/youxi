@@ -2,6 +2,7 @@ package com.yuoxi.android.app.activity.shiwu;
 
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.activity.BaseActivity;
@@ -17,6 +18,7 @@ public class SWHomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = getViewData(R.layout.activity_swhome);
+        setStatusBarHeight();
 
         MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
 
@@ -27,5 +29,12 @@ public class SWHomeActivity extends BaseActivity {
         binding.viewPager.setCurrentItem(0);
         binding.viewPager.setOffscreenPageLimit(mainPagerAdapter.getCount());
         binding.tabLayout.setupWithViewPager(binding.viewPager);
+
+        binding.swGoldView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(SWGoldActivity.class);
+            }
+        });
     }
 }

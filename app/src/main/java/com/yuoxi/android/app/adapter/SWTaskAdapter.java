@@ -5,8 +5,9 @@ import android.content.Context;
 import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemSwGoldBinding;
+import com.yuoxi.android.app.databinding.ItemSwTaskBinding;
 
-public class SWTaskAdapter extends BaseRecyclerAdapter<String, ItemSwGoldBinding> {
+public class SWTaskAdapter extends BaseRecyclerAdapter<String, ItemSwTaskBinding> {
 
 
     private OnClickListener onClickListener;
@@ -21,7 +22,7 @@ public class SWTaskAdapter extends BaseRecyclerAdapter<String, ItemSwGoldBinding
 
     @Override
     protected int getLayoutResId(int viewType) {
-        return R.layout.item_sw_gold;
+        return R.layout.item_sw_task;
     }
 
     @Override
@@ -30,7 +31,7 @@ public class SWTaskAdapter extends BaseRecyclerAdapter<String, ItemSwGoldBinding
     }
 
     @Override
-    protected void onBindItem(ItemSwGoldBinding binding, String dataBean, int position) {
+    protected void onBindItem(ItemSwTaskBinding binding, String dataBean, int position) {
 
     }
 }

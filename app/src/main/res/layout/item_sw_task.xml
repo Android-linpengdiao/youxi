@@ -13,11 +13,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="@dimen/dp_15"
-        tools:background="#181526">
+        android:paddingRight="@dimen/dp_15"
+        tools:background="#ffffff">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_84"
+            android:layout_height="@dimen/dp_75"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -26,48 +27,59 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_10"
-                android:gravity="center_vertical"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="金币抽奖花费"
                     android:singleLine="true"
-                    android:textColor="#ffdadada"
-                    android:textSize="@dimen/sp_18"
-                    />
+                    android:text="完成一局任意多人剧本"
+                    android:textColor="#4e3e51"
+                    android:textSize="@dimen/sp_14" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2022-12-12 12:12:12"
-                    android:layout_marginTop="@dimen/dp_12"
-                    android:singleLine="true"
-                    android:textColor="#ff666666"
-                    android:textSize="@dimen/sp_12"
-                    />
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_2"
+                        android:src="@mipmap/ic_sw_gold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="100"
+                        android:textColor="#F5A91D"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:maxWidth="@dimen/dp_200"
+                android:layout_width="@dimen/dp_66"
+                android:layout_height="@dimen/dp_30"
                 android:singleLine="true"
-                android:text="+100"
-                android:textColor="#ffce4ef6"
-                android:textSize="@dimen/sp_18"
-                android:layout_marginRight="@dimen/dp_15"
-                />
+                android:gravity="center"
+                android:text="领取"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_14"
+                android:background="@drawable/button_lq"/>
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_1"
-            android:background="#0DFFFFFF" />
+            android:background="#0D1D1D1D" />
 
     </LinearLayout>
 

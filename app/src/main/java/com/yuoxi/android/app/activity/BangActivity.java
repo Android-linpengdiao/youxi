@@ -3,6 +3,7 @@ package com.yuoxi.android.app.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -60,5 +61,12 @@ public class BangActivity extends BaseActivity {
 
             }
         });
+    }
+
+    public void onClickBack(View view) {
+        finish();
+    }
+
+    public void onClickRule(View view) {
     }
 }

@@ -29,6 +29,10 @@ public class SWGoldActivity extends BaseActivity {
     }
 
     public void onClickSWHome(View view) {
-        openActivity(SWHomeActivity.class);
+
+    }
+
+    public void onClickBack(View view) {
+        finish();
     }
 }

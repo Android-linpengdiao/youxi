@@ -178,10 +178,12 @@
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <View
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="#F838A9" />
+                                android:background="#F838A9"
+                                android:text="剧本大厅"
+                                android:textColor="#ffffff"/>
                         </androidx.cardview.widget.CardView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -203,16 +205,19 @@
                             android:orientation="horizontal">
 
                             <androidx.cardview.widget.CardView
+                                android:id="@+id/mateView"
                                 android:layout_width="@dimen/dp_0"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 app:cardCornerRadius="@dimen/dp_5"
                                 app:cardElevation="@dimen/dp_0">
 
-                                <View
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="#DE609D" />
+                                    android:background="#DE609D"
+                                    android:text="快速开始"
+                                    android:textColor="#ffffff"/>
                             </androidx.cardview.widget.CardView>
 
                             <View
@@ -227,10 +232,12 @@
                                 app:cardCornerRadius="@dimen/dp_5"
                                 app:cardElevation="@dimen/dp_0">
 
-                                <View
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="#4C82E7" />
+                                    android:background="#4C82E7"
+                                    android:text="排行榜"
+                                    android:textColor="#ffffff"/>
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -241,6 +248,7 @@
                             android:layout_height="@dimen/dp_5" />
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/anJianView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_0"
                             android:layout_weight="134"
@@ -250,10 +258,12 @@
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <View
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="#EE7868" />
+                                android:background="#EE7868"
+                                android:text="案件室"
+                                android:textColor="#ffffff"/>
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>

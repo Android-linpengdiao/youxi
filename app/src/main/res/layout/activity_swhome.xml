@@ -13,6 +13,8 @@
         android:background="@mipmap/ic_sw_home_bg"
         android:orientation="vertical">
 
+        <include layout="@layout/status_bar" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_45"
@@ -39,15 +41,15 @@
                 android:textSize="@dimen/sp_18" />
 
             <TextView
-                android:id="@+id/menuTextView"
+                android:id="@+id/swGoldView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:paddingLeft="@dimen/dp_16"
                 android:paddingRight="@dimen/dp_16"
-                android:text=""
-                android:textColor="#333333"
+                android:text="金币明细"
+                android:textColor="#ffffff"
                 android:textSize="@dimen/sp_15" />
 
         </RelativeLayout>
@@ -55,6 +57,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
@@ -65,106 +72,412 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_3"
                 android:gravity="center"
-                android:text="金币明细"
+                android:text="1872"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/sp_20" />
+                android:textSize="@dimen/sp_28" />
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/dp_5"
                 android:text="金币"
-                android:textColor="#ffffffff"
+                android:textColor="#87FFFFFF"
                 android:textSize="@dimen/sp_15" />
 
             <TextView
-                android:layout_width="@dimen/dp_80"
-                android:layout_height="@dimen/dp_34"
+                android:layout_width="@dimen/dp_78"
+                android:layout_height="@dimen/dp_30"
                 android:layout_centerInParent="true"
-                android:background="@drawable/button_stroke_dh"
+                android:background="@drawable/button_lq"
                 android:gravity="center"
-                android:text="兑换"
+                android:text="金币夺宝"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/sp_18" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_130"
-            android:layout_margin="@dimen/dp_15"
-            android:background="@mipmap/ic_sw_gold_bg"
-            android:orientation="vertical"
-            android:padding="@dimen/dp_20">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/dp_30"
-                    android:layout_height="@dimen/dp_30"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:src="@mipmap/ic_sw_gold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="金币明细"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/sp_20" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_15"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_weight="1"
-                    android:text="888"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/sp_32" />
-
-                <TextView
-                    android:layout_width="@dimen/dp_80"
-                    android:layout_height="@dimen/dp_34"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/button_stroke_dh"
-                    android:gravity="center"
-                    android:text="兑换"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/sp_18" />
-            </LinearLayout>
-
+                android:textSize="@dimen/sp_14" />
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_15"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:cardElevation="@dimen/dp_0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="@drawable/tablayout_background"
+                    android:gravity="center"
+                    android:text="已累计签到1天"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/sp_16" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_15">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginBottom="@dimen/dp_15">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        app:cardCornerRadius="@dimen/dp_6"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_80"
+                            android:background="#F6F7FB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="点击补签"
+                                android:textColor="#4e3e51"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_30"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_4"
+                                android:src="@mipmap/ic_sw_gold" />
+
+                            <TextView
+                                android:layout_width="@dimen/dp_42"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginTop="@dimen/dp_3"
+                                android:background="@drawable/button_mg"
+                                android:gravity="center"
+                                android:text="补签"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_7" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="@dimen/dp_12"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:cardCornerRadius="@dimen/dp_8"
             app:cardElevation="@dimen/dp_0">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/ic_sw_task_bg"
                 android:orientation="vertical">
 
                 <com.yuoxi.android.app.tab.TopTabLayout
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_45"
+                    android:background="@drawable/tablayout_background"
                     android:overScrollMode="never"
                     android:scrollbars="none"
                     app:yj_tabBackground="@null"

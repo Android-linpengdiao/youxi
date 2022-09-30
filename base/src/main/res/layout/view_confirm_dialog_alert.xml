@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:paddingTop="@dimen/dp_30">
 
-            <com.base.view.TextFontView
+            <TextView
                 android:id="@+id/titleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:textColor="#02091A"
                 android:textSize="@dimen/sp_16" />
 
-            <com.base.view.TextFontView
+            <TextView
                 android:id="@+id/contentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right">
 
-                <com.base.view.TextFontView
+                <TextView
                     android:id="@+id/cancelView"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_48"
@@ -73,7 +73,7 @@
                     android:layout_height="match_parent"
                     android:background="#F1F1F6" />
 
-                <com.base.view.TextFontView
+                <TextView
                     android:id="@+id/confirmView"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_48"
