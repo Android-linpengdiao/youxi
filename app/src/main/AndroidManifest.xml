@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BangActivity"></activity>
+        <activity android:name=".activity.shiwu.SWGoldActivity"></activity>
+        <activity android:name=".activity.BangActivity" />
         <activity android:name=".activity.YWFilterActivity" />
         <activity android:name=".activity.GroupsActivity" />
         <activity android:name=".activity.BlacklistActivity" />

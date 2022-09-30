@@ -25,6 +25,7 @@ import com.youth.banner.listener.OnBannerListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.activity.BangActivity;
 import com.yuoxi.android.app.activity.UserInfoActivity;
+import com.yuoxi.android.app.activity.shiwu.SWGoldActivity;
 import com.yuoxi.android.app.adapter.HomeLinearHorizontalAdapter;
 import com.yuoxi.android.app.adapter.HomeLinearVerticalAdapter;
 import com.yuoxi.android.app.databinding.FragmentMainHomeBinding;
@@ -70,6 +71,12 @@ public class MainHomeFragment extends BaseFragment {
         binding.verticalRecyclerView.setAdapter(homeLinearVerticalAdapter);
         homeLinearVerticalAdapter.refreshData(CommonUtil.getTitles());
 
+        binding.swGoldView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                openActivity(SWGoldActivity.class);
+            }
+        });
         binding.bangView.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void OnMultiClick(View view) {
