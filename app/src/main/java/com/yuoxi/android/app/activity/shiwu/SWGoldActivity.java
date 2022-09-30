@@ -2,6 +2,7 @@ package com.yuoxi.android.app.activity.shiwu;
 
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -14,6 +15,7 @@ import com.yuoxi.android.app.databinding.ActivitySWGoldBinding;
 public class SWGoldActivity extends BaseActivity {
 
     private ActivitySWGoldBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,5 +26,9 @@ public class SWGoldActivity extends BaseActivity {
         SWGoldAdapter swGoldAdapter = new SWGoldAdapter(SWGoldActivity.this);
         binding.recyclerView.setAdapter(swGoldAdapter);
         swGoldAdapter.refreshData(CommonUtil.getTitles());
+    }
+
+    public void onClickSWHome(View view) {
+        openActivity(SWHomeActivity.class);
     }
 }
