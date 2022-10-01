@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.MateActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/ic_sw_home_bg"
+        android:orientation="vertical">
+
+        <include layout="@layout/status_bar" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/backView"
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:onClick="onClickBack"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="日常事物"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/swGoldView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:text="金币明细"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_15" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

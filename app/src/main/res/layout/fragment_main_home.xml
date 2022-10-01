@@ -169,6 +169,7 @@
                         android:layout_weight="184">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/juBenView"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_0"
                             app:cardCornerRadius="@dimen/dp_5"

@@ -46,14 +46,14 @@
                     android:id="@+id/tabLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dp_32"
-                    android:layout_marginRight="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
                     android:layout_weight="1"
                     android:overScrollMode="never"
                     android:scrollbars="none"
                     app:yj_tabBackground="@null"
                     app:yj_tabGravity="fill"
-                    app:yj_tabIndicatorDrawable="@drawable/tab_indicator"
+                    app:yj_tabIndicatorDrawable="@drawable/tab_indicator_c"
                     app:yj_tabMode="fixed"
                     app:yj_tabSelectTextSize="@dimen/sp_18"
                     app:yj_tabSelectedTextColor="#FFFFFF"
@@ -124,7 +124,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="排序"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/sortRecyclerView"
@@ -148,7 +148,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="人数"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/peopleRecyclerView"
@@ -172,7 +172,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="题材"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/ticaiRecyclerView"
@@ -196,7 +196,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="时代"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/shidaiRecyclerView"
@@ -220,7 +220,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="难度"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/nanduRecyclerView"
@@ -244,7 +244,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="价格"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/jiageRecyclerView"
@@ -268,7 +268,7 @@
                         android:layout_marginRight="@dimen/dp_5"
                         android:text="游玩"
                         android:textColor="#ff909090"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/youwanRecyclerView"

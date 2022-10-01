@@ -2,24 +2,20 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_selected="true">
         <layer-list>
-            <item android:left="@dimen/dp_10" android:right="@dimen/dp_10">
+            <item android:left="@dimen/dp_0" android:right="@dimen/dp_0">
                 <shape>
                     <corners android:radius="@dimen/dp_20" />
-                    <gradient android:startColor="#A465F4"
-                        android:endColor="#6A65F4"
-                        android:angle="0"/>
+                    <solid android:color="#26A465F4" />
                 </shape>
             </item>
         </layer-list>
     </item>
     <item android:state_selected="false">
         <layer-list>
-            <item android:left="@dimen/dp_10" android:right="@dimen/dp_10">
+            <item android:left="@dimen/dp_0" android:right="@dimen/dp_0">
                 <shape>
                     <corners android:radius="@dimen/dp_20" />
-                    <gradient android:startColor="#4DA465F4"
-                        android:endColor="#4D6A65F4"
-                        android:angle="0"/>
+                    <solid android:color="#00000000" />
                 </shape>
             </item>
         </layer-list>

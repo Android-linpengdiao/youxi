@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:background="@drawable/item_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_10">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/dp_4"
+                    app:cardElevation="@dimen/dp_0">
+
+                    <ImageView
+                        android:id="@+id/coverView"
+                        android:layout_width="@dimen/dp_70"
+                        android:layout_height="@dimen/dp_98"
+                        android:background="@drawable/image" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:minHeight="@dimen/dp_98"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/dp_24"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/titleView"
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="十分之一"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/sp_18" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5"
+                                    android:textColor="#ffaa4cff"
+                                    android:textSize="@dimen/sp_16" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="/7"
+                                    android:textColor="#ffffff"
+                                    android:textSize="@dimen/sp_16" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_0"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:src="@mipmap/ic_renshu" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:text="5男2女"
+                                android:textColor="#D1FFFFFF"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:src="@mipmap/ic_time" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:text="3小时"
+                                android:textColor="#D1FFFFFF"
+                                android:textSize="@dimen/sp_12" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:src="@mipmap/ic_xinshou" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:text="新手"
+                                android:textColor="#D1FFFFFF"
+                                android:textSize="@dimen/sp_12" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/tagRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_marginTop="@dimen/dp_6" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_0"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.yuoxi.android.app.view.RatingBar
+                                android:id="@+id/ratingBarView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_12"
+                                android:layout_marginRight="@dimen/dp_6"
+                                app:ratingDefault="@drawable/svg_star_g"
+                                app:ratingDefaultSelectNum="3.5"
+                                app:ratingDistance="@dimen/dp_4"
+                                app:ratingHeight="@dimen/dp_12"
+                                app:ratingIsFull="true"
+                                app:ratingSelect="@drawable/svg_star_y"
+                                app:ratingSelectable="false"
+                                app:ratingTotalNum="5"
+                                app:ratingWidth="@dimen/dp_12" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="9.5分"
+                                android:textColor="#D1FFFFFF"
+                                android:textSize="@dimen/sp_12" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="#1AFFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_6"
+                android:layout_marginRight="@dimen/dp_14"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/userRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="组队中"
+                    android:textColor="#ffaa4cff"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tagView"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_20"
+            android:background="@mipmap/ic_tag_chaoji"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</layout>

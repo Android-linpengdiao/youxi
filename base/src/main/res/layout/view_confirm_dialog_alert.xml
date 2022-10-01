@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/dp_26"
-        android:paddingRight="@dimen/dp_26">
+        android:paddingLeft="@dimen/dp_48"
+        android:paddingRight="@dimen/dp_48">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_gravity="center"
             android:background="@drawable/button_dialog"
             android:orientation="vertical"
-            android:paddingTop="@dimen/dp_30">
+            android:paddingTop="@dimen/dp_16">
 
             <TextView
                 android:id="@+id/titleView"
@@ -30,9 +30,9 @@
                 android:layout_marginLeft="@dimen/dp_16"
                 android:layout_marginRight="@dimen/dp_16"
                 android:gravity="center"
-                android:text="@string/Hint"
-                android:textColor="#02091A"
-                android:textSize="@dimen/sp_16" />
+                tools:text="案件已开始"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_20" />
 
             <TextView
                 android:id="@+id/contentView"
@@ -41,46 +41,45 @@
                 android:layout_marginLeft="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_16"
                 android:layout_marginRight="@dimen/dp_16"
-                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_18"
                 android:lineSpacingExtra="@dimen/dp_2"
                 android:gravity="center"
-                android:textColor="#696972"
+                android:textColor="#B8FFFFFF"
                 android:textSize="@dimen/sp_14"
-                tools:text="内容" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_0_5"
-                android:background="#F1F1F6" />
+                tools:text="当前案件已开始，是否参与围观" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
                 android:gravity="right">
 
                 <TextView
                     android:id="@+id/cancelView"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_28"
+                    android:background="@drawable/button_white_100_t10"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="取消"
-                    android:textColor="#02091A"
+                    android:textColor="#ffffff"
                     android:textSize="@dimen/sp_14" />
 
                 <View
-                    android:layout_width="@dimen/dp_0_5"
-                    android:layout_height="match_parent"
-                    android:background="#F1F1F6" />
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="match_parent"/>
 
                 <TextView
                     android:id="@+id/confirmView"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/dp_48"
+                    android:layout_height="@dimen/dp_28"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="确定"
-                    android:textColor="#02091A"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/button_mg"
                     android:textSize="@dimen/sp_14" />
 
             </LinearLayout>

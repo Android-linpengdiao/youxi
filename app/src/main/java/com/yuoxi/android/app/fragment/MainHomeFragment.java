@@ -27,6 +27,7 @@ import com.yuoxi.android.app.activity.BangActivity;
 import com.yuoxi.android.app.activity.MateActivity;
 import com.yuoxi.android.app.activity.UserInfoActivity;
 import com.yuoxi.android.app.activity.anjian.AJHomeActivity;
+import com.yuoxi.android.app.activity.juben.JBHomeActivity;
 import com.yuoxi.android.app.activity.shiwu.SWGoldActivity;
 import com.yuoxi.android.app.activity.shiwu.SWHomeActivity;
 import com.yuoxi.android.app.adapter.HomeLinearHorizontalAdapter;
@@ -80,6 +81,12 @@ public class MainHomeFragment extends BaseFragment {
                 openActivity(SWHomeActivity.class);
             }
         });
+        binding.juBenView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                openActivity(JBHomeActivity.class);
+            }
+        });
         binding.bangView.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void OnMultiClick(View view) {
@@ -91,7 +98,8 @@ public class MainHomeFragment extends BaseFragment {
             public void OnMultiClick(View view) {
                 openActivity(AJHomeActivity.class);
             }
-        });binding.mateView.setOnClickListener(new OnMultiClickListener() {
+        });
+        binding.mateView.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void OnMultiClick(View view) {
                 openActivity(MateActivity.class);
