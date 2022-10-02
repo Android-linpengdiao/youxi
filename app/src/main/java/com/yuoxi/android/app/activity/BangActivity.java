@@ -68,5 +68,6 @@ public class BangActivity extends BaseActivity {
     }
 
     public void onClickRule(View view) {
+        openActivity(BangRuleActivity.class);
     }
 }

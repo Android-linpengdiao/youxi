@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.base.BaseApplication;
 import com.base.R;
 import com.base.manager.DialogManager;
+import com.base.view.GlideBlurTransformation;
 import com.base.view.GlideRoundTransform;
 import com.base.view.RoundedCornersTransform;
 import com.bumptech.glide.Glide;
@@ -277,6 +278,22 @@ public class GlideLoader {
             e.getMessage();
         }
 
+    }
+
+    public static void LoaderBlurImage(Context context, String url, ImageView view) {
+        try {
+            RequestOptions requestOptions = new RequestOptions();
+            requestOptions
+                    .centerCrop()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .transform(new GlideBlurTransformation(context));
+            Glide.with(context)
+                    .load(url)
+                    .apply(requestOptions)
+                    .into(view);
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
 
     public void LoaderMediaImage(Context context, String url, ImageView view) {

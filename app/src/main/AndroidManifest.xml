@@ -18,7 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.juben.JuBenDetailsActivity"></activity>
+        <activity android:name=".activity.CommentActivity"></activity>
+        <activity android:name=".activity.BangRuleActivity" />
+        <activity
+            android:name=".activity.juben.JuBenDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.juben.JBHomeActivity" />
         <activity android:name=".activity.MateActivity" />
         <activity android:name=".activity.SearchActivity" />

@@ -36,7 +36,7 @@ public class BangGaoWanVerticalAdapter extends BaseRecyclerAdapter<String, ItemB
     protected void onBindItem(ItemBangGaowanBinding binding, String dataBean, int position) {
         GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView, 30);
         binding.indexView.setText(String.valueOf(position + 4));
-        binding.getRoot().setBackgroundResource(position == 0 ? R.mipmap.ic_bang_gaowan_4 : position == 1 ? R.mipmap.ic_bang_gaowan_5 : R.mipmap.ic_bang_gaowan_6);
+        binding.getRoot().setBackgroundResource(position == 0 ? R.mipmap.ic_bang_gaowan_4 : position == 1 ? R.mipmap.ic_bang_gaowan_5: position == 5 ? R.mipmap.ic_bang_gaowan_bang : R.mipmap.ic_bang_gaowan_6);
 
 
     }

@@ -29,6 +29,8 @@ import com.base.R;
 import com.base.databinding.ViewAddPermissionDialogBinding;
 import com.base.databinding.ViewConfirmDialogAlertBinding;
 import com.base.databinding.ViewEditUserNameDialogBinding;
+import com.base.databinding.ViewSendJubenDialogBinding;
+import com.base.databinding.ViewSignInDialogBinding;
 import com.base.utils.CommonUtil;
 import com.base.utils.ToastUtils;
 
@@ -142,8 +144,107 @@ public class DialogManager {
         return dialog;
     }
 
-    public AlertDialog addPermissionDialog(Activity activity, String title,Listener listener) {
-        return addPermissionDialog(activity,title,null,null,listener);
+    /**
+     * @param type 0-签到成功  1-补签成功 2-领取金币 3-抽奖领取金币
+     * @return
+     */
+    public AlertDialog signInDialog(Activity act, int type, String title, String content, String cancelText, String confirmText, final Listener listener) {
+        final AlertDialog dialog = new AlertDialog.Builder(act, AlertDialog.THEME_HOLO_DARK).create();
+        dialog.setCancelable(true);
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.getDecorView().setBackgroundColor(act.getResources().getColor(R.color.transparent));
+
+        View contentView = LayoutInflater.from(act).inflate(R.layout.view_sign_in_dialog, null);
+        window.setContentView(contentView);
+        ViewSignInDialogBinding binding = DataBindingUtil.bind(contentView);
+
+        binding.signInContainer.setVisibility(type == 0 || type == 2 || type == 3 ? View.VISIBLE : View.GONE);
+        binding.signInPatchContainer.setVisibility(type == 1 ? View.VISIBLE : View.GONE);
+        binding.cancelView.setVisibility(type == 3 ? View.VISIBLE : View.GONE);
+        binding.container.setBackgroundResource(
+                type == 1 ? R.mipmap.ic_sw_sign_in_bu :
+                        R.mipmap.ic_sw_sign_in);
+
+        if (!CommonUtil.isBlank(confirmText)) {
+            binding.confirmView.setText(confirmText);
+        }
+        binding.closeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        binding.cancelView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemLeft();
+                }
+                dialog.cancel();
+            }
+        });
+        binding.confirmView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemRight();
+                }
+                dialog.cancel();
+            }
+        });
+        return dialog;
+    }
+
+    public AlertDialog sendJuBenDialog(Activity act, String title, String content, String cancelText, String confirmText, final Listener listener) {
+        final AlertDialog dialog = new AlertDialog.Builder(act, AlertDialog.THEME_HOLO_DARK).create();
+        dialog.setCancelable(true);
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.getDecorView().setBackgroundColor(act.getResources().getColor(R.color.transparent));
+
+        View contentView = LayoutInflater.from(act).inflate(R.layout.view_send_juben_dialog, null);
+        window.setContentView(contentView);
+        ViewSendJubenDialogBinding binding = DataBindingUtil.bind(contentView);
+
+        if (!CommonUtil.isBlank(cancelText)) {
+            binding.cancelView.setText(cancelText);
+        }
+        if (!CommonUtil.isBlank(confirmText)) {
+            binding.confirmView.setText(confirmText);
+        }
+        binding.closeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemLeft();
+                }
+                dialog.cancel();
+            }
+        });
+        binding.cancelView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemLeft();
+                }
+                dialog.cancel();
+            }
+        });
+        binding.confirmView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemRight();
+                }
+                dialog.cancel();
+            }
+        });
+        return dialog;
+    }
+
+    public AlertDialog addPermissionDialog(Activity activity, String title, Listener listener) {
+        return addPermissionDialog(activity, title, null, null, listener);
     }
 
     public AlertDialog addPermissionDialog(Activity activity, String title, String cancelText, String confirmText, final Listener listener) {

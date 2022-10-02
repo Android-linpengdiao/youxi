@@ -1,8 +1,10 @@
 package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
+import android.view.View;
 
 import com.base.view.OnClickListener;
+import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemSwGoldBinding;
 import com.yuoxi.android.app.databinding.ItemSwTaskBinding;
@@ -32,6 +34,13 @@ public class SWTaskAdapter extends BaseRecyclerAdapter<String, ItemSwTaskBinding
 
     @Override
     protected void onBindItem(ItemSwTaskBinding binding, String dataBean, int position) {
-
+        binding.confirmView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
     }
 }

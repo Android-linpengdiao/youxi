@@ -299,8 +299,8 @@
                         android:textSize="@dimen/sp_14" />
 
                     <ImageView
-                        android:layout_width="@dimen/dp_12"
-                        android:layout_height="@dimen/dp_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@mipmap/ic_arrow_right" />
                 </LinearLayout>
 

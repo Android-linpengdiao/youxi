@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
+import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.juben.JuBenDetailsActivity;
 import com.yuoxi.android.app.databinding.ItemAjJubenBinding;
 import com.yuoxi.android.app.databinding.ItemBangJubenBinding;
 
@@ -48,6 +50,12 @@ public class AJJuBenVerticalAdapter extends BaseRecyclerAdapter<String, ItemAjJu
         binding.tagView.setText(String.valueOf(position + 1));
         binding.tagView.setBackgroundResource(position == 0 ? R.mipmap.ic_tag_chaoji : position == 1 ? R.mipmap.ic_tag_chaoji : R.mipmap.ic_tag_chaoji);
 
+        binding.getRoot().setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                openActivity(JuBenDetailsActivity.class);
+            }
+        });
 
     }
 }

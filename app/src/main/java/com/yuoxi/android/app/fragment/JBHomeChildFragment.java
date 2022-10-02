@@ -57,25 +57,18 @@ public class JBHomeChildFragment extends BaseFragment {
             juBenVerticalAdapter.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view, Object object) {
-                    switch (view.getId()) {
-                        case R.id.coverView:
-                            openActivity(JuBenDetailsActivity.class);
-                            break;
-                        default:
-                            DialogManager.getInstance().confirmDialog(getActivity(),
-                                    "案件已开始", "当前案件已开始，是否参与围观", "取消", "去围观",
-                                    new DialogManager.Listener() {
-                                        @Override
-                                        public void onItemLeft() {
+                    DialogManager.getInstance().confirmDialog(getActivity(),
+                            "案件已开始", "当前案件已开始，是否参与围观", "取消", "去围观",
+                            new DialogManager.Listener() {
+                                @Override
+                                public void onItemLeft() {
 
-                                        }
+                                }
 
-                                        @Override
-                                        public void onItemRight() {
-                                        }
-                                    });
-                            break;
-                    }
+                                @Override
+                                public void onItemRight() {
+                                }
+                            });
 
                 }
 

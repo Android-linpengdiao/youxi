@@ -96,6 +96,7 @@
                 android:background="@drawable/button_lq"
                 android:gravity="center"
                 android:text="金币夺宝"
+                android:onClick="onClickChouJiang"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/sp_14" />
         </LinearLayout>
@@ -136,10 +137,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn1View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -182,10 +185,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn2View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -228,10 +233,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn3View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -274,10 +281,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn4View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -326,10 +335,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn5View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -372,10 +383,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn6View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView
@@ -418,10 +431,12 @@
                         app:cardElevation="@dimen/dp_0">
 
                         <LinearLayout
+                            android:id="@+id/signIn7View"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_80"
                             android:background="#F6F7FB"
                             android:gravity="center"
+                            android:onClick="onClickSignIn"
                             android:orientation="vertical">
 
                             <TextView

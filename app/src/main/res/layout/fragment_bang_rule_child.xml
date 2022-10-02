@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:background="@mipmap/ic_bang_bg">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_23"
+                android:text="奖励说明"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_16" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="第一名奖励"
+                    android:textColor="#fff1cf88"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_80"
+                    android:background="@mipmap/ic_rule_cover"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@mipmap/ic_bang_gaowan_1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="至尊皇帝"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:background="@mipmap/ic_rule_cover"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@mipmap/ic_bang_gaowan_1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="昨日神豪"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_80"
+                    android:background="@mipmap/ic_rule_cover"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@mipmap/ic_bang_gaowan_1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="守护者"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_26"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="前十奖励"
+                    android:textColor="#fff1cf88"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:background="@mipmap/ic_rule_cover"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@mipmap/ic_bang_gaowan_1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="至尊皇帝"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:background="@mipmap/ic_rule_cover"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@mipmap/ic_bang_gaowan_1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="昨日神豪"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_14" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="入榜奖励"
+                    android:textColor="#fff1cf88"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@mipmap/ic_rule_cover"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_56"
+                    android:layout_height="@dimen/dp_56"
+                    android:src="@mipmap/ic_bang_gaowan_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:gravity="center"
+                    android:text="至尊皇帝"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_36"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="奖励规则"
+                    android:textColor="#fff1cf88"
+                    android:textSize="@dimen/sp_16" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_rule_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_23"
+                android:layout_marginRight="@dimen/dp_23"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@drawable/button_mg"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_12"
+                    android:minHeight="@dimen/dp_12"
+                    android:text="1"
+                    android:textColor="#ff2b0837"
+                    android:textSize="@dimen/sp_10" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="什么是高玩榜"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="在平台统计周期内，对收到礼物累计价值按照有多到少进行排名的用户"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_23"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_23"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@drawable/button_mg"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_12"
+                    android:minHeight="@dimen/dp_12"
+                    android:text="2"
+                    android:textColor="#ff2b0837"
+                    android:textSize="@dimen/sp_10" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="什么是月榜"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="在平台统计周期内，对收到礼物累计价值按照有多到少进行排名的用户"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_23"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_23"
+                android:layout_marginBottom="@dimen/dp_53"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@drawable/button_mg"
+                    android:gravity="center"
+                    android:minWidth="@dimen/dp_12"
+                    android:minHeight="@dimen/dp_12"
+                    android:text="3"
+                    android:textColor="#ff2b0837"
+                    android:textSize="@dimen/sp_10" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="怎么领取奖励"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="在平台统计周期内，对收到礼物累计价值按照有多到少进行排名的用户"
+                        android:textColor="#ffa765ce"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

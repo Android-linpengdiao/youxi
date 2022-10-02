@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2D2E40"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        app:cardBackgroundColor="#2D2E40"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_0">
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_180"
+            android:layout_height="@dimen/dp_92"
+            android:background="#2D2E40"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_8">
+
+            <ImageView
+                android:id="@+id/coverView"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_8"
+                android:background="@drawable/image" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="王管家"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:text="王管家，女，负责管理
+李少爷的生活起居，来
+自偏远的乡村，来自家
+境贫困"
+                    android:textColor="#ffcccccc"
+                    android:textSize="@dimen/sp_10" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
+import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.activity.juben.JuBenDetailsActivity;
 import com.yuoxi.android.app.adapter.AJJuBenVerticalAdapter;
 import com.yuoxi.android.app.adapter.BangGaoWanVerticalAdapter;
 import com.yuoxi.android.app.adapter.BangJuBenVerticalAdapter;
@@ -45,6 +47,17 @@ public class AJHomeFragment extends BaseFragment {
             AJJuBenVerticalAdapter juBenVerticalAdapter = new AJJuBenVerticalAdapter(getActivity());
             binding.verticalRecyclerView.setAdapter(juBenVerticalAdapter);
             juBenVerticalAdapter.refreshData(CommonUtil.getTitles());
+            juBenVerticalAdapter.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view, Object object) {
+                    openActivity(JuBenDetailsActivity.class);
+                }
+
+                @Override
+                public void onLongClick(View view, Object object) {
+
+                }
+            });
 
         }
 

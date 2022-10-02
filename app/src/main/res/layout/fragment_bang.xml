@@ -16,7 +16,7 @@
             android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_26"
-            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_26"
             android:layout_marginBottom="@dimen/dp_20"
             app:tabBackground="@drawable/tab_background"
             app:tabGravity="fill"
@@ -28,7 +28,7 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="#FFFFFF"
             app:tabTextAppearance="@style/TabTextStyle14"
-            app:tabTextColor="#99FFFFFF" />
+            app:tabTextColor="#6A65F4" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"

@@ -10,9 +10,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
+import com.base.manager.DialogManager;
 import com.base.utils.CommonUtil;
+import com.base.view.OnClickListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.activity.shiwu.SWGoldActivity;
+import com.yuoxi.android.app.activity.shiwu.SWHomeActivity;
 import com.yuoxi.android.app.adapter.BangJuBenVerticalAdapter;
 import com.yuoxi.android.app.adapter.MainPagerAdapter;
 import com.yuoxi.android.app.adapter.SWGoldAdapter;
@@ -48,6 +51,28 @@ public class SWHomeFragment extends BaseFragment {
             SWTaskAdapter adapter = new SWTaskAdapter(getActivity());
             binding.recyclerView.setAdapter(adapter);
             adapter.refreshData(CommonUtil.getTitles());
+            adapter.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view, Object object) {
+                    DialogManager.getInstance().signInDialog(getActivity(),
+                            2, "", "", "", "",
+                            new DialogManager.Listener() {
+                                @Override
+                                public void onItemLeft() {
+
+                                }
+
+                                @Override
+                                public void onItemRight() {
+                                }
+                            });
+                }
+
+                @Override
+                public void onLongClick(View view, Object object) {
+
+                }
+            });
 
         }
 

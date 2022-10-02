@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_48"
+        android:paddingRight="@dimen/dp_48">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_262"
+            android:layout_height="@dimen/dp_324"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_dialog_juben">
+
+            <RelativeLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:text="男孩的精分日记"
+                    android:textColor="#ff261126"
+                    android:textSize="@dimen/sp_18" />
+
+                <ImageView
+                    android:id="@+id/closeView"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/ic_close_b" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dp_162"
+                android:layout_height="@dimen/dp_200"
+                android:layout_below="@+id/topView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@drawable/image_10" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_324"
+                android:background="@mipmap/ic_juben_dialog"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_16">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_marginRight="@dimen/dp_3"
+                        android:src="@mipmap/ic_jinbi"
+                        android:text="6000"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6000"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sp_20" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_6"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_16"
+                    android:text="余额 7581"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_16"
+                    android:text="赠送给您的好友“六六顺”"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sp_12" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#17EBEBEB" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/cancelView"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_43"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="取消"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/sp_16" />
+
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="match_parent"
+                        android:background="#17EBEBEB" />
+
+                    <TextView
+                        android:id="@+id/confirmView"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_43"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="确定"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/sp_16" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

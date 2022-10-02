@@ -65,14 +65,15 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/confirmView"
                 android:layout_width="@dimen/dp_66"
                 android:layout_height="@dimen/dp_30"
-                android:singleLine="true"
+                android:background="@drawable/button_lq"
                 android:gravity="center"
+                android:singleLine="true"
                 android:text="领取"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/sp_14"
-                android:background="@drawable/button_lq"/>
+                android:textSize="@dimen/sp_14" />
 
         </LinearLayout>
 
