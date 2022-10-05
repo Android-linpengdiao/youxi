@@ -20,21 +20,58 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="@dimen/dp_329"
-                android:layout_height="@dimen/dp_329"
+                android:id="@+id/zhuanpanContainer"
+                android:layout_width="@dimen/dp_328"
+                android:layout_height="@dimen/dp_328"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/dp_50">
 
                 <ImageView
-                    android:layout_width="@dimen/dp_329"
-                    android:layout_height="@dimen/dp_329"
+                    android:id="@+id/zhuanpanView"
+                    android:layout_width="@dimen/dp_328"
+                    android:layout_height="@dimen/dp_328"
                     android:layout_gravity="center"
                     android:background="@mipmap/ic_choujiang_zhuanpan" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/ic_choujiang_zhizhen_xiao"
+                    android:layout_centerHorizontal="true"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/coverViewConstraintLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_116">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_68"
+                        android:layout_height="@dimen/dp_0"
+                        android:background="@mipmap/ic_choujiang_zhizhen"
+                        app:layout_constraintDimensionRatio="138:178"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zhuanpanContainer"
+                android:layout_centerHorizontal="true"
+                android:text="幸运值 100/600"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sp_10" />
+
             <ImageView
+                android:id="@+id/choujiangButton1"
                 android:layout_width="@dimen/dp_93"
                 android:layout_height="@dimen/dp_46"
                 android:layout_alignParentBottom="true"
@@ -44,6 +81,7 @@
                 android:background="@mipmap/ic_choujiang_button_1" />
 
             <ImageView
+                android:id="@+id/choujiangButton2"
                 android:layout_width="@dimen/dp_93"
                 android:layout_height="@dimen/dp_46"
                 android:layout_alignParentRight="true"
@@ -51,17 +89,76 @@
                 android:layout_marginLeft="@dimen/dp_38"
                 android:layout_marginRight="@dimen/dp_38"
                 android:layout_marginBottom="@dimen/dp_24"
-                android:background="@mipmap/ic_choujiang_button_1" />
+                android:background="@mipmap/ic_choujiang_button_2" />
 
             <ImageView
                 android:id="@+id/closeView"
                 android:layout_width="@dimen/dp_35"
                 android:layout_height="@dimen/dp_35"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_35"
+                android:layout_marginRight="@dimen/dp_5"
                 android:padding="@dimen/dp_10"
                 android:src="@mipmap/ic_close_b"
                 app:tint="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/gameRuleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/closeView"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/button_g_t30"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="规"
+                    android:textColor="#ffb5e6ff"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="则"
+                    android:textColor="#ffb5e6ff"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gameRuleView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/button_g_t30"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记"
+                    android:textColor="#ffb5e6ff"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="录"
+                    android:textColor="#ffb5e6ff"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
 
         </RelativeLayout>
 

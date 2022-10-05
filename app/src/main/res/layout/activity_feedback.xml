@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#181526"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:onClick="onClickBack"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="规则反馈"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_16" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/contentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_16"
+                    android:background="@drawable/button_edit"
+                    android:gravity="left"
+                    android:hint="请输入您宝贵的意见"
+                    android:lineSpacingExtra="@dimen/dp_5"
+                    android:minHeight="@dimen/dp_180"
+                    android:padding="@dimen/sp_14"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#91FFFFFF"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:gravity="left"
+                    android:inputType="phone"
+                    android:text="上传图片（最多9张）/视频"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/sp_14" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:overScrollMode="never"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_16" />
+
+                <EditText
+                    android:id="@+id/phoneView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:background="@drawable/button_edit"
+                    android:gravity="left"
+                    android:hint="请留下您的联系方式，如微信，手机号等..."
+                    android:inputType="phone"
+                    android:lineSpacingExtra="@dimen/dp_5"
+                    android:padding="@dimen/sp_14"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#91FFFFFF"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/submitView"
+                    android:layout_width="@dimen/dp_290"
+                    android:layout_height="@dimen/dp_46"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_56"
+                    android:layout_marginBottom="@dimen/dp_30"
+                    android:background="@drawable/button_lq"
+                    android:gravity="center"
+                    android:onClick="onClickSubmit"
+                    android:text="提交反馈"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/sp_20" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

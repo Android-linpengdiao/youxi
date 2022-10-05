@@ -18,15 +18,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CommentActivity"></activity>
+        <activity android:name=".activity.shiwu.SWGameRuleActivity"></activity>
+        <activity android:name=".activity.FeedbackActivity" />
+        <activity android:name=".activity.CommentActivity" />
         <activity android:name=".activity.BangRuleActivity" />
         <activity
             android:name=".activity.juben.JuBenDetailsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.juben.JBHomeActivity" />
-        <activity android:name=".activity.MateActivity" />
-        <activity android:name=".activity.SearchActivity" />
+        <activity
+            android:name=".activity.MateActivity"
+            android:theme="@style/SearchTheme" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:theme="@style/SearchTheme" />
         <activity android:name=".activity.anjian.AJHomeActivity" />
         <activity android:name=".activity.shiwu.SWHomeActivity" />
         <activity android:name=".activity.shiwu.SWGoldActivity" />

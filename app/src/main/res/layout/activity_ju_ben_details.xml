@@ -338,7 +338,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_15"
                         android:layout_marginTop="@dimen/dp_20"
-                        android:layout_marginRight="@dimen/dp_15"
                         android:gravity="center_vertical">
 
                         <ImageView
@@ -358,8 +357,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/dp_15"
+                            android:paddingLeft="@dimen/dp_15"
                             android:text="更多"
                             android:textColor="#ffffffff"
+                            android:onClick="onClickComment"
                             android:textSize="@dimen/sp_16" />
                     </LinearLayout>
 
@@ -378,7 +380,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dp_78"
                             android:gravity="center_vertical"
-                            android:onClick="onClickComment"
                             android:orientation="horizontal"
                             android:paddingLeft="@dimen/dp_12"
                             android:paddingRight="@dimen/dp_12">
@@ -703,7 +704,7 @@
                 android:layout_height="@dimen/dp_40"
                 android:layout_marginRight="@dimen/dp_20"
                 android:layout_weight="1"
-                android:background="@drawable/button_stroke_mg"
+                android:background="@drawable/button_cancel"
                 android:gravity="center"
                 android:onClick="onClickBuyJuBen"
                 android:text="购买剧本"

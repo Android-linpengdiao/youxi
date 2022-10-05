@@ -1,16 +1,34 @@
 package com.yuoxi.android.app.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.databinding.ActivityMateBinding;
 
-public class MateActivity extends AppCompatActivity {
+public class MateActivity extends BaseActivity {
+
+
+    private ActivityMateBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mate);
+        binding = getViewData(R.layout.activity_mate);
+        setStatusBarHeight();
+
+    }
+
+    public void onClickMate(View view) {
+        TextView mateView = (TextView) view;
+        view.setSelected(!view.isSelected());
+        view.setBackgroundResource(view.isSelected() ? R.drawable.button_mate : R.drawable.button_cancel);
+        mateView.setText(view.isSelected() ? "开始匹配" : "取消");
+    }
+
+    public void onClickBack(View view) {
+        finish();
     }
 }

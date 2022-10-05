@@ -163,7 +163,10 @@ public class DialogManager {
         binding.signInPatchContainer.setVisibility(type == 1 ? View.VISIBLE : View.GONE);
         binding.cancelView.setVisibility(type == 3 ? View.VISIBLE : View.GONE);
         binding.container.setBackgroundResource(
+                type == 0 ? R.mipmap.ic_sw_sign_in :
                 type == 1 ? R.mipmap.ic_sw_sign_in_bu :
+                type == 2 ? R.mipmap.ic_sw_lingqu :
+                type == 3 ? R.mipmap.ic_sw_lingqu :
                         R.mipmap.ic_sw_sign_in);
 
         if (!CommonUtil.isBlank(confirmText)) {
