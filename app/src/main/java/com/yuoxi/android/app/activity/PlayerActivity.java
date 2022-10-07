@@ -1,7 +1,5 @@
 package com.yuoxi.android.app.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -10,7 +8,6 @@ import android.widget.ImageView;
 import com.base.utils.GlideLoader;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ActivityPlayerBinding;
-import com.yuoxi.android.app.databinding.ActivitySWGameRuleBinding;
 
 import xyz.doikki.videocontroller.StandardVideoController;
 import xyz.doikki.videocontroller.component.CompleteView;
