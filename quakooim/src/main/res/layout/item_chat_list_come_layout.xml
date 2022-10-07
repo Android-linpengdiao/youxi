@@ -28,8 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/send_time"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="60dp">
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_60">
 
             <!--头像-->
             <ImageView
@@ -49,7 +49,7 @@
                     android:id="@+id/message_content_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/dp_10"
                     android:layout_toRightOf="@+id/message_ic"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -59,7 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_marginBottom="2dp"
+                        android:layout_marginBottom="@dimen/dp_2"
                         android:text="这是发送者的名字"
                         android:textColor="@color/chat_message_name_text_color"
                         android:textSize="@dimen/chat_message_name_size"
@@ -86,14 +86,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="5dp" />
+                        android:layout_marginLeft="@dimen/dp_5" />
 
                     <ImageView
                         android:id="@+id/destroy_status"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="@dimen/dp_15"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="@dimen/dp_5"
                         android:src="@drawable/ic_destroy"
                         android:visibility="gone" />
                 </LinearLayout>

@@ -184,6 +184,8 @@
                                 android:layout_height="match_parent"
                                 android:background="#F838A9"
                                 android:text="剧本大厅"
+                                android:gravity="center"
+                                android:textSize="@dimen/sp_14"
                                 android:textColor="#ffffff"/>
                         </androidx.cardview.widget.CardView>
 
@@ -218,6 +220,8 @@
                                     android:layout_height="match_parent"
                                     android:background="#DE609D"
                                     android:text="快速开始"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/sp_14"
                                     android:textColor="#ffffff"/>
                             </androidx.cardview.widget.CardView>
 
@@ -238,6 +242,8 @@
                                     android:layout_height="match_parent"
                                     android:background="#4C82E7"
                                     android:text="排行榜"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/sp_14"
                                     android:textColor="#ffffff"/>
                             </androidx.cardview.widget.CardView>
 
@@ -264,6 +270,8 @@
                                 android:layout_height="match_parent"
                                 android:background="#EE7868"
                                 android:text="案件室"
+                                android:gravity="center"
+                                android:textSize="@dimen/sp_14"
                                 android:textColor="#ffffff"/>
                         </androidx.cardview.widget.CardView>
 

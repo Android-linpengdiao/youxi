@@ -45,7 +45,6 @@ public class FocusFansActivity extends BaseActivity {
         }
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(FocusFansActivity.this));
-        binding.recyclerView.setNestedScrollingEnabled(false);
         focusFansAdapter = new FocusFansAdapter(FocusFansActivity.this);
         focusFansAdapter.setType(type);
         binding.recyclerView.setAdapter(focusFansAdapter);
@@ -53,35 +52,37 @@ public class FocusFansActivity extends BaseActivity {
         focusFansAdapter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view, Object object) {
-                FocusFansBean dataBean = (FocusFansBean) object;
-                int uid;
-                if (type == 0) {
-                    uid = dataBean.getTypeUser().getId();
-                } else {
-                    uid = dataBean.getUser().getId();
-                }
-                switch (view.getId()) {
-                    case R.id.focusView:
-                        String url = dataBean.getFocus() == 1 ? APIUrls.focusfansDel : APIUrls.focusfansAdd;
-                        focusFans(1, uid, url, new Callback() {
-                            @Override
-                            public void onError() {
+                if (object instanceof FocusFansBean) {
+                    FocusFansBean dataBean = (FocusFansBean) object;
+                    int uid;
+                    if (type == 0) {
+                        uid = dataBean.getTypeUser().getId();
+                    } else {
+                        uid = dataBean.getUser().getId();
+                    }
+                    switch (view.getId()) {
+                        case R.id.focusView:
+                            String url = dataBean.getFocus() == 1 ? APIUrls.focusfansDel : APIUrls.focusfansAdd;
+                            focusFans(1, uid, url, new Callback() {
+                                @Override
+                                public void onError() {
 
-                            }
-
-                            @Override
-                            public void onResponse(boolean success,int id) {
-                                if (success) {
-                                    dataBean.setFocus(dataBean.getFocus() == 1 ? 0 : 1);
-                                    focusFansAdapter.notifyDataSetChanged();
                                 }
-                            }
-                        });
-                        break;
-                    case R.id.view_layout:
-                        Bundle bundle = new Bundle();
-                        openActivity(UserInfoActivity.class, bundle);
-                        break;
+
+                                @Override
+                                public void onResponse(boolean success, int id) {
+                                    if (success) {
+                                        dataBean.setFocus(dataBean.getFocus() == 1 ? 0 : 1);
+                                        focusFansAdapter.notifyDataSetChanged();
+                                    }
+                                }
+                            });
+                            break;
+                        case R.id.view_layout:
+                            Bundle bundle = new Bundle();
+                            openActivity(UserInfoActivity.class, bundle);
+                            break;
+                    }
                 }
             }
 

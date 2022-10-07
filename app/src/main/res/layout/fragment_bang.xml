@@ -28,7 +28,7 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="#FFFFFF"
             app:tabTextAppearance="@style/TabTextStyle14"
-            app:tabTextColor="#6A65F4" />
+            app:tabTextColor="#99FFFFFF" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"

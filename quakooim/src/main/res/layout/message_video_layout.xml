@@ -7,19 +7,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_chat_media_gray"
-        android:padding="0.5px">
+        android:padding="@dimen/dp_2">
 
         <com.quakoo.im.view.LoadingImgView
             android:id="@+id/mes"
-            android:layout_width="95dp"
-            android:layout_height="160dp"
+            android:layout_width="@dimen/dp_95"
+            android:layout_height="@dimen/dp_160"
             android:contentDescription="@null"
             android:scaleType="centerCrop" />
 
         <ImageView
             android:id="@+id/play_iv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
             android:layout_centerInParent="true"
             android:background="@drawable/ic_im_video_play_btn_small_nor" />
 
@@ -29,9 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:paddingRight="12dp"
+            android:paddingRight="@dimen/dp_12"
             android:textColor="@android:color/white"
-            android:textSize="10sp" />
+            android:textSize="@dimen/sp_10" />
 
     </RelativeLayout>
 </layout>

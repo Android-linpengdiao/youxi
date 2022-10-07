@@ -18,8 +18,7 @@
         <ImageView
             android:id="@+id/coverView"
             android:layout_width="@dimen/dp_46"
-            android:layout_height="@dimen/dp_46"
-            android:src="@drawable/image" />
+            android:layout_height="@dimen/dp_46"/>
 
         <TextView
             android:id="@+id/titleView"

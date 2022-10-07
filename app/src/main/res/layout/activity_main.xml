@@ -18,9 +18,9 @@
             android:layout_height="match_parent"
             app:Easy_lineHeight="@dimen/dp_0"
             app:Easy_tabTextTop="@dimen/dp_2"
-            app:Easy_tabIconSize="@dimen/dp_20"
+            app:Easy_tabIconSize="@dimen/dp_22"
             app:Easy_scaleType="FIT_CENTER"
-            app:Easy_navigationHeight="@dimen/dp_56"/>
+            app:Easy_navigationHeight="@dimen/dp_60"/>
 
     </RelativeLayout>
 </layout>

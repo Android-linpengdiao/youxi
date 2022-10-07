@@ -6,9 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
+        <activity android:name=".activity.IMChatSettingsActivity"></activity>
         <activity
             android:name=".activity.IMChatActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".media.MediaSelectActivity"
             android:screenOrientation="portrait" />

@@ -34,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="粉丝"
+                android:text="群聊列表"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/sp_18"/>
 

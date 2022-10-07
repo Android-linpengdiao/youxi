@@ -12,10 +12,11 @@ import androidx.viewpager.widget.ViewPager;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.adapter.MainPagerAdapter;
 import com.yuoxi.android.app.databinding.FragmentBangBinding;
+import com.yuoxi.android.app.databinding.FragmentBangRuleBinding;
 
 public class BangRuleFragment extends BaseFragment {
 
-    private FragmentBangBinding binding;
+    private FragmentBangRuleBinding binding;
     private int type = 0;
 
     public static BangRuleFragment getInstance(int type) {
@@ -30,7 +31,7 @@ public class BangRuleFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bang, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bang_rule, container, false);
 
         if (getArguments() != null) {
 

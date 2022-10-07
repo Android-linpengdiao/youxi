@@ -62,11 +62,11 @@ public class MainYuewanFragment extends BaseFragment {
             }
         });
 
-        RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
-                LinearLayoutManager.VERTICAL,
-                CommonUtil.dip2px(getActivity(), 10),
-                Color.parseColor("#181526"));
-        binding.verticalRecyclerView.addItemDecoration(verticalDivider);
+//        RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
+//                LinearLayoutManager.VERTICAL,
+//                CommonUtil.dip2px(getActivity(), 10),
+//                Color.parseColor("#181526"));
+//        binding.verticalRecyclerView.addItemDecoration(verticalDivider);
         binding.verticalRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         YuewanLinearVerticalAdapter yuewanLinearVerticalAdapter = new YuewanLinearVerticalAdapter(getActivity());
         binding.verticalRecyclerView.setAdapter(yuewanLinearVerticalAdapter);

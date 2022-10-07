@@ -67,7 +67,10 @@
                         android:layout_width="@dimen/dp_70"
                         android:layout_height="@dimen/dp_70"
                         android:background="@drawable/bg_transparent"
-                        android:padding="@dimen/dp_20"
+                        android:paddingLeft="@dimen/dp_25"
+                        android:paddingRight="@dimen/dp_25"
+                        android:paddingTop="@dimen/dp_23"
+                        android:paddingBottom="@dimen/dp_23"
                         android:src="@mipmap/record_cancel_n"
                         android:visibility="gone"
                         tools:visibility="visible"/>
@@ -130,7 +133,7 @@
                         android:layout_width="@dimen/dp_70"
                         android:layout_height="@dimen/dp_70"
                         android:background="@drawable/bg_transparent"
-                        android:padding="@dimen/dp_20"
+                        android:padding="@dimen/dp_25"
                         android:src="@mipmap/record_confirm_n"
                         android:visibility="gone"
                         tools:visibility="visible"/>

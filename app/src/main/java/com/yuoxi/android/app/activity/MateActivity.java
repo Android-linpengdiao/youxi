@@ -24,8 +24,8 @@ public class MateActivity extends BaseActivity {
     public void onClickMate(View view) {
         TextView mateView = (TextView) view;
         view.setSelected(!view.isSelected());
-        view.setBackgroundResource(view.isSelected() ? R.drawable.button_mate : R.drawable.button_cancel);
-        mateView.setText(view.isSelected() ? "开始匹配" : "取消");
+        view.setBackgroundResource(view.isSelected() ? R.drawable.button_cancel : R.drawable.button_mate);
+        mateView.setText(view.isSelected() ? "取消" : "开始匹配");
     }
 
     public void onClickBack(View view) {

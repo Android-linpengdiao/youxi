@@ -108,7 +108,7 @@ public class AudioRecorderView extends RelativeLayout {
     }
 
     public void wantToCancel() {
-        cancelImageView.setBackgroundResource(R.drawable.button_cancel);
+        cancelImageView.setBackgroundResource(R.drawable.bg_im_cancel);
         confirmImageView.setBackgroundResource(R.drawable.bg_transparent);
         confirmHintTextView.setText("松手取消发送");
         confirmHintTextView.setTextColor(Color.parseColor("#F16572"));

@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.activity.BaseActivity;
+import com.yuoxi.android.app.activity.anjian.AJHomeActivity;
 import com.yuoxi.android.app.adapter.MainPagerAdapter;
 import com.yuoxi.android.app.databinding.ActivityJBHomeBinding;
 import com.yuoxi.android.app.fragment.AJHomeFragment;
@@ -52,9 +53,11 @@ public class JBHomeActivity extends BaseActivity {
     }
 
     public void onClickAddRoom(View view) {
+        openActivity(AJHomeActivity.class);
     }
 
     public void onClickSearch(View view) {
+        openActivity(JBSearchActivity.class);
     }
 
     public void onClickBack(View view) {

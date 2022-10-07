@@ -76,7 +76,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="24dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="至尊皇帝"
                         android:textColor="#ffffffff"
@@ -100,7 +100,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="24dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="昨日神豪"
                         android:textColor="#ffffffff"
@@ -122,7 +122,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="24dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="守护者"
                         android:textColor="#ffffffff"
@@ -182,7 +182,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="24dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="至尊皇帝"
                         android:textColor="#ffffffff"
@@ -205,7 +205,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="24dp"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="昨日神豪"
                         android:textColor="#ffffffff"
@@ -258,7 +258,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="至尊皇帝"
                     android:textColor="#ffffffff"

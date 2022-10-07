@@ -42,7 +42,7 @@ public class FocusFansAdapter extends BaseRecyclerAdapter<String, ItemFocusFansB
     @Override
     protected void onBindItem(ItemFocusFansBinding binding, String dataBean, int position) {
 
-        binding.focusView.setText(type == 2 ? "赠送" : "已关注");
+        binding.focusView.setText(type == 0 ? "取关" :type == 1 ? "回关" :type == 2 ? "赠送" : "已关注");
 
 //        if (type == 0) {
 //            binding.titleView.setText(!CommonUtil.isBlank(dataBean.getTypeUser().getName()) ? dataBean.getTypeUser().getName() : dataBean.getTypeUser().getPhone());
@@ -71,13 +71,13 @@ public class FocusFansAdapter extends BaseRecyclerAdapter<String, ItemFocusFansB
                 }
             }
         });
-//        binding.viewLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (onClickListener != null) {
-//                    onClickListener.onClick(view, dataBean);
-//                }
-//            }
-//        });
+        binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
     }
 }

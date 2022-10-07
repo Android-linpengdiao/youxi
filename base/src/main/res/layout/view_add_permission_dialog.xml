@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/button_dialog"
+            android:background="@drawable/button_white"
             android:orientation="vertical"
             android:paddingLeft="@dimen/dp_20"
             android:paddingTop="@dimen/dp_20"

@@ -90,9 +90,9 @@ public class ChatListAdapter extends RecyclerView.Adapter {
         this.mContext = context;
         messageList = list;
         ChatFriend = chatFriend;
-        picMaxWidth = UnitUtils.dip2px(context, 192);
+        picMaxWidth = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_192);
         picMaxHeight = picMaxWidth;
-        picMinWidth = UnitUtils.dip2px(context, 48);
+        picMinWidth = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_48);
         picMinHeight = picMinWidth;
     }
 
@@ -553,7 +553,7 @@ public class ChatListAdapter extends RecyclerView.Adapter {
             layoutParams.width = picWidth;
             layoutParams.height = picHeight;
             binding.mes.setLayoutParams(layoutParams);
-            GlideLoader.LoderChatImage(mContext, url, binding.mes, 4);
+            GlideLoader.LoderChatImage(mContext, url, binding.mes, 10);
 
             binding.mes.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -581,7 +581,7 @@ public class ChatListAdapter extends RecyclerView.Adapter {
             View m = LinearLayout.inflate(mContext, R.layout.message_video_layout, null);
             final MessageVideoLayoutBinding binding = DataBindingUtil.bind(m);
             Log.i(TAG, "getMessageView: " + message.getThumbnailUrl());
-            GlideLoader.LoderChatImage(mContext, message.getThumbnailUrl(), binding.mes, 4);
+            GlideLoader.LoderChatImage(mContext, message.getThumbnailUrl(), binding.mes, 10);
             binding.mes.finish();
             binding.mes.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -606,10 +606,12 @@ public class ChatListAdapter extends RecyclerView.Adapter {
             }
             ViewGroup.LayoutParams layoutParams = m.getLayoutParams();
             if (layoutParams == null) {
-                layoutParams = new ViewGroup.LayoutParams(CommonUtil.dip2px(mContext, 95), CommonUtil.dip2px(mContext, 160));
+                layoutParams = new ViewGroup.LayoutParams(
+                        mContext.getResources().getDimensionPixelOffset(R.dimen.dp_95),
+                        mContext.getResources().getDimensionPixelOffset(R.dimen.dp_160));
             } else {
-                layoutParams.height = CommonUtil.dip2px(mContext, 160);
-                layoutParams.width = CommonUtil.dip2px(mContext, 95);
+                layoutParams.height = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_160);
+                layoutParams.width = mContext.getResources().getDimensionPixelOffset(R.dimen.dp_95);
             }
             m.setLayoutParams(layoutParams);
             contentContainer(binding.mes, message, position);

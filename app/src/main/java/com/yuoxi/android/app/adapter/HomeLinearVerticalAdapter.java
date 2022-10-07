@@ -2,12 +2,14 @@ package com.yuoxi.android.app.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
+import com.base.view.OnMultiClickListener;
 import com.base.view.RecycleViewDivider;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemHomeLinearVerticalBinding;
@@ -49,7 +51,14 @@ public class HomeLinearVerticalAdapter extends BaseRecyclerAdapter<String, ItemH
 
 //        binding.titleView.setText(null);
         GlideLoader.getInstance().LoaderDrawable(mContext, R.drawable.ic_test_cover, binding.coverView);
-
+        binding.getRoot().setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
 
     }
 }

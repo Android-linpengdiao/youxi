@@ -74,7 +74,7 @@ public class SWHomeActivity extends BaseActivity {
             container.setBackgroundColor(Color.parseColor("#D548F6"));
         }else if (state == 2) {
             titleTextView.setTextColor(Color.parseColor("#4e3e51"));
-            contentTextView.setTextColor(Color.parseColor("#4e3e51"));
+            contentTextView.setTextColor(Color.parseColor("#ffffff"));
             stateView.setBackgroundResource(R.mipmap.ic_sign_in_s);
             container.setBackgroundColor(Color.parseColor("#F6F7FB"));
         }else if (state == 3) {

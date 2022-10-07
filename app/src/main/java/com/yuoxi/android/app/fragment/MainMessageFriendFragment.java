@@ -29,10 +29,6 @@ import com.yuoxi.android.app.adapter.MainFriendAdapter;
 import com.yuoxi.android.app.databinding.FragmentMainMessageFriendBinding;
 import com.yuoxi.android.app.view.SideLetterBar;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,7 +38,7 @@ import okhttp3.Call;
 public class MainMessageFriendFragment extends BaseFragment {
 
     private FragmentMainMessageFriendBinding binding;
-    private MainFriendAdapter messageAdapter;
+    private MainFriendAdapter friendAdapter;
 
     @Nullable
     @Override
@@ -50,17 +46,41 @@ public class MainMessageFriendFragment extends BaseFragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_message_friend, container, false);
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        messageAdapter = new MainFriendAdapter(getActivity());
-        binding.recyclerView.setAdapter(messageAdapter);
-        messageAdapter.setOnClickListener(new OnClickListener() {
+        friendAdapter = new MainFriendAdapter(getActivity());
+        binding.recyclerView.setAdapter(friendAdapter);
+        friendAdapter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view, Object object) {
-                UserInfo userInfo = (UserInfo) object;
-                Intent intent = new Intent(getActivity(), IMChatActivity.class);
-                intent.putExtra("userInfo", userInfo); //获取聊天对象
-                intent.putExtra("chat_type", Constants.FRAGMENT_FRIEND); //获取聊天对象的类型(群聊/单聊)
-                intent.putExtra("unreadCount", 0);
-                startActivity(intent);
+                Bundle bundle = new Bundle();
+                switch (view.getId()) {
+                    case R.id.friendContainer:
+                        UserInfo userInfo = (UserInfo) object;
+                        Intent intent = new Intent(getActivity(), IMChatActivity.class);
+                        intent.putExtra("userInfo", userInfo); //获取聊天对象
+                        intent.putExtra("chat_type", Constants.FRAGMENT_FRIEND); //获取聊天对象的类型(群聊/单聊)
+                        intent.putExtra("unreadCount", 0);
+                        startActivity(intent);
+                        break;
+                    case R.id.focusView:
+                        bundle.putInt("type", 0);
+                        openActivity(FocusFansActivity.class, bundle);
+
+                        break;
+                    case R.id.fansView:
+                        bundle.putInt("type", 1);
+                        openActivity(FocusFansActivity.class, bundle);
+
+                        break;
+                    case R.id.groupView:
+                        openActivity(GroupsActivity.class);
+
+                        break;
+                    case R.id.blacklistView:
+                        openActivity(BlacklistActivity.class);
+
+                        break;
+                }
+
             }
 
             @Override
@@ -72,17 +92,15 @@ public class MainMessageFriendFragment extends BaseFragment {
         binding.sidebar.setOnLetterChangedListener(new SideLetterBar.OnLetterChangedListener() {
             @Override
             public void onLetterChanged(String letter) {
-                int position = messageAdapter.getLetterPosition(letter);
+                int position = friendAdapter.getLetterPosition(letter);
                 binding.recyclerView.setScrollBarSize(position);
                 RecycleViewManager.smoothMoveToPosition(binding.recyclerView, position);
             }
         });
 
-        binding.focusView.setOnClickListener(onMultiClickListener);
-        binding.fansView.setOnClickListener(onMultiClickListener);
-        binding.groupView.setOnClickListener(onMultiClickListener);
-        binding.blacklistView.setOnClickListener(onMultiClickListener);
-
+        List<UserInfo> list = new ArrayList<>();
+        list.add(new UserInfo());
+        friendAdapter.refreshData(list);
         getFriendsList();
 
         return binding.getRoot();
@@ -100,38 +118,9 @@ public class MainMessageFriendFragment extends BaseFragment {
                     public void onResponse(ResultClient<List<UserInfo>> response, int id) {
                         if (response.isSuccess() && response.getData() != null) {
                             Collections.sort(response.getData(), new UserInfo());
-                            messageAdapter.refreshData(response.getData());
+                            friendAdapter.loadMoreData(response.getData());
                         }
                     }
                 });
     }
-
-
-    private OnMultiClickListener onMultiClickListener = new OnMultiClickListener() {
-        @Override
-        public void OnMultiClick(View view) {
-            Bundle bundle = new Bundle();
-            switch (view.getId()) {
-                case R.id.focusView:
-                    bundle.putInt("type", 0);
-                    openActivity(FocusFansActivity.class, bundle);
-
-                    break;
-                case R.id.fansView:
-                    bundle.putInt("type", 1);
-                    openActivity(FocusFansActivity.class, bundle);
-
-                    break;
-                case R.id.groupView:
-                    openActivity(GroupsActivity.class);
-
-                    break;
-                case R.id.blacklistView:
-                    openActivity(BlacklistActivity.class);
-
-                    break;
-
-            }
-        }
-    };
 }

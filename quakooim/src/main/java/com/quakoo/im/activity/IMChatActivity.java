@@ -3,7 +3,6 @@ package com.quakoo.im.activity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -22,7 +21,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.base.manager.LoadingManager;
+import com.base.view.OnMultiClickListener;
 import com.cjt2325.cameralibrary.CameraActivity;
 import com.cjt2325.cameralibrary.JCameraView;
 import com.google.gson.reflect.TypeToken;
@@ -48,7 +47,6 @@ import com.base.utils.BitmapUtils;
 import com.base.utils.CommonUtil;
 import com.base.utils.FileUtils;
 import com.base.utils.GsonUtils;
-import com.base.utils.LogUtil;
 import com.base.utils.PermissionUtils;
 import com.base.utils.ToastUtils;
 import com.base.view.BaseBottomSheetDialog;
@@ -78,10 +76,6 @@ import com.quakoo.im.view.AudioRecorderButton;
 import com.quakoo.im.view.ChatExtView;
 import com.quakoo.im.view.CustomEmotionView;
 import com.quakoo.im.view.CustomLayoutManager;
-import com.yanzhenjie.permission.Action;
-import com.yanzhenjie.permission.AndPermission;
-import com.yanzhenjie.permission.Rationale;
-import com.yanzhenjie.permission.RequestExecutor;
 import com.yanzhenjie.permission.runtime.Permission;
 
 import org.greenrobot.eventbus.EventBus;
@@ -97,10 +91,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import okhttp3.Call;
-import okhttp3.Request;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
@@ -225,18 +217,18 @@ public class IMChatActivity extends BaseActivity implements CustomClickEvents, H
             }
         });
 
-        mBinding.menuImageView.setOnClickListener(new View.OnClickListener() {
+        mBinding.settingsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (chatType.equals(Constants.FRAGMENT_FRIEND)) { //单聊
-//                    Intent intent = new Intent(IMChatActivity.this, FriendChatSettingActivity.class);
-//                    intent.putExtra("userInfo", ChatFriend);
-//                    startActivity(intent);
-//                } else if (chatType.equals(Constants.FRAGMENT_GROUP)) {//群聊
-//                    Intent intent = new Intent(IMChatActivity.this, ChatGroupInfoActivity.class);
-//                    intent.putExtra("userInfo", ChatFriend);
-//                    startActivity(intent);
-//                }
+                if (chatType.equals(Constants.FRAGMENT_FRIEND)) { //单聊
+                    Intent intent = new Intent(IMChatActivity.this, IMChatSettingsActivity.class);
+                    intent.putExtra("userInfo", ChatFriend);
+                    startActivity(intent);
+                } else if (chatType.equals(Constants.FRAGMENT_GROUP)) {//群聊
+                    Intent intent = new Intent(IMChatActivity.this, IMChatSettingsActivity.class);
+                    intent.putExtra("userInfo", ChatFriend);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -329,6 +321,15 @@ public class IMChatActivity extends BaseActivity implements CustomClickEvents, H
                 if (mBinding.chatList.getAdapter().getItemCount() - layoutManager.findFirstVisibleItemPosition() + 5 >= unreadCount) {
                     mBinding.newMessage.setVisibility(View.GONE);
                 }
+            }
+        });
+
+        mBinding.orderView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                String mScheme = "scheme://order/OrderHomeActivity?uid=" + getUserInfo().getId();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(mScheme));
+                startActivity(intent);
             }
         });
 
@@ -1121,6 +1122,7 @@ public class IMChatActivity extends BaseActivity implements CustomClickEvents, H
 
     /**
      * 压缩图片
+     *
      * @param data
      */
     private void compressImage(Intent data) {

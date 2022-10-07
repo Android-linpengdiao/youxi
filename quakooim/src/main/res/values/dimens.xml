@@ -24,7 +24,7 @@
     <dimen name="keyboardHeight">280dp</dimen>
     <dimen name="min_panel_height">220dp</dimen>
     <dimen name="max_panel_height">380dp</dimen>
-    <dimen name="chat_media_radius">4dp</dimen>
+    <dimen name="chat_media_radius">10dp</dimen>
     <dimen name="divide_heigth">0.1dp</dimen>
     <dimen name="media_heigth">56dp</dimen>
     <dimen name="min_keyboard_height">80dp</dimen>

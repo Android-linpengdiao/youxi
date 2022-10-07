@@ -116,7 +116,7 @@ public class ChatEdittextView extends RelativeLayout {
             @Override
             public void onClick(View v) {
                 if (mute) {
-                    ToastUtils.showShort(mContext,"您在禁言中");
+                    ToastUtils.showShort(mContext, "您在禁言中");
                     return;
                 }
                 if (PermissionUtils.checkPermissionAllGranted(mContext, PermissionUtils.AUDIO)) { //询问麦克风权限
@@ -135,8 +135,9 @@ public class ChatEdittextView extends RelativeLayout {
         mBinding.editEmotion.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                KeybordS.closeKeybord(mBinding.editTextInput, mContext);
                 if (mute) {
-                    ToastUtils.showShort(mContext,"您在禁言中");
+                    ToastUtils.showShort(mContext, "您在禁言中");
                     return;
                 }
                 if (v.getTag().equals("默认")) {
@@ -191,10 +192,14 @@ public class ChatEdittextView extends RelativeLayout {
 //                        mContext.startActivity(intent);
                     }
                     if (s.toString().equals("")) {
-                        mBinding.sendText.setVisibility(GONE);
+//                        mBinding.sendText.setVisibility(GONE);
+                        mBinding.sendText.setEnabled(false);
+                        mBinding.sendText.setBackgroundResource(R.drawable.bg_text_send_t60);
                         mBinding.otherMessage.setVisibility(VISIBLE);
                     } else {
                         mBinding.sendText.setVisibility(VISIBLE);
+                        mBinding.sendText.setEnabled(true);
+                        mBinding.sendText.setBackgroundResource(R.drawable.bg_text_send);
                         mBinding.otherMessage.setVisibility(GONE);
                     }
 
@@ -307,10 +312,11 @@ public class ChatEdittextView extends RelativeLayout {
         });
 
 
-
         mBinding.imChatExtAudioView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                KeybordS.closeKeybord(mBinding.editTextInput, mContext);
+                hideChatEdittextView();
                 if (events != null) {
                     events.Click(v, "语音");
                 }
@@ -319,6 +325,7 @@ public class ChatEdittextView extends RelativeLayout {
         mBinding.imChatExtPhotoView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideChatEdittextView();
                 if (events != null) {
                     events.Click(v, "相片");
                 }
@@ -327,6 +334,7 @@ public class ChatEdittextView extends RelativeLayout {
         mBinding.imChatExtVideoView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideChatEdittextView();
                 if (events != null) {
                     events.Click(v, "相机");
                 }
@@ -335,12 +343,12 @@ public class ChatEdittextView extends RelativeLayout {
         mBinding.imChatExtCallView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideChatEdittextView();
                 if (events != null) {
                     events.Click(v, "电话");
                 }
             }
         });
-
 
 
         mBinding.editTextInput.setInputLayout(this);
@@ -428,7 +436,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[1]);
             mBinding.editTextInput.setVisibility(GONE);
             mBinding.voiceText.setVisibility(VISIBLE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(GONE);
@@ -445,7 +453,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(GONE);
@@ -460,7 +468,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[1]);
+//            mBinding.editEmotion.setImageResource(Images[1]);
             mBinding.editEmotion.setTag("发表情");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(VISIBLE);
@@ -475,13 +483,13 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(INVISIBLE);
             mBinding.emotionPanelLayout.setVisibility(GONE);
             mBinding.otherPane2Layout.setVisibility(GONE);
-            KeybordS.openKeybord(mBinding.editTextInput, mContext); //打开键盘
+//            KeybordS.openKeybord(mBinding.editTextInput, mContext); //打开键盘
             if (mVariety != null) {
                 mVariety.lockContentHeight();
             }
@@ -490,7 +498,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(VISIBLE);
@@ -505,7 +513,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("打开");
             mBinding.paneLayout.setVisibility(VISIBLE);
@@ -520,7 +528,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(INVISIBLE);
@@ -535,7 +543,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(INVISIBLE);
@@ -550,7 +558,7 @@ public class ChatEdittextView extends RelativeLayout {
             mBinding.editYuyin.setImageResource(Images[2]);
             mBinding.editTextInput.setVisibility(VISIBLE);
             mBinding.voiceText.setVisibility(GONE);
-            mBinding.editEmotion.setImageResource(Images[0]);
+//            mBinding.editEmotion.setImageResource(Images[0]);
             mBinding.editEmotion.setTag("默认");
             mBinding.otherMessage.setTag("默认");
             mBinding.paneLayout.setVisibility(GONE);

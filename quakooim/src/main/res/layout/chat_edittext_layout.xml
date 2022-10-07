@@ -48,23 +48,24 @@
                     android:hint="说点什么..."
                     android:maxLines="3"
                     android:minHeight="@dimen/dp_42"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_8"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_46"
+                    android:textSize="@dimen/sp_14"
                     android:textColor="@color/white"
                     android:textColorHint="#666666" />
 
                 <ImageView
                     android:id="@+id/edit_emotion"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="@dimen/dp_26"
+                    android:layout_height="@dimen/dp_26"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_im_chat_add_emotion_black"
-                    android:tag="默认"
-                    android:tint="@color/white"
-                    tools:ignore="UseAppTint" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:src="@drawable/ic_im_chat_add_emotion"
+                    android:tag="默认"/>
 
                 <com.quakoo.im.view.AudioRecorderButton
                     android:id="@+id/voice_text"
@@ -118,13 +119,12 @@
                     android:layout_height="@dimen/dp_32"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:background="@drawable/bg_text_send_green"
+                    android:background="@drawable/bg_text_send_t60"
+                    android:enabled="false"
                     android:gravity="center"
                     android:text="发送"
                     android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
+                    android:textSize="@dimen/sp_14"/>
 
             </LinearLayout>
 

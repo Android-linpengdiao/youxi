@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.base.utils.CommonUtil;
 import com.base.utils.GlideLoader;
+import com.base.view.OnClickListener;
 import com.base.view.OnMultiClickListener;
 import com.base.view.RecycleViewDivider;
 import com.okhttp.ResultClient;
@@ -28,6 +29,7 @@ import com.yuoxi.android.app.activity.MateActivity;
 import com.yuoxi.android.app.activity.UserInfoActivity;
 import com.yuoxi.android.app.activity.anjian.AJHomeActivity;
 import com.yuoxi.android.app.activity.juben.JBHomeActivity;
+import com.yuoxi.android.app.activity.juben.JuBenDetailsActivity;
 import com.yuoxi.android.app.activity.shiwu.SWGoldActivity;
 import com.yuoxi.android.app.activity.shiwu.SWHomeActivity;
 import com.yuoxi.android.app.adapter.HomeLinearHorizontalAdapter;
@@ -64,6 +66,17 @@ public class MainHomeFragment extends BaseFragment {
         HomeLinearHorizontalAdapter homeLinearHorizontalAdapter = new HomeLinearHorizontalAdapter(getActivity());
         binding.horizontalRecyclerView.setAdapter(homeLinearHorizontalAdapter);
         homeLinearHorizontalAdapter.refreshData(CommonUtil.getTitles());
+        homeLinearHorizontalAdapter.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view, Object object) {
+                openActivity(JuBenDetailsActivity.class);
+            }
+
+            @Override
+            public void onLongClick(View view, Object object) {
+
+            }
+        });
 
 //        RecycleViewDivider verticalDivider = new RecycleViewDivider(getActivity(),
 //                LinearLayoutManager.VERTICAL,
@@ -74,6 +87,17 @@ public class MainHomeFragment extends BaseFragment {
         HomeLinearVerticalAdapter homeLinearVerticalAdapter = new HomeLinearVerticalAdapter(getActivity());
         binding.verticalRecyclerView.setAdapter(homeLinearVerticalAdapter);
         homeLinearVerticalAdapter.refreshData(CommonUtil.getTitles());
+        homeLinearVerticalAdapter.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view, Object object) {
+                openActivity(JuBenDetailsActivity.class);
+            }
+
+            @Override
+            public void onLongClick(View view, Object object) {
+
+            }
+        });
 
         binding.swGoldView.setOnClickListener(new OnMultiClickListener() {
             @Override

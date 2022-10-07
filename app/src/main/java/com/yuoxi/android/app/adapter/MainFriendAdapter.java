@@ -6,6 +6,7 @@ import android.view.View;
 import com.base.UserInfo;
 import com.base.utils.GlideLoader;
 import com.base.view.OnClickListener;
+import com.base.view.OnMultiClickListener;
 import com.yuoxi.android.app.R;
 import com.yuoxi.android.app.databinding.ItemMainFriendBinding;
 import com.yuoxi.android.app.databinding.ItemMainMessageBinding;
@@ -32,25 +33,66 @@ public class MainFriendAdapter extends BaseRecyclerAdapter<UserInfo, ItemMainFri
 
     @Override
     protected void onBindItem(ItemMainFriendBinding binding, UserInfo dataBean, int position) {
-        binding.userNameView.setText(dataBean.getName());
+        binding.functionContainer.setVisibility(View.GONE);
+        binding.friendContainer.setVisibility(View.GONE);
 
-        if (position != 0) {
+        if (position == 0) {
+            binding.functionContainer.setVisibility(View.VISIBLE);
+
+        } else if (position == 1) {
+            binding.userNameView.setText(dataBean.getName());
+            binding.friendContainer.setVisibility(View.VISIBLE);
+            binding.pinyinTextView.setText(dataBean.getPinyin().toUpperCase().substring(0, 1));
+            binding.pinyinTextView.setVisibility(View.VISIBLE);
+
+        } else {
+            binding.userNameView.setText(dataBean.getName());
+            binding.friendContainer.setVisibility(View.VISIBLE);
             if (!dataBean.getPinyin().substring(0, 1).equals(mList.get(position - 1).getPinyin().substring(0, 1))) {
                 binding.pinyinTextView.setText(dataBean.getPinyin().toUpperCase().substring(0, 1));
                 binding.pinyinTextView.setVisibility(View.VISIBLE);
             } else {
                 binding.pinyinTextView.setVisibility(View.GONE);
             }
-        } else {
-            binding.pinyinTextView.setText(dataBean.getPinyin().toUpperCase().substring(0, 1));
-            binding.pinyinTextView.setVisibility(View.VISIBLE);
         }
 
-        binding.viewLayout.setOnClickListener(new View.OnClickListener() {
+        binding.friendContainer.setOnClickListener(new OnMultiClickListener() {
             @Override
-            public void onClick(View v) {
+            public void OnMultiClick(View view) {
                 if (onClickListener != null) {
-                    onClickListener.onClick(v, dataBean);
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
+        binding.focusView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
+        binding.fansView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
+        binding.groupView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
+                }
+            }
+        });
+        binding.blacklistView.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void OnMultiClick(View view) {
+                if (onClickListener != null) {
+                    onClickListener.onClick(view, dataBean);
                 }
             }
         });

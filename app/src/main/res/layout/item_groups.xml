@@ -23,7 +23,7 @@
                 android:id="@+id/userIconView"
                 android:layout_width="@dimen/dp_66"
                 android:layout_height="@dimen/dp_66"
-                android:src="@mipmap/ic_message_system" />
+                android:src="@drawable/image_10" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -40,7 +40,7 @@
                     android:layout_weight="1"
                     android:gravity="bottom"
                     android:singleLine="true"
-                    android:text="与世无争"
+                    android:text="侦探社探索大队（一分局）"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/sp_14" />
 
@@ -52,7 +52,7 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:maxLines="2"
-                    android:text="这个侦探没有留下任何蛛丝马迹"
+                    android:text="共计31人"
                     android:textColor="#999999"
                     android:textSize="@dimen/sp_12" />
 

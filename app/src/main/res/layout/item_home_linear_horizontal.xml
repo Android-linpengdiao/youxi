@@ -11,9 +11,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/transparent"
-        android:layout_marginRight="@dimen/dp_5"
         android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        app:cardBackgroundColor="@color/transparent"
         app:cardCornerRadius="@dimen/dp_6"
         app:cardElevation="@dimen/dp_0">
 
@@ -25,8 +25,7 @@
             <ImageView
                 android:id="@+id/coverView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_90"
-                android:background="@drawable/image" />
+                android:layout_height="@dimen/dp_90" />
 
             <LinearLayout
                 android:layout_width="match_parent"
