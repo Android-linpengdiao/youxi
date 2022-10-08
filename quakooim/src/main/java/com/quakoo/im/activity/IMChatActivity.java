@@ -965,9 +965,44 @@ public class IMChatActivity extends BaseActivity implements CustomClickEvents, H
                     .start();
         } else if (id == R.id.imChatExtCallView) {//电话
 
+            JSONObject json = new JSONObject();
+            try {
+                json.put("pid", 0);
+                json.put("name", "房间极限差3! 可反串，速来速开了！");
+                json.put("info", "在很久很久以前，流浪者张三在一个荒芜人烟的平原上躺着自己的马。穿越了人迹罕见的草丛里");
+                json.put("icon", "https://t7.baidu.com/it/u=2371362259,3988640650&fm=193&f=GIF");
+                json.put("image", "https://t7.baidu.com/it/u=2371362259,3988640650&fm=193&f=GIF");
+                json.put("extra", null);
+                doSendPlugin(json);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
 
     }
+
+    // 发送小程序
+    private void doSendPlugin(JSONObject extra) {
+        ChatMessage cm = new ChatMessage();
+        cm.setExtra(extra.toString());
+        cm.setContentType(ChatMessage.CHAT_CONTENT_TYPE_SHARE_PLUGIND);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        cm.setTime(df.format(new Date()));
+        String clientId = CommonUtil.getStringToDate(cm.getTime()) + (int) (Math.random() * 1000);
+        cm.setClientId(clientId);
+        cm.setSendMessagePersonnel(BaseApplication.getUserInfo());
+        cm.setReceiveMessagePersonnel(ChatFriend);
+        cm.setMsgState("read");
+        cm.setProgress("true");
+        cm.setPrompt("false");
+        cm.setSendMsgState(Constants.SEND_PROCEED);
+        UniteUpdateDataModel model = new UniteUpdateDataModel();
+        model.setKey(Constants.SEND_CHATMESSAGE); //发送消息
+        model.setValue(model.toJson(cm));
+        EventBus.getDefault().postSticky(model);
+    }
+
 
     private static final int REQUEST_IMAGE = 100;
     private static final int REQUEST_CAMERA = 200;

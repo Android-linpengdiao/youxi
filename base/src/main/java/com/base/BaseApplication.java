@@ -68,6 +68,7 @@ public class BaseApplication extends Application {
 
     public void setUserInfo(UserInfo userInfo) {
         MsgCache.get(this).put(Constants.USER_INFO, userInfo);
+        this.userInfo = userInfo;
     }
 
     public static UserInfo getUserInfo() {

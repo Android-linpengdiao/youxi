@@ -83,7 +83,8 @@
                                     android:layout_width="@dimen/dp_18"
                                     android:layout_height="@dimen/dp_18"
                                     android:layout_marginRight="@dimen/dp_4"
-                                    android:background="@mipmap/ic_home_jinbi_t" />
+                                    android:background="@mipmap/ic_home_jinbi_t"
+                                    android:padding="@dimen/dp_1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -97,7 +98,9 @@
                                     android:layout_width="@dimen/dp_14"
                                     android:layout_height="@dimen/dp_14"
                                     android:layout_marginRight="@dimen/dp_2"
-                                    android:background="@drawable/circle_gray" />
+                                    android:background="@drawable/button_add"
+                                    android:padding="@dimen/dp_2"
+                                    android:src="@mipmap/ic_add" />
 
                             </LinearLayout>
 
@@ -112,7 +115,8 @@
                                     android:layout_width="@dimen/dp_18"
                                     android:layout_height="@dimen/dp_18"
                                     android:layout_marginRight="@dimen/dp_4"
-                                    android:background="@mipmap/ic_home_zuanshi_t" />
+                                    android:background="@mipmap/ic_home_zuanshi_t"
+                                    android:padding="@dimen/dp_1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -126,7 +130,9 @@
                                     android:layout_width="@dimen/dp_14"
                                     android:layout_height="@dimen/dp_14"
                                     android:layout_marginRight="@dimen/dp_2"
-                                    android:background="@drawable/circle_gray" />
+                                    android:background="@drawable/button_add"
+                                    android:padding="@dimen/dp_2"
+                                    android:src="@mipmap/ic_add" />
 
                             </LinearLayout>
 
@@ -183,10 +189,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="#F838A9"
-                                android:text="剧本大厅"
                                 android:gravity="center"
-                                android:textSize="@dimen/sp_14"
-                                android:textColor="#ffffff"/>
+                                android:text="剧本大厅"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_14" />
                         </androidx.cardview.widget.CardView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -219,10 +225,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#DE609D"
-                                    android:text="快速开始"
                                     android:gravity="center"
-                                    android:textSize="@dimen/sp_14"
-                                    android:textColor="#ffffff"/>
+                                    android:text="快速开始"
+                                    android:textColor="#ffffff"
+                                    android:textSize="@dimen/sp_14" />
                             </androidx.cardview.widget.CardView>
 
                             <View
@@ -241,10 +247,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="#4C82E7"
-                                    android:text="排行榜"
                                     android:gravity="center"
-                                    android:textSize="@dimen/sp_14"
-                                    android:textColor="#ffffff"/>
+                                    android:text="排行榜"
+                                    android:textColor="#ffffff"
+                                    android:textSize="@dimen/sp_14" />
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -269,10 +275,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="#EE7868"
-                                android:text="案件室"
                                 android:gravity="center"
-                                android:textSize="@dimen/sp_14"
-                                android:textColor="#ffffff"/>
+                                android:text="案件室"
+                                android:textColor="#ffffff"
+                                android:textSize="@dimen/sp_14" />
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>

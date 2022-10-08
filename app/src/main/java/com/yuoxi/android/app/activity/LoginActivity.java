@@ -1,12 +1,11 @@
 package com.yuoxi.android.app.activity;
 
-
 import android.os.Bundle;
+import android.view.View;
 
 import com.base.BaseApplication;
 import com.base.UserInfo;
 import com.base.manager.LoadingManager;
-import com.base.utils.CommonUtil;
 import com.base.utils.ToastUtils;
 import com.okhttp.ResultClient;
 import com.okhttp.SendRequest;
@@ -16,27 +15,29 @@ import com.quakoo.im.aiyou.ImSocketService;
 import com.yuoxi.android.app.MainActivity;
 import com.yuoxi.android.app.MainApplication;
 import com.yuoxi.android.app.R;
+import com.yuoxi.android.app.databinding.ActivityLoginBinding;
 
 import okhttp3.Call;
 import okhttp3.Request;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
-public class WelcomeActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
+
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        binding = getViewData(R.layout.activity_login);
+        setStatusBarHeight();
+        finishAllActivity();
+        addActivity(this);
 
-        if (CommonUtil.isBlank(getUserInfo()) || CommonUtil.isBlank(getUserInfo().getToken())) {
-            openActivity(LoginActivity.class);
-            finish();
-        } else {
-            ImSocketService.startImService(BaseApplication.getInstance()); //开启长链接
-            openActivity(MainActivity.class);
-            finish();
-        }
 
+    }
+
+    public void onClickLogin(View view) {
+        login();
     }
 
     private void login() {
@@ -46,13 +47,13 @@ public class WelcomeActivity extends BaseActivity {
                     @Override
                     public void onBefore(Request request, int id) {
                         super.onBefore(request, id);
-                        LoadingManager.showLoadingDialog(WelcomeActivity.this);
+                        LoadingManager.showLoadingDialog(LoginActivity.this);
                     }
 
                     @Override
                     public void onAfter(int id) {
                         super.onAfter(id);
-                        LoadingManager.hideLoadingDialog(WelcomeActivity.this);
+                        LoadingManager.hideLoadingDialog(LoginActivity.this);
                     }
 
                     @Override

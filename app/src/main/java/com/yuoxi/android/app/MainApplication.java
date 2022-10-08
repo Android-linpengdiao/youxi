@@ -18,6 +18,7 @@ import com.quakoo.im.model.ChatSettingEntity;
 import com.quakoo.im.model.MainMessage;
 import com.quakoo.im.model.UniteUpdateDataModel;
 import com.quakoo.im.utils.NetUtil;
+import com.yuoxi.android.app.activity.LoginActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -88,8 +89,8 @@ public class MainApplication extends BaseApplication {
             IMChatManager.getInstance(getInstance()).save(chatMessage);
             EventBus.getDefault().removeStickyEvent(model); //删除原来的消息
             UniteUpdateDataModel stickyEvent = EventBus.getDefault().getStickyEvent(UniteUpdateDataModel.class);
-            if(stickyEvent != null) {
-                Log.i(TAG,"删除事件了:");
+            if (stickyEvent != null) {
+                Log.i(TAG, "删除事件了:");
                 EventBus.getDefault().removeStickyEvent(stickyEvent);
             }
             EventBus.getDefault().postSticky(model1);//发送新的消息体
@@ -153,47 +154,50 @@ public class MainApplication extends BaseApplication {
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true, priority = 100)
     public void MainMessage(MainMessage model) {
         EventBus.getDefault().removeAllStickyEvents();
-//        if (model.getKey().equals(Constants.SOCKET_USER_LOGOUT)) {//帐号被挤掉了
+        if (model.getKey().equals(Constants.SOCKET_USER_LOGOUT)) {//帐号被挤掉了
 //            if (messageCenterManager != null) {
 //                messageCenterManager.stopPolling();
 //            }
 //            ChatSettingMap.clear();
-//            userInfo = null;
+            userInfo = null;
 //            login = "重新登录";
-//            stopService(new Intent(getInstance(), ImSocketService.class));
+
+            stopService(new Intent(getInstance(), ImSocketService.class));
 //            stopService(new Intent(getInstance(), AVChatService.class));
 //            stopService(new Intent(getInstance(), MsgPushService.class));
-//            Intent intent1 = new Intent(getInstance(), ApplyHintActivity.class);
-//            intent1.putExtra("type", "logout");
-//            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent1);
-//            EventBus.getDefault().removeStickyEvent(model);
-//
-//            UniteUpdateDataModel stickyEvent = EventBus.getDefault().getStickyEvent(UniteUpdateDataModel.class);
-//            if(stickyEvent != null) {
-//                Log.i(TAG,"删除事件了:");
-//                EventBus.getDefault().removeStickyEvent(stickyEvent);
-//            }
-//            EventBus.getDefault().removeAllStickyEvents();
-//        } else if (model.getKey().equals(Constants.EXITLOGIN)) { //重新登录
+
+            EventBus.getDefault().removeAllStickyEvents();
+            EventBus.getDefault().removeStickyEvent(model);
+            MsgCache.get(getInstance()).remove(Constants.USER_INFO); //清除缓存里的帐号信息
+            ImSharedPreferences.exitLogin();
+
+            Intent intent = new Intent(getInstance(), LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            EventBus.getDefault().removeStickyEvent(model);
+
+        } else if (model.getKey().equals(Constants.EXITLOGIN)) { //重新登录
 //            if (messageCenterManager != null) {
 //                messageCenterManager.stopPolling();
 //            }
 //            ChatSettingMap.clear();
-//            userInfo = null;
+            userInfo = null;
 //            login = "重新登录";
-//            EventBus.getDefault().removeStickyEvent(model);
-//            stopService(new Intent(getInstance(), ImSocketService.class));
+
+            stopService(new Intent(getInstance(), ImSocketService.class));
 //            stopService(new Intent(getInstance(), AVChatService.class));
 //            stopService(new Intent(getInstance(), MsgPushService.class));
-//            MsgCache.get(getInstance()).remove(Constants.USER_INFO); //清除缓存里的帐号信息
-//            ImSharedPreferences.exitLogin();
-//            EventBus.getDefault().removeAllStickyEvents();
-//            Intent intent1 = new Intent(getInstance(), ApplyHintActivity.class);
-//            intent1.putExtra("type", Constants.EXITLOGIN);
-//            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent1);
-//        } else if (model.getKey().equals(Constants.CHATSETTING)) {
+
+            EventBus.getDefault().removeAllStickyEvents();
+            EventBus.getDefault().removeStickyEvent(model);
+            MsgCache.get(getInstance()).remove(Constants.USER_INFO); //清除缓存里的帐号信息
+            ImSharedPreferences.exitLogin();
+
+            Intent intent = new Intent(getInstance(), LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
+        } else if (model.getKey().equals(Constants.CHATSETTING)) {
 //            ChatSettingMap.clear(); //设置当前帐号,先清除全局好友设置的变量
 //            List<ChatSettingEntity> list = ChatSettingManager.getInstance().queryAll(userInfo.getId());//获取在本地数据库中设置的好友设置
 //            if (list.size() > 0) {
@@ -202,14 +206,14 @@ public class MainApplication extends BaseApplication {
 //                }
 //
 //            }
-//        }
+        }
 
     }
 
     @Subscribe(threadMode = ThreadMode.ASYNC, sticky = true, priority = -100)
     public void deleteSticky(UniteUpdateDataModel model) {
         UniteUpdateDataModel stickyEvent = EventBus.getDefault().getStickyEvent(UniteUpdateDataModel.class);
-        if(stickyEvent != null) {
+        if (stickyEvent != null) {
             EventBus.getDefault().removeStickyEvent(stickyEvent);
         }
         LogUtil.i(TAG, "删除消息体的EventBus,子线程.");
@@ -218,7 +222,7 @@ public class MainApplication extends BaseApplication {
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true, priority = -100)
     public void deleteMainSticky(UniteUpdateDataModel model) {
         UniteUpdateDataModel stickyEvent = EventBus.getDefault().getStickyEvent(UniteUpdateDataModel.class);
-        if(stickyEvent != null) {
+        if (stickyEvent != null) {
             EventBus.getDefault().removeStickyEvent(stickyEvent);
         }
         Log.i(TAG, "删除消息体的EventBus,Main线程.");
@@ -227,7 +231,7 @@ public class MainApplication extends BaseApplication {
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true, priority = -100)
     public void deleteSticky(MainMessage model) {
         UniteUpdateDataModel stickyEvent = EventBus.getDefault().getStickyEvent(UniteUpdateDataModel.class);
-        if(stickyEvent != null) {
+        if (stickyEvent != null) {
             EventBus.getDefault().removeStickyEvent(stickyEvent);
         }
         Log.i(TAG, "清除好友消息设置的EventBus,Main线程");

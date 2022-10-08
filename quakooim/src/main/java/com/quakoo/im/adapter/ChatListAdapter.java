@@ -28,6 +28,7 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.base.BaseApplication;
@@ -46,6 +47,7 @@ import com.quakoo.im.databinding.ItemChatListNoticeLayoutBinding;
 import com.quakoo.im.databinding.ItemChatListOwnLayoutBinding;
 import com.quakoo.im.databinding.MessageAudioLayoutBinding;
 import com.quakoo.im.databinding.MessageImageLayoutBinding;
+import com.quakoo.im.databinding.MessagePluginLayoutBinding;
 import com.quakoo.im.databinding.MessageTextLayoutBinding;
 import com.quakoo.im.databinding.MessageVideoLayoutBinding;
 import com.quakoo.im.manager.ChatSettingManager;
@@ -69,6 +71,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -221,7 +224,7 @@ public class ChatListAdapter extends RecyclerView.Adapter {
                                 notifyDataSetChanged();
 
                             } else {
-                                ToastUtils.showShort(mContext,"请检查网络情况,再重发");
+                                ToastUtils.showShort(mContext, "请检查网络情况,再重发");
                             }
                         }
                     });
@@ -753,9 +756,44 @@ public class ChatListAdapter extends RecyclerView.Adapter {
                 audioLayoutBinding.audioLayout.setBackgroundResource(R.drawable.bg_my_collection_find);
             }
             return m;
+        } else if (message.getContentType().equals(ChatMessage.CHAT_CONTENT_TYPE_SHARE_PLUGIND)) {//分享小程序
+            final View m = LinearLayout.inflate(mContext, R.layout.message_plugin_layout, null);
+            final MessagePluginLayoutBinding binding = DataBindingUtil.bind(m);
+
+            JSONObject object = null;
+            try {
+                object = new JSONObject(message.getExtra());
+                binding.pluginsName.setText(object.optString("name"));
+                binding.pluginsInfo.setText(object.optString("info"));
+                GlideLoader.getInstance().LoaderImage(mContext, object.optString("image"), binding.pluginsImage,6);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
+            layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            binding.tagRecyclerView.setLayoutManager(layoutManager);
+            PluginTagAdapter tagAdapter = new PluginTagAdapter(mContext);
+            binding.tagRecyclerView.setAdapter(tagAdapter);
+            tagAdapter.refreshData(Arrays.asList("5人","困难","中恐"));
+
+            final JSONObject finalObject = object;
+            binding.pluginsContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    PluginsEntity.DataBean dataBean = new PluginsEntity.DataBean();
+//                    dataBean.setId(finalObject.optInt("pid"));
+//                    dataBean.setName(finalObject.optString("name"));
+//                    dataBean.setInfo(finalObject.optString("info"));
+//                    dataBean.setIcon(finalObject.optString("icon"));
+//                    dataBean.setImage(finalObject.optString("image"));
+//                    dataBean.setExtra(finalObject.optString("extra"));
+//                    PluginsManager.getInstance().openPluginsInfo((Activity) mContext, dataBean, ChatFriend.getId());
+                }
+            });
+            contentContainer(binding.pluginsContainer, message, position);
+            return m;
         }
-
-
 
 
 //        else if (message.getContentType().equals(ChatMessage.CHAT_CONTENT_TYPE_RED)) { //红包

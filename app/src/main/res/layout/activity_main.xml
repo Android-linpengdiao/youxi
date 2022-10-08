@@ -12,15 +12,89 @@
         android:layout_height="match_parent"
         tools:context=".activity.MainActivity">
 
-        <com.next.easynavigation.view.EasyNavigationBar
-            android:id="@+id/easyNavigationBar"
+        <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:Easy_lineHeight="@dimen/dp_0"
-            app:Easy_tabTextTop="@dimen/dp_2"
-            app:Easy_tabIconSize="@dimen/dp_22"
-            app:Easy_scaleType="FIT_CENTER"
-            app:Easy_navigationHeight="@dimen/dp_60"/>
+            android:layout_above="@+id/radioGroupView" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonHome"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/main_bg"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/main_home"
+                android:paddingTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@drawable/main_text_color"
+                android:textSize="@dimen/sp_10" />
+
+            <RadioButton
+                android:id="@+id/radioButtonYueWan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_bg"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/main_yuewan"
+                android:paddingTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="约玩"
+                android:textColor="@drawable/main_text_color"
+                android:textSize="@dimen/sp_10" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMessage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/main_bg"
+                android:button="@null"
+                android:drawableTop="@drawable/main_message"
+                android:paddingTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="@drawable/main_text_color"
+                android:textSize="@dimen/sp_10" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/main_bg"
+                android:button="@null"
+                android:drawableTop="@drawable/main_mine"
+                android:paddingTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@drawable/main_text_color"
+                android:textSize="@dimen/sp_10" />
+
+        </RadioGroup>
+
+        <!--        <com.next.easynavigation.view.EasyNavigationBar-->
+        <!--            android:id="@+id/easyNavigationBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            app:Easy_lineHeight="@dimen/dp_0"-->
+        <!--            app:Easy_tabTextTop="@dimen/dp_2"-->
+        <!--            app:Easy_tabIconSize="@dimen/dp_22"-->
+        <!--            app:Easy_scaleType="FIT_CENTER"-->
+        <!--            app:Easy_navigationHeight="@dimen/dp_60"/>-->
 
     </RelativeLayout>
 </layout>

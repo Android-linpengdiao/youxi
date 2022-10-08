@@ -345,12 +345,15 @@ public class BaseEmotionView extends RelativeLayout {
                 convertView = LayoutInflater.from(context).inflate(R.layout.widget_image_view, null);
                 holder = new ViewHolder();
                 holder.imageView = convertView.findViewById(R.id.imageView);
-                int w = UnitUtils.dip2px(getContext(), 30);
-                int top = UnitUtils.dip2px(getContext(), 20);
+                int w = getContext().getResources().getDimensionPixelOffset(R.dimen.dp_30);
+                int top = getContext().getResources().getDimensionPixelOffset(R.dimen.dp_50);
+//                int w = UnitUtils.dip2px(getContext(), 30);
+//                int top = UnitUtils.dip2px(getContext(), 20);
                 holder.imageView.setLayoutParams(new GridView.LayoutParams(w, w));//设置ImageView对象布局
                 holder.imageView.setAdjustViewBounds(false);//设置边界对齐
                 holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY);//设置刻度的类型
-                holder.imageView.setPadding(8, 8, 8, 8);//设置间距
+                int padding = getContext().getResources().getDimensionPixelOffset(R.dimen.dp_8);
+//                holder.imageView.setPadding(padding, padding, padding, padding);//设置间距
                 LayoutParams params = new LayoutParams(w, w);
                 params.setMargins(0, top, 0, 0);
                 holder.imageView.setLayoutParams(params);
